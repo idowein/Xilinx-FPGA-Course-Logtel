@@ -43,7 +43,7 @@ end MUX;
 architecture Behavioral of MUX is
 
 begin
--- MUX 
+-- MUX4
 process (SELECTOR,IN1,IN2,IN3,IN4)
 begin
    case SELECTOR is
