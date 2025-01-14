@@ -36,7 +36,7 @@ entity REG8_V2 is
            CE : in STD_LOGIC;
            CLK : in STD_LOGIC;
            RST : in STD_LOGIC;
-           DOUT : in STD_LOGIC_VECTOR (7 downto 0));
+           DOUT : out STD_LOGIC_VECTOR (7 downto 0));
 end REG8_V2;
 
 architecture Behavioral of REG8_V2 is

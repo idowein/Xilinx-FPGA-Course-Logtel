@@ -29,7 +29,7 @@ set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:zybo-z7-20:part0:1.2 [current_project]
 set_property ip_output_repo {c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/xilinx_book_labs/Lab1/project_1.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_vhdl -library xil_defaultlib {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/xilinx_book_labs/Lab1/project_1.srcs/sources_1/new/REG8.vhd}}
+read_vhdl -library xil_defaultlib {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/xilinx_book_labs/Lab1/project_1.srcs/sources_1/new/REG8_V2.vhd}}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -41,12 +41,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top REG8 -part xc7z020clg400-1
+synth_design -top REG8_V2 -part xc7z020clg400-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef REG8.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file REG8_utilization_synth.rpt -pb REG8_utilization_synth.pb"
+write_checkpoint -force -noxdef REG8_V2.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file REG8_V2_utilization_synth.rpt -pb REG8_V2_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
