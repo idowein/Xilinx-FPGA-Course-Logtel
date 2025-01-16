@@ -1,0 +1,5 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../genLoops.srcs/sim_1/imports/VHDL/tb_uart_driver.vhd"
+
+# Do not sort compile order
+nosort

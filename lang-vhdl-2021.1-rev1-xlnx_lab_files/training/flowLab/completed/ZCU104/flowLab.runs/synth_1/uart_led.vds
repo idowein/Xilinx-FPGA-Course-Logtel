@@ -1,0 +1,294 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed Sep  1 23:19:12 2021
+# Process ID: 21380
+# Current directory: /home/xilinx/training/flowLab/completed/ZCU104/flowLab.runs/synth_1
+# Command line: vivado -log uart_led.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_led.tcl
+# Log file: /home/xilinx/training/flowLab/completed/ZCU104/flowLab.runs/synth_1/uart_led.vds
+# Journal file: /home/xilinx/training/flowLab/completed/ZCU104/flowLab.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script '/home/xilinx/.Xilinx/Vivado/Vivado_init.tcl'
+266 Beta devices matching pattern found, 0 enabled.
+source uart_led.tcl -notrace
+Command: synth_design -top uart_led -part xczu7ev-ffvc1156-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 21514
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2920.004 ; gain = 48.750 ; free physical = 8229 ; free virtual = 13029
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'uart_led' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:70]
+INFO: [Synth 8-113] binding component instance 'IBUF_rst_i0' to cell 'IBUF' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:126]
+INFO: [Synth 8-113] binding component instance 'IBUF_rxd_i0' to cell 'IBUF' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:128]
+INFO: [Synth 8-113] binding component instance 'IBUFG_clk_i0' to cell 'IBUFGDS' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:130]
+INFO: [Synth 8-113] binding component instance 'BUFG_clk_rx_i0' to cell 'BUFG' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:136]
+INFO: [Synth 8-113] binding component instance 'OBUF_led_i' to cell 'OBUF' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:141]
+INFO: [Synth 8-113] binding component instance 'OBUF_led_i' to cell 'OBUF' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:141]
+INFO: [Synth 8-113] binding component instance 'OBUF_led_i' to cell 'OBUF' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:141]
+INFO: [Synth 8-113] binding component instance 'OBUF_led_i' to cell 'OBUF' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:141]
+INFO: [Synth 8-3491] module 'meta_harden' declared at '/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/meta_harden.vhd:58' bound to instance 'meta_harden_rst_i0' of component 'meta_harden' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:146]
+INFO: [Synth 8-638] synthesizing module 'meta_harden' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/meta_harden.vhd:66]
+INFO: [Synth 8-256] done synthesizing module 'meta_harden' (1#1) [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/meta_harden.vhd:66]
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter CLOCK_RATE bound to: 125000000 - type: integer 
+INFO: [Synth 8-3491] module 'uart_rx' declared at '/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx.vhd:73' bound to instance 'uart_rx_i0' of component 'uart_rx' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'uart_rx' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx.vhd:88]
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+	Parameter CLOCK_RATE bound to: 125000000 - type: integer 
+INFO: [Synth 8-3491] module 'meta_harden' declared at '/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/meta_harden.vhd:58' bound to instance 'meta_harden_rxd_i0' of component 'meta_harden' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx.vhd:128]
+	Parameter CLOCK_RATE bound to: 125000000 - type: integer 
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+INFO: [Synth 8-3491] module 'uart_baud_gen' declared at '/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_baud_gen.vhd:63' bound to instance 'uart_baud_gen_rx_i0' of component 'uart_baud_gen' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'uart_baud_gen' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_baud_gen.vhd:74]
+	Parameter CLOCK_RATE bound to: 125000000 - type: integer 
+	Parameter BAUD_RATE bound to: 115200 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'uart_baud_gen' (2#1) [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_baud_gen.vhd:74]
+INFO: [Synth 8-3491] module 'uart_rx_ctl' declared at '/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx_ctl.vhd:86' bound to instance 'uart_rx_ctl_i0' of component 'uart_rx_ctl' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx.vhd:146]
+INFO: [Synth 8-638] synthesizing module 'uart_rx_ctl' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx_ctl.vhd:98]
+INFO: [Synth 8-226] default block is never used [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx_ctl.vhd:117]
+INFO: [Synth 8-256] done synthesizing module 'uart_rx_ctl' (3#1) [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx_ctl.vhd:98]
+INFO: [Synth 8-256] done synthesizing module 'uart_rx' (4#1) [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_rx.vhd:88]
+INFO: [Synth 8-3491] module 'led_ctl' declared at '/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/led_ctl.vhd:25' bound to instance 'led_ctl_i0' of component 'led_ctl' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:169]
+INFO: [Synth 8-638] synthesizing module 'led_ctl' [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/led_ctl.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'led_ctl' (5#1) [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/led_ctl.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'uart_led' (6#1) [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/sources_1/imports/support/uart_led.vhd:70]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2957.973 ; gain = 86.719 ; free physical = 8245 ; free virtual = 13047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2976.785 ; gain = 105.531 ; free physical = 8280 ; free virtual = 13082
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2976.785 ; gain = 105.531 ; free physical = 8280 ; free virtual = 13082
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2988.691 ; gain = 0.000 ; free physical = 8277 ; free virtual = 13078
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc]
+create_clock: Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3144.434 ; gain = 0.000 ; free physical = 7081 ; free virtual = 11883
+WARNING: [Vivado 12-584] No ports matched 'btn_pin'. [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'btn_pin'. [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc:7]
+WARNING: [Vivado 12-584] No ports matched 'btn_pin'. [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_pin'. [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xilinx/training/flowLab/completed/ZCU104/flowLab.srcs/constrs_1/imports/support/uart_led.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/uart_led_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/uart_led_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3144.434 ; gain = 0.000 ; free physical = 7076 ; free virtual = 11879
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 2 instances
+  IBUFGDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3144.434 ; gain = 0.000 ; free physical = 7075 ; free virtual = 11878
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3144.434 ; gain = 273.180 ; free physical = 7660 ; free virtual = 12463
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3144.434 ; gain = 273.180 ; free physical = 7659 ; free virtual = 12462
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 3144.434 ; gain = 273.180 ; free physical = 7657 ; free virtual = 12460
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx_ctl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                  iSTATE |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx_ctl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3144.434 ; gain = 273.180 ; free physical = 7628 ; free virtual = 12432
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input    8 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 3     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 13    
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 3144.434 ; gain = 273.180 ; free physical = 7524 ; free virtual = 12332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:56 . Memory (MB): peak = 3539.051 ; gain = 667.797 ; free physical = 6849 ; free virtual = 11697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:56 . Memory (MB): peak = 3539.051 ; gain = 667.797 ; free physical = 6849 ; free virtual = 11697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:56 . Memory (MB): peak = 3559.082 ; gain = 687.828 ; free physical = 6847 ; free virtual = 11696
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 3565.020 ; gain = 693.766 ; free physical = 6847 ; free virtual = 11697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 3565.020 ; gain = 693.766 ; free physical = 6847 ; free virtual = 11697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 3565.020 ; gain = 693.766 ; free physical = 6847 ; free virtual = 11697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 3565.020 ; gain = 693.766 ; free physical = 6847 ; free virtual = 11697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 3565.020 ; gain = 693.766 ; free physical = 6847 ; free virtual = 11697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 3565.020 ; gain = 693.766 ; free physical = 6847 ; free virtual = 11697
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |LUT1    |     3|
+|3     |LUT2    |     7|
+|4     |LUT3    |     5|
+|5     |LUT4    |     7|
+|6     |LUT5    |    14|
+|7     |LUT6    |     9|
+|8     |FDRE    |    30|
+|9     |FDSE    |     6|
+|10    |IBUF    |     2|
+|11    |IBUFGDS |     1|
+|12    |OBUF    |     4|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 3565.020 ; gain = 693.766 ; free physical = 6847 ; free virtual = 11697
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 3565.020 ; gain = 526.117 ; free physical = 6883 ; free virtual = 11734
+Synthesis Optimization Complete : Time (s): cpu = 00:01:00 ; elapsed = 00:01:04 . Memory (MB): peak = 3565.027 ; gain = 693.766 ; free physical = 6883 ; free virtual = 11734
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3565.027 ; gain = 0.000 ; free physical = 6877 ; free virtual = 11727
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3622.621 ; gain = 0.000 ; free physical = 6702 ; free virtual = 11650
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 2 instances
+  IBUFGDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+
+Synth Design complete, checksum: a306b086
+INFO: [Common 17-83] Releasing license: Synthesis
+47 Infos, 4 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:16 ; elapsed = 00:01:16 . Memory (MB): peak = 3622.621 ; gain = 1050.699 ; free physical = 6806 ; free virtual = 11754
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/xilinx/training/flowLab/completed/ZCU104/flowLab.runs/synth_1/uart_led.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file uart_led_utilization_synth.rpt -pb uart_led_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  1 23:20:40 2021...

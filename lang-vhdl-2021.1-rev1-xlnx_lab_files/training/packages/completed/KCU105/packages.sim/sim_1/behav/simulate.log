@@ -1,0 +1,42 @@
+Vivado Simulator 2016.3
+Time resolution is 1 ps
+Note: with slv_short set to '1', the results are '1' & '1'
+Time: 100 ps  Iteration: 1  Process: /new_packages_tb/logic  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: with slv_short set to 16#A581#, the results are '0' & '1'
+Time: 101 ps  Iteration: 1  Process: /new_packages_tb/logic  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: with slv_long set to zeros, the results are '0' & '0'
+Time: 102 ps  Iteration: 1  Process: /new_packages_tb/logic  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Time: 5 ns  Iteration: 0  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: 0
+Time: 5 ns  Iteration: 0  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: position of C in ABCDEFGHIJKLMNOPQRSTUVWXYZ is 3
+Time: 5 ns  Iteration: 0  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: last position of X in ABCDEFGHIJKLMNOPQRSTUVWXYZ is 24
+Time: 5 ns  Iteration: 0  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: first position of X in X2345X7890X2345X7890X2345X is 1
+Time: 5 ns  Iteration: 1  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: next position of X after 13 character in X2345X7890X2345X7890X2345X is 16
+Time: 5 ns  Iteration: 1  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: last position of X in X2345X7890X2345X7890X2345X is 26
+Time: 5 ns  Iteration: 1  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: with slv_short set to '1', the results are '1' & '1'
+Time: 100 ps  Iteration: 1  Process: /new_packages_tb/logic  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: with slv_short set to 16#A581#, the results are '0' & '1'
+Time: 101 ps  Iteration: 1  Process: /new_packages_tb/logic  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: with slv_long set to zeros, the results are '0' & '0'
+Time: 102 ps  Iteration: 1  Process: /new_packages_tb/logic  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Time: 5 ns  Iteration: 0  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: 0
+Time: 5 ns  Iteration: 0  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: position of C in ABCDEFGHIJKLMNOPQRSTUVWXYZ is 3
+Time: 5 ns  Iteration: 0  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: last position of X in ABCDEFGHIJKLMNOPQRSTUVWXYZ is 24
+Time: 5 ns  Iteration: 0  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: first position of X in X2345X7890X2345X7890X2345X is 1
+Time: 5 ns  Iteration: 1  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: next position of X after 13 character in X2345X7890X2345X7890X2345X is 16
+Time: 5 ns  Iteration: 1  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd
+Note: last position of X in X2345X7890X2345X7890X2345X is 26
+Time: 5 ns  Iteration: 1  Process: /new_packages_tb/test  File: C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd

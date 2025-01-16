@@ -1,0 +1,22 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../flowLab.srcs/sources_1/imports/support/meta_harden.vhd" \
+
+vhdl utilities_lib  \
+"../../../../flowLab.srcs/sim_1/imports/support/string_utilities_sim_pkg.vhd" \
+"../../../../flowLab.srcs/sim_1/imports/support/string_utilities_synth_pkg.vhd" \
+"../../../../flowLab.srcs/sim_1/imports/support/time_utilities_pkg.vhd" \
+
+vhdl specific_support_lib  \
+"../../../../flowLab.srcs/sim_1/imports/support/tb_fifo_pkg.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../flowLab.srcs/sim_1/imports/support/tb_resp_checker.vhd" \
+"../../../../flowLab.srcs/sim_1/imports/support/tb_uart_driver.vhd" \
+"../../../../flowLab.srcs/sources_1/imports/support/uart_baud_gen.vhd" \
+"../../../../flowLab.srcs/sources_1/imports/support/uart_rx.vhd" \
+"../../../../flowLab.srcs/sources_1/imports/support/uart_rx_ctl.vhd" \
+"../../../../flowLab.srcs/sim_1/imports/support/test_uart_rx.vhd" \
+
+# Do not sort compile order
+nosort

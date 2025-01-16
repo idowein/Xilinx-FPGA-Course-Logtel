@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/VHDL_lab_files/completed/buildingMemory/KCU105/VHDL/buildingMemory.srcs/sources_1/new/DP_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity DP_memory
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/VHDL_lab_files/completed/buildingMemory/KCU105/VHDL/buildingMemory.srcs/sim_1/imports/VHDL/DPmemory_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity DPmemory_tb

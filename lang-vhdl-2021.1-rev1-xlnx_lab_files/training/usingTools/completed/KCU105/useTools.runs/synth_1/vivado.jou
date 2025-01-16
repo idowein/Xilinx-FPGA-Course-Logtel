@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Sep  2 01:29:15 2021
+# Process ID: 42732
+# Current directory: /home/xilinx/training/usingTools/completed/KCU105/useTools.runs/synth_1
+# Command line: vivado -log register8.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source register8.tcl
+# Log file: /home/xilinx/training/usingTools/completed/KCU105/useTools.runs/synth_1/register8.vds
+# Journal file: /home/xilinx/training/usingTools/completed/KCU105/useTools.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source register8.tcl -notrace
