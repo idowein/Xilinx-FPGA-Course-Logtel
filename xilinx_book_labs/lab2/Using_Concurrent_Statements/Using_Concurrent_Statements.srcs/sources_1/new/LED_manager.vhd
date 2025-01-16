@@ -71,10 +71,10 @@ regCh2: register8 port map (clock => clock,
             data_out => Channel_2_registered_data);
 
 with selector select
-    mux_data_selected <= Channel_1_registered_data when '0';
-                         Channel_2_registered_data when '1';   
+    mux_data_selected <= Channel_1_registered_data when '0',
+                         Channel_2_registered_data when '1',  
                          (others => '-') when others;
                          
-data_out <= mux_data_selected when raising_edge(clock);
+data_out <= mux_data_selected when rising_edge(clock);
 
 end Behavioral;
