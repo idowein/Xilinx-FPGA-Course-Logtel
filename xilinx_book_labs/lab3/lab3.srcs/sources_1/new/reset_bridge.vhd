@@ -50,7 +50,7 @@ process (clk_dst, rst_in)
            rst_meta := '1'; -- the meta stable mightly FF is driven high internal to the process
            rst_out <= '1'; -- the output of the module is also high
         -- second FF
-        elsif (rising_edge(clk_dst)) then
+        elsif (rising_edge(clk_dst)) then -- if clock rise recognized in the second FF
            rst_out <= rst_meta; -- feed the second FF the output of the first
            rst_meta := '0'; -- clear the meta-stable likely FF
         end if; 
