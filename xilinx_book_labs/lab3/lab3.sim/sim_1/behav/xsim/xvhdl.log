@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/xilinx_book_labs/lab3/lab3.srcs/sources_1/new/reset_bridge.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reset_bridge'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/lang-vhdl-2021.1-rev1-xlnx_lab_files/training/processes/completed/KCU105/reset_bridge_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reset_bridge_tb'
