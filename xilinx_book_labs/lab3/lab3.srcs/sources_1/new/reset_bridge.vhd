@@ -42,15 +42,17 @@ architecture Behavioral of reset_bridge is
 begin
 
 process (clk_dst, rst_in)
-    variable rst_meta :std_logic := '0'; -- wire between 2 FF
+    variable rst_meta :std_logic := 'U'; -- wire between 2 FF
         
     begin  
+        -- first FF
         if (rst_in = '1') then
-           rst_out <= '1';
-           rst_meta := '1';
+           rst_meta := '1'; -- the meta stable mightly FF is driven high internal to the process
+           rst_out <= '1'; -- the output of the module is also high
+        -- second FF
         elsif (rising_edge(clk_dst)) then
-           rst_out <= rst_meta;
-           rst_meta := '0';
+           rst_out <= rst_meta; -- feed the second FF the output of the first
+           rst_meta := '0'; -- clear the meta-stable likely FF
         end if; 
 end process;
 				
