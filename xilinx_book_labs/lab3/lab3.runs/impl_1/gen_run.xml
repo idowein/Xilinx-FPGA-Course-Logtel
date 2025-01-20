@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1737367141">
+  <File Type="BITSTR-BMM" Name="reset_bridge_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="reset_bridge_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="reset_bridge_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="reset_bridge_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="reset_bridge.tcl"/>
+  <File Type="OPT-TIMING" Name="reset_bridge_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="reset_bridge_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="reset_bridge_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="reset_bridge_reports.tcl"/>
+  <File Type="OPT-DRC" Name="reset_bridge_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="reset_bridge.hwdef"/>
+  <File Type="PWROPT-DCP" Name="reset_bridge_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="reset_bridge_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="reset_bridge_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="reset_bridge_placed.dcp"/>
+  <File Type="PLACE-IO" Name="reset_bridge_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="reset_bridge_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="reset_bridge_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="reset_bridge_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="reset_bridge_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="reset_bridge_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="reset_bridge_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="reset_bridge_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="reset_bridge_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="reset_bridge.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="reset_bridge_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="reset_bridge_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="reset_bridge_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="reset_bridge.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="reset_bridge_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="reset_bridge_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="reset_bridge_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="reset_bridge_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="reset_bridge_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="reset_bridge_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="reset_bridge_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="reset_bridge.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="reset_bridge_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="reset_bridge_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="reset_bridge_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="reset_bridge_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="reset_bridge_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="reset_bridge_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="reset_bridge_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="reset_bridge_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="reset_bridge_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="reset_bridge_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="reset_bridge_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="reset_bridge_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="reset_bridge_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="reset_bridge_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="reset_bridge_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="reset_bridge_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="reset_bridge_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="reset_bridge_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="reset_bridge_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="reset_bridge_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="reset_bridge_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="reset_bridge.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="reset_bridge_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="reset_bridge.rbt"/>
+  <File Type="BITSTR-NKY" Name="reset_bridge.nky"/>
+  <File Type="PDI-FILE" Name="reset_bridge.pdi"/>
+  <File Type="RCFI_FILE" Name="reset_bridge.rcfi"/>
+  <File Type="CFI_FILE" Name="reset_bridge.cfi"/>
+  <File Type="RNPI_FILE" Name="reset_bridge.rnpi"/>
+  <File Type="NPI_FILE" Name="reset_bridge.npi"/>
+  <File Type="RBD_FILE" Name="reset_bridge.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="reset_bridge.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="reset_bridge.sysdef"/>
+  <File Type="BG-BGN" Name="reset_bridge.bgn"/>
+  <File Type="BG-DRC" Name="reset_bridge.drc"/>
+  <File Type="RDI-RDI" Name="reset_bridge.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/reset_bridge.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="reset_bridge"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
