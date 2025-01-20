@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../../lang-vhdl-2021.1-rev1-xlnx_lab_files/training/concurrency/completed/KCU105/concurrency.srcs/sources_1/new/LED_manager.vhd" \
+"../../../../../../../lang-vhdl-2021.1-rev1-xlnx_lab_files/training/concurrency/completed/KCU105/register8.vhd" \
+"../../../../Using_Concurrent_Statements.srcs/sim_1/new/LED_manager_tb.vhd" \
+
+# Do not sort compile order
+nosort
