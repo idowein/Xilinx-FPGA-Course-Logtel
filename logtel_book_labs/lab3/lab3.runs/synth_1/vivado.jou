@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Jan 23 14:49:11 2025
-# Process ID: 22332
+# Start of session at: Thu Jan 23 15:38:25 2025
+# Process ID: 9208
 # Current directory: C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab3/lab3.runs/synth_1
 # Command line: vivado.exe -log NUCLEAR_ALARM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source NUCLEAR_ALARM.tcl
 # Log file: C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab3/lab3.runs/synth_1/NUCLEAR_ALARM.vds

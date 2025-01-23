@@ -42,7 +42,7 @@ end NUCLEAR_ALARM;
 
 architecture Behavioral of NUCLEAR_ALARM is
 
-signal RAD_signal_length_count : STD_LOGIC_VECTOR(8 downto 0) := (others => '0'); 
+    signal RAD_signal_length_count : STD_LOGIC_VECTOR(8 downto 0) := (others => '0'); 
 
 begin
 

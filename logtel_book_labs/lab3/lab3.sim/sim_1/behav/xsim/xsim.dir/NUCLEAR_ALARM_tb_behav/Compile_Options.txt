@@ -1,0 +1,1 @@
+-wto "ac448d0a885a4240ab716326df3038ac" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "NUCLEAR_ALARM_tb_behav" "xil_defaultlib.NUCLEAR_ALARM_tb" -log "elaborate.log" 

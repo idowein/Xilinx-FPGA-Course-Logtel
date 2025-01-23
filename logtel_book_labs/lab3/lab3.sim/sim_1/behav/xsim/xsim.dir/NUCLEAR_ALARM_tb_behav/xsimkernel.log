@@ -1,0 +1,4 @@
+Running: xsim.dir/NUCLEAR_ALARM_tb_behav/xsimk.exe -simmode gui -wdb NUCLEAR_ALARM_tb_behav.wdb -simrunnum 0 -socket 52828
+Design successfully loaded
+Design Loading Memory Usage: 6916 KB (Peak: 6916 KB)
+Design Loading CPU Usage: 0 ms
