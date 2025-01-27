@@ -2,3 +2,6 @@ Running: xsim.dir/blk_mem_gen_0_tb_behav/xsimk.exe -simmode gui -wdb blk_mem_gen
 Design successfully loaded
 Design Loading Memory Usage: 7080 KB (Peak: 7080 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 7844 KB (Peak: 7844 KB)
+Simulation CPU Usage: 0 ms
