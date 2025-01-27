@@ -69,7 +69,7 @@ begin
         if rising_edge (clka) then
             wea(0) <= not addra_sig(8);
             addra_sig <= addra_sig + '1';
-            dina <= '0' & addra_sig(7 downto 0) & '0'; -- multiply by 2
+            dina <= '0' & addra_sig(7 downto 0) & '0'; -- multiply by 2 binary
     --        wait for 10 ns;
         end if;
      end process;
