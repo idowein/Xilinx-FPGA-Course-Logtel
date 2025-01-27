@@ -1,9 +1,9 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Thu Jan 23 20:02:01 2025
+-- Date        : Mon Jan 27 15:30:32 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/idowe/FPGA
+-- Command     : write_vhdl -force -mode funcsim {C:/Users/idowe/FPGA
 --               Projects/FPGA-Course-Logtel/logtel_book_labs/lab5/lab5.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_sim_netlist.vhdl}
 -- Design      : blk_mem_gen_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
@@ -19,12 +19,10 @@ entity blk_mem_gen_1_blk_mem_gen_prim_wrapper_init is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
-    ena : in STD_LOGIC;
+    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    wea : in STD_LOGIC_VECTOR ( 0 to 0 )
+    dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of blk_mem_gen_1_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
@@ -211,8 +209,8 @@ begin
       DOPADOP(0) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_33\,
       DOPBDOP(1) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_34\,
       DOPBDOP(0) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_35\,
-      ENARDEN => enb,
-      ENBWREN => ena,
+      ENARDEN => '1',
+      ENBWREN => wea(0),
       REGCEAREGCE => '0',
       REGCEB => '0',
       RSTRAMARSTRAM => '0',
@@ -220,10 +218,7 @@ begin
       RSTREGARSTREG => '0',
       RSTREGB => '0',
       WEA(1 downto 0) => B"00",
-      WEBWE(3) => wea(0),
-      WEBWE(2) => wea(0),
-      WEBWE(1) => wea(0),
-      WEBWE(0) => wea(0)
+      WEBWE(3 downto 0) => B"1111"
     );
 end STRUCTURE;
 library IEEE;
@@ -235,12 +230,10 @@ entity blk_mem_gen_1_blk_mem_gen_prim_width is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
-    ena : in STD_LOGIC;
+    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    wea : in STD_LOGIC_VECTOR ( 0 to 0 )
+    dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of blk_mem_gen_1_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
@@ -256,8 +249,6 @@ begin
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      ena => ena,
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -270,12 +261,10 @@ entity blk_mem_gen_1_blk_mem_gen_generic_cstr is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
-    ena : in STD_LOGIC;
+    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    wea : in STD_LOGIC_VECTOR ( 0 to 0 )
+    dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of blk_mem_gen_1_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
@@ -291,8 +280,6 @@ begin
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      ena => ena,
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -305,12 +292,10 @@ entity blk_mem_gen_1_blk_mem_gen_top is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
-    ena : in STD_LOGIC;
+    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    wea : in STD_LOGIC_VECTOR ( 0 to 0 )
+    dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of blk_mem_gen_1_blk_mem_gen_top : entity is "blk_mem_gen_top";
@@ -326,8 +311,6 @@ begin
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      ena => ena,
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -340,12 +323,10 @@ entity blk_mem_gen_1_blk_mem_gen_v8_4_4_synth is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
-    ena : in STD_LOGIC;
+    wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    wea : in STD_LOGIC_VECTOR ( 0 to 0 )
+    dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of blk_mem_gen_1_blk_mem_gen_v8_4_4_synth : entity is "blk_mem_gen_v8_4_4_synth";
@@ -361,8 +342,6 @@ begin
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      ena => ena,
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -489,9 +468,9 @@ entity blk_mem_gen_1_blk_mem_gen_v8_4_4 is
   attribute C_HAS_AXI_ID : integer;
   attribute C_HAS_AXI_ID of blk_mem_gen_1_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_HAS_ENA : integer;
-  attribute C_HAS_ENA of blk_mem_gen_1_blk_mem_gen_v8_4_4 : entity is 1;
+  attribute C_HAS_ENA of blk_mem_gen_1_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_HAS_ENB : integer;
-  attribute C_HAS_ENB of blk_mem_gen_1_blk_mem_gen_v8_4_4 : entity is 1;
+  attribute C_HAS_ENB of blk_mem_gen_1_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_HAS_INJECTERR : integer;
   attribute C_HAS_INJECTERR of blk_mem_gen_1_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_HAS_MEM_OUTPUT_REGS_A : integer;
@@ -667,8 +646,6 @@ inst_blk_mem_gen: entity work.blk_mem_gen_1_blk_mem_gen_v8_4_4_synth
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      ena => ena,
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -679,12 +656,10 @@ use UNISIM.VCOMPONENTS.ALL;
 entity blk_mem_gen_1 is
   port (
     clka : in STD_LOGIC;
-    ena : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
-    enb : in STD_LOGIC;
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 )
   );
@@ -772,9 +747,9 @@ architecture STRUCTURE of blk_mem_gen_1 is
   attribute C_HAS_AXI_ID : integer;
   attribute C_HAS_AXI_ID of U0 : label is 0;
   attribute C_HAS_ENA : integer;
-  attribute C_HAS_ENA of U0 : label is 1;
+  attribute C_HAS_ENA of U0 : label is 0;
   attribute C_HAS_ENB : integer;
-  attribute C_HAS_ENB of U0 : label is 1;
+  attribute C_HAS_ENB of U0 : label is 0;
   attribute C_HAS_INJECTERR : integer;
   attribute C_HAS_INJECTERR of U0 : label is 0;
   attribute C_HAS_MEM_OUTPUT_REGS_A : integer;
@@ -876,8 +851,6 @@ architecture STRUCTURE of blk_mem_gen_1 is
   attribute x_interface_parameter of clka : signal is "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
   attribute x_interface_info of clkb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK";
   attribute x_interface_parameter of clkb : signal is "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
-  attribute x_interface_info of ena : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA EN";
-  attribute x_interface_info of enb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB EN";
   attribute x_interface_info of addra : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR";
   attribute x_interface_info of addrb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR";
   attribute x_interface_info of dina : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA DIN";
@@ -897,8 +870,8 @@ U0: entity work.blk_mem_gen_1_blk_mem_gen_v8_4_4
       douta(9 downto 0) => NLW_U0_douta_UNCONNECTED(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
       eccpipece => '0',
-      ena => ena,
-      enb => enb,
+      ena => '0',
+      enb => '0',
       injectdbiterr => '0',
       injectsbiterr => '0',
       rdaddrecc(7 downto 0) => NLW_U0_rdaddrecc_UNCONNECTED(7 downto 0),
