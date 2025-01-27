@@ -122,7 +122,7 @@ begin
                                 ORANGE_C <= '0';
                                 GREEN_C <= '1';
                                 if count = 100 then
-                                    state <= DRIVE;
+                                    state <= STOP_DRIVE;
                                 end if; 
                         when STOP_DRIVE => 
                                 RED_W <= '1';
