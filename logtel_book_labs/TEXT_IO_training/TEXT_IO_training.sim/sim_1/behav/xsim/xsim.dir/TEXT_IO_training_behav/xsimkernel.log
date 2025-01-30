@@ -2,3 +2,6 @@ Running: xsim.dir/TEXT_IO_training_behav/xsimk.exe -simmode gui -wdb TEXT_IO_tra
 Design successfully loaded
 Design Loading Memory Usage: 7420 KB (Peak: 7420 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 7884 KB (Peak: 7884 KB)
+Simulation CPU Usage: 0 ms

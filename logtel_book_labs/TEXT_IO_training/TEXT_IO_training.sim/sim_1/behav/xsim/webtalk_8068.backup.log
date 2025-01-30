@@ -2,11 +2,13 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Jan 30 20:06:11 2025
-# Process ID: 23120
+# Start of session at: Thu Jan 30 20:03:12 2025
+# Process ID: 8068
 # Current directory: C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/TEXT_IO_training/TEXT_IO_training.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/TEXT_IO_training/TEXT_IO_training.sim/sim_1/behav/xsim/xsim.dir/TEXT_IO_reading_training_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/TEXT_IO_training/TEXT_IO_training.sim/sim_1/behav/xsim/xsim.dir/TEXT_IO_training_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/TEXT_IO_training/TEXT_IO_training.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/TEXT_IO_training/TEXT_IO_training.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source C:/Users/idowe/FPGA -notrace
+couldn't read file "C:/Users/idowe/FPGA": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Thu Jan 30 20:03:12 2025...
