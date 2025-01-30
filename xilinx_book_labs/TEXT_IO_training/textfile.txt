@@ -1,0 +1,2 @@
+1 ps: ***> Starting circuit initialization
+50001 ps: - 45
