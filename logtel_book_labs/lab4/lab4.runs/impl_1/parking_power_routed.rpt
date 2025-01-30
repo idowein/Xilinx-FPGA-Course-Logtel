@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Mon Jan 27 17:44:27 2025
+| Date             : Thu Jan 30 16:51:20 2025
 | Host             : Ido running 64-bit major release  (build 9200)
 | Command          : report_power -file parking_power_routed.rpt -pb parking_power_summary_routed.pb -rpx parking_power_routed.rpx
 | Design           : parking
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 4.968        |
+| Total On-Chip Power (W)  | 4.964        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 4.660        |
+| Dynamic (W)              | 4.657        |
 | Device Static (W)        | 0.308        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 27.7         |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.101 |       42 |       --- |             --- |
+| Slice Logic    |     0.101 |       40 |       --- |             --- |
 |   LUT as Logic |     0.069 |       16 |     53200 |            0.03 |
 |   CARRY4       |     0.019 |        3 |     13300 |            0.02 |
-|   Register     |     0.007 |       18 |    106400 |            0.02 |
+|   Register     |     0.007 |       16 |    106400 |            0.02 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |     0.124 |       30 |       --- |             --- |
+| Signals        |     0.121 |       28 |       --- |             --- |
 | I/O            |     4.435 |       15 |       125 |           12.00 |
 | Static Power   |     0.308 |          |           |                 |
-| Total          |     4.968 |          |           |                 |
+| Total          |     4.964 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.306 |       0.237 |      0.069 |
+| Vccint    |       1.000 |     0.302 |       0.234 |      0.068 |
 | Vccaux    |       1.800 |     0.398 |       0.362 |      0.036 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -84,7 +84,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.109 |       0.000 |      0.109 |
+| Vccpint   |       1.000 |     0.108 |       0.000 |      0.108 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -145,7 +145,7 @@ Table of Contents
 +---------+-----------+
 | Name    | Power (W) |
 +---------+-----------+
-| parking |     4.660 |
+| parking |     4.657 |
 +---------+-----------+
 
 
