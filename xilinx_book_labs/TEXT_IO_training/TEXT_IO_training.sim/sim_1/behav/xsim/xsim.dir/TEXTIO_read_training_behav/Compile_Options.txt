@@ -1,0 +1,1 @@
+-wto "25df266733e846f58b53a3e296e282ef" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "TEXTIO_read_training_behav" "xil_defaultlib.TEXTIO_read_training" -log "elaborate.log" 

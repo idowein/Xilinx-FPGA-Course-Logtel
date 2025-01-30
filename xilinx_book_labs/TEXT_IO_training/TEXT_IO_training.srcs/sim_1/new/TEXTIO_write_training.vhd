@@ -34,11 +34,11 @@ use std.textio.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity TEXTIO_training is
+entity TEXTIO_write_training is
 --  Port ( );
-end TEXTIO_training;
+end TEXTIO_write_training;
 
-architecture Behavioral of TEXTIO_training is
+architecture Behavioral of TEXTIO_write_training is
 
 
 

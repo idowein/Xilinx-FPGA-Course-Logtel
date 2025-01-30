@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/xilinx_book_labs/TEXT_IO_training/TEXT_IO_training.srcs/sim_1/new/TEXTIO_training.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'TEXTIO_training'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/xilinx_book_labs/TEXT_IO_training/TEXT_IO_training.srcs/sim_1/new/TEXTIO_read_training.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'TEXTIO_read_training'
