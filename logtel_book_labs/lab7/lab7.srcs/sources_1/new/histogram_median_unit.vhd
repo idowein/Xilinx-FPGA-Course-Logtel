@@ -71,41 +71,89 @@ architecture Behavioral of histogram_median_unit is
     end component;
     
     -- ROM signals declarations
-    signal rom_addres : unsigned(9 downto 0); 
-    signal rom_dout : unsigned(9 downto 0); 
+    signal rom_address : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
+    signal rom_dout : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
     
     -- RAM signals declarations
-    signal ram_addres : unsigned(9 downto 0); 
-    signal ram_dout : unsigned(9 downto 0); 
-    signal ram_wea : STD_LOGIC := '0'; -- initializing 
+    signal ram_address : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
+    signal ram_dout : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
+    signal ram_wea : STD_LOGIC_VECTOR(0 DOWNTO 0) := (others => '0'); -- write enable initializing 
+    
+    -- internal signals
+    signal data_counter : STD_LOGIC_VECTOR (9 downto 0) := (others => '0'); 
+    signal hist_index   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
+    signal hist_full    : STD_LOGIC := '0';
     
 begin
 
-    -- data_in procedure
-    process (clk) begin
-        if rising_edge (clk) then
-            if rst = '1' then
-                data_in <= (others => '0');
-            else
-                data_in <= data_in + 1;
+    -- device under unit (DUT) is ROM 
+    UUT_ROM : single_port_rom
+        port map (
+            clka  => clk,
+            addra => rom_address, 
+            douta => rom_dout
+        );
+        
+     -- device under unit (DUT) RAM 
+    UUT_RAM : dual_port_ram
+        port map (
+            clka  => clk,
+            wea   => ram_wea,
+            addra => hist_index, 
+            dina  => data_in, 
+            clkb  => clk,
+            enb   => '1', 
+            addrb => ram_address, 
+            doutb => ram_dout 
+        );  
+
+    -- Data Counter
+    process (clk, rst)
+    begin
+        if rst = '1' then
+            data_counter <= (others => '0'); 
+        elsif rising_edge(clk) then
+            if data_counter < 1023 then -- 1023 data points
+                data_counter <= data_counter + 1;
             end if;
         end if;
     end process;
     
-    -- Device Under Unit (DUT) is the ROM component
-    uut : blk_mem_gen_0
-        port map (
-        clka  => CLK,
-        addra => count,
-        douta => rom_data
-        );
-
-    -- Device Under Unit (DUT) is the ROM component
-    uut : blk_mem_gen_0
-        port map (
-        clka  => CLK,
-        addra => count,
-        douta => rom_data
-        );
+    -- ROM Address Generation
+    rom_address <= data_counter; 
+   
+    -- RAM Write
+    process (clk, rst)
+    begin
+        if rst = '1' then
+            ram_wea(0) <= '0';
+        elsif rising_edge(clk) then
+            if data_counter < 1023 then 
+                ram_wea(0) <= '1'; -- Write to RAM 
+            else
+                ram_wea(0) <= '0'; 
+            end if;
+        end if;
+     end process; 
+     
+     -- Histogram Generation
+    process (clk, rst)
+    begin
+        if rst = '1' then
+            hist_index <= (others => '0');
+            hist_full <= '0';
+        elsif rising_edge(clk) then
+            if data_counter < 1023 then -- Assuming 1023 data points
+                hist_index <= rom_dout; 
+            else
+                hist_full <= '1'; 
+            end if;
+        end if;
+    end process;
+               
+     -- Output Assignments
+    hist_ready   <= hist_full; 
+    hist_value   <= hist_index; 
+    value_amount <= ram_dout;
 
 end Behavioral;
