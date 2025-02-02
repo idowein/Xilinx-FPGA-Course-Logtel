@@ -81,5 +81,31 @@ architecture Behavioral of histogram_median_unit is
     
 begin
 
+    -- data_in procedure
+    process (clk) begin
+        if rising_edge (clk) then
+            if rst = '1' then
+                data_in <= (others => '0');
+            else
+                data_in <= data_in + 1;
+            end if;
+        end if;
+    end process;
+    
+    -- Device Under Unit (DUT) is the ROM component
+    uut : blk_mem_gen_0
+        port map (
+        clka  => CLK,
+        addra => count,
+        douta => rom_data
+        );
+
+    -- Device Under Unit (DUT) is the ROM component
+    uut : blk_mem_gen_0
+        port map (
+        clka  => CLK,
+        addra => count,
+        douta => rom_data
+        );
 
 end Behavioral;
