@@ -47,7 +47,8 @@ end histogram_median_unit;
 
 architecture Behavioral of histogram_median_unit is
 
-    component single_port_rom -- ROM component declaration
+    -- ROM component declaration
+    component single_port_rom
         port(
             clka  : IN STD_LOGIC;
             addra : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -55,7 +56,8 @@ architecture Behavioral of histogram_median_unit is
         );
     end component;
     
-    component dual_port_ram -- RAN declaration
+     -- RAM declaration
+    component dual_port_ram
       port (
         clka : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
@@ -67,6 +69,15 @@ architecture Behavioral of histogram_median_unit is
         doutb : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
       );
     end component;
+    
+    -- ROM signals declarations
+    signal rom_addres : unsigned(9 downto 0); 
+    signal rom_dout : unsigned(9 downto 0); 
+    
+    -- RAM signals declarations
+    signal ram_addres : unsigned(9 downto 0); 
+    signal ram_dout : unsigned(9 downto 0); 
+    signal ram_wea : STD_LOGIC := '0'; -- initializing 
     
 begin
 
