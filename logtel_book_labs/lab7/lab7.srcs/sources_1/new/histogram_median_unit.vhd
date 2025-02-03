@@ -40,7 +40,7 @@ entity histogram_median_unit is
         data_in     : in  STD_LOGIC_VECTOR(9 downto 0); 
         hist_ready  : out STD_LOGIC;
         hist_value  : out STD_LOGIC_VECTOR(7 downto 0); 
-        value_amount : out STD_LOGIC_VECTOR(9 downto 0);
+        hist_amount : out STD_LOGIC_VECTOR(9 downto 0);
         median_number : out STD_LOGIC_VECTOR(9 downto 0) 
     );
 end histogram_median_unit;
@@ -154,6 +154,6 @@ begin
      -- Output Assignments
     hist_ready   <= hist_full; 
     hist_value   <= hist_index; 
-    value_amount <= ram_dout;
+    hist_amount <= ram_dout;
 
 end Behavioral;

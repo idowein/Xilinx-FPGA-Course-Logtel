@@ -45,7 +45,7 @@ architecture Behavioral of histogram_median_unit_tb is
             data_in     : in  STD_LOGIC_VECTOR(9 downto 0); 
             hist_ready  : out STD_LOGIC;
             hist_value  : out STD_LOGIC_VECTOR(7 downto 0); 
-            value_amount : out STD_LOGIC_VECTOR(9 downto 0);
+            hist_amount : out STD_LOGIC_VECTOR(9 downto 0);
             median_number : out STD_LOGIC_VECTOR(9 downto 0) 
         );
     end component;
@@ -56,7 +56,7 @@ architecture Behavioral of histogram_median_unit_tb is
     signal data_in     : STD_LOGIC_VECTOR(9 downto 0) := (others => '0');
     signal hist_ready  : STD_LOGIC;
     signal hist_value  : STD_LOGIC_VECTOR(7 downto 0);
-    signal value_amount : STD_LOGIC_VECTOR(9 downto 0);
+    signal hist_amount : STD_LOGIC_VECTOR(9 downto 0);
     signal median_number : STD_LOGIC_VECTOR(9 downto 0);
     
     -- Clock period definition
@@ -72,7 +72,7 @@ begin
             data_in     => data_in,
             hist_ready  => hist_ready,
             hist_value  => hist_value,
-            value_amount => value_amount,
+            hist_amount => hist_amount,
             median_number => median_number
         );
 
