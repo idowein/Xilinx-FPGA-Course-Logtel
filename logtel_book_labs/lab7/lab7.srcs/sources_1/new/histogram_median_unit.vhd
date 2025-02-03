@@ -38,9 +38,9 @@ entity histogram_median_unit is
         clk         : in  STD_LOGIC;
         rst         : in  STD_LOGIC;
         data_in     : in  STD_LOGIC_VECTOR(9 downto 0); 
-        hist_ready  : out STD_LOGIC;
-        hist_value  : out STD_LOGIC_VECTOR(7 downto 0); 
-        hist_amount : out STD_LOGIC_VECTOR(9 downto 0);
+        hist_ready  : out STD_LOGIC;                        -- flag for finish reading
+        hist_value  : out STD_LOGIC_VECTOR(7 downto 0);     -- index of the memory
+        hist_amount : out STD_LOGIC_VECTOR(9 downto 0);     -- storage of the memory
         median_number : out STD_LOGIC_VECTOR(9 downto 0) 
     );
 end histogram_median_unit;
