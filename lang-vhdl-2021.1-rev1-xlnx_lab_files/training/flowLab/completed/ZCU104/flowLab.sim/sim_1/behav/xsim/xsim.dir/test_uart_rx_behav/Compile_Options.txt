@@ -1,1 +1,0 @@
--wto "c090f5f7cbba442db8cc4030d7221e00" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "utilities_lib" -L "specific_support_lib" -L "secureip" --snapshot "test_uart_rx_behav" "xil_defaultlib.test_uart_rx" -log "elaborate.log" 

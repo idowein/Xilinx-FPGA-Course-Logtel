@@ -1,8 +1,0 @@
-Vivado Simulator 2017.1
-Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto c91c28c13d1c4a679d5f1512621b86c2 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot DPmemory_tb_behav xil_defaultlib.DPmemory_tb -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-ERROR: [VRFC 10-718] formal port <PortB_writeEnable> does not exist in entity <DP_memory>.  Please compare the definition of block <DP_memory> to its component declaration and its instantion to detect the mismatch. [C:/VHDL_lab_files/completed/buildingMemory/KCU105/VHDL/buildingMemory.srcs/sim_1/imports/VHDL/DPmemory_tb.vhd:49]
-ERROR: [VRFC 10-718] formal port <PortB_dataIn> does not exist in entity <DP_memory>.  Please compare the definition of block <DP_memory> to its component declaration and its instantion to detect the mismatch. [C:/VHDL_lab_files/completed/buildingMemory/KCU105/VHDL/buildingMemory.srcs/sim_1/imports/VHDL/DPmemory_tb.vhd:51]
-ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit dpmemory_tb in library work failed.

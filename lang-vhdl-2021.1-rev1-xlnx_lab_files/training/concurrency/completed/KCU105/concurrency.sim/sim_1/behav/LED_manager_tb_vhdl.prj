@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  "../../../concurrency.srcs/sources_1/new/LED_manager.vhd"
-vhdl xil_defaultlib  "../../../concurrency.srcs/sources_1/imports/VHDL/register8.vhd"
-vhdl xil_defaultlib  "../../../concurrency.srcs/sim_1/new/LED_manager_tb.vhd"
-
-# Do not sort compile order
-nosort

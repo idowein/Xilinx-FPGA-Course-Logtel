@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  "../../../packages.srcs/sources_1/imports/VHDL/UART_LED_pkg.vhd"
-vhdl utilities_lib  "../../../packages.srcs/sim_1/imports/VHDL/string_utilities_sim_pkg.vhd"
-vhdl xil_defaultlib  "../../../packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd"
-
-# Do not sort compile order
-nosort

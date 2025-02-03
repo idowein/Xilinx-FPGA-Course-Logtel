@@ -1,7 +1,0 @@
-Running: xsim.dir/uart_led_simple_tb_behav/xsimk.exe -simmode gui -wdb uart_led_simple_tb_behav.wdb -simrunnum 0 -socket 52091
-Design successfully loaded
-Design Loading Memory Usage: 6592 KB (Peak: 6592 KB)
-Design Loading CPU Usage: 77 ms
-Simulation completed
-Simulation Memory Usage: 15196 KB (Peak: 15196 KB)
-Simulation CPU Usage: 2730 ms

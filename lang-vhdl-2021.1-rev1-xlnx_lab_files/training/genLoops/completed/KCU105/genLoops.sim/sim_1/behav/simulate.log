@@ -1,5 +1,0 @@
-Vivado Simulator 2017.1
-Time resolution is 1 ps
-Failure: ***** Simulation Ending due to all data being transmitted! *****
-Time: 1916575 ns  Iteration: 0  Process: /tb_uart_driver/send_char_bitper  File: C:/training/dsgnVHDL/labs/genLoops/KCU105/VHDL/genLoops.srcs/sim_1/imports/VHDL/tb_uart_driver.vhd
-$finish called at time : 1916575 ns : File "C:/training/dsgnVHDL/labs/genLoops/KCU105/VHDL/genLoops.srcs/sim_1/imports/VHDL/tb_uart_driver.vhd" Line 102

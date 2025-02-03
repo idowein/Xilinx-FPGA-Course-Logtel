@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sources_1/imports/VHDL/UART_LED_pkg.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/string_utilities_sim_pkg.vhd" into library utilities_lib
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/training/dsgnVHDL/labs/packages/KC705/VHDL/packages.srcs/sim_1/imports/VHDL/new_packages_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity new_packages_tb
