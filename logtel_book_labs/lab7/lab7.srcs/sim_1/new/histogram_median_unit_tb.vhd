@@ -77,29 +77,9 @@ begin
         );
 
     -- Clock generation process
-    clock_process: process
-    begin
-        CLK <= '1', '0' after CLK_PERIOD/2; -- Generate clock with CLK_PERIOD
-        wait for CLK_PERIOD;
-    end process;
+    CLK <= not CLK after 5 ns;
 
-    -- Reset generation process
-    reset_process: process
-    begin
-        wait for CLK_PERIOD * 10; -- Assert reset for 10 clock cycles
-        RST <= '0'; 
-        wait;
-    end process;
-
-    -- Stimulus process
-    stimulus_process: process
-    begin 
-        -- Apply stimulus here 
-        -- Example:
-        -- Generate a sequence of input data values
-        -- Observe the outputs (hist_ready, hist_value, value_amount, median_number)
-
-        wait;
-    end process;
+    -- Reset generatrion
+    RST <= '1', '0' after CLK_PERIOD * 10;
 
 end Behavioral;
