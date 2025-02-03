@@ -1,9 +1,9 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sun Feb  2 11:58:35 2025
+// Date        : Mon Feb  3 22:10:23 2025
 // Host        : Ido running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {c:/Users/idowe/FPGA
+// Command     : write_verilog -force -mode synth_stub {C:/Users/idowe/FPGA
 //               Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom_stub.v}
 // Design      : single_port_rom
 // Purpose     : Stub declaration of top-level module interface

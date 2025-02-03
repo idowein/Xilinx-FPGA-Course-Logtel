@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="single_port_rom_synth_1" LaunchDir="C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.runs/single_port_rom_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="dual_port_ram_synth_1" LaunchDir="C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.runs/dual_port_ram_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="single_port_rom_synth_1"/>
+		<Parent Id="dual_port_ram_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

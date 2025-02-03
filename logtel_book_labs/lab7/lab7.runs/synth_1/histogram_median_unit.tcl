@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 1
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,12 +31,12 @@ set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:zybo-z7-20:part0:1.2 [current_project]
 set_property ip_output_repo {c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files {{c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/data_simulation.coe}}
+add_files {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/data_simulation.coe}}
 read_vhdl -library xil_defaultlib {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/new/histogram_median_unit.vhd}}
-read_ip -quiet {{c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom.xci}}
+read_ip -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom_ooc.xdc}}]
 
-read_ip -quiet {{c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/dual_port_ram/dual_port_ram.xci}}
+read_ip -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/dual_port_ram/dual_port_ram.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/dual_port_ram/dual_port_ram_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being

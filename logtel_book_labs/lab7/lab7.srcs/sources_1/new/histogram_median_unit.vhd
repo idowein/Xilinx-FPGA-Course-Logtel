@@ -35,13 +35,13 @@ use IEEE.std_logic_unsigned.all;
 
 entity histogram_median_unit is
     Port (
-        clk         : in  STD_LOGIC;
-        rst         : in  STD_LOGIC;
-        data_in     : in  STD_LOGIC_VECTOR(9 downto 0); 
-        hist_ready  : out STD_LOGIC;                        -- flag for finish reading
-        hist_value  : out STD_LOGIC_VECTOR(7 downto 0);     -- index of the memory
-        hist_amount : out STD_LOGIC_VECTOR(9 downto 0);     -- storage of the memory
-        median_number : out STD_LOGIC_VECTOR(9 downto 0) 
+            clk         : in  STD_LOGIC;
+            rst         : in  STD_LOGIC;
+            data_in     : in  STD_LOGIC_VECTOR(9 downto 0); 
+            hist_ready  : out STD_LOGIC;                        -- flag for finish reading
+            hist_value  : out STD_LOGIC_VECTOR(7 downto 0);     -- index of the memory
+            hist_amount : out STD_LOGIC_VECTOR(9 downto 0);     -- storage of the memory
+            median_number : out STD_LOGIC_VECTOR(9 downto 0) 
     );
 end histogram_median_unit;
 
@@ -50,23 +50,23 @@ architecture Behavioral of histogram_median_unit is
     -- ROM component declaration
     component single_port_rom
         port(
-            clka  : IN STD_LOGIC;
+            clka : IN STD_LOGIC;
             addra : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) 
+            douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
     end component;
     
      -- RAM declaration
     component dual_port_ram
       port (
-        clka : IN STD_LOGIC;
-        wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        dina : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
-        clkb : IN STD_LOGIC;
-        enb : IN STD_LOGIC;
-        addrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        doutb : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
+            clka : IN STD_LOGIC;
+            wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+            addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            dina : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+            clkb : IN STD_LOGIC;
+            enb : IN STD_LOGIC;
+            addrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            doutb : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
       );
     end component;
     
@@ -75,15 +75,18 @@ architecture Behavioral of histogram_median_unit is
     signal rom_dout : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
     
     -- RAM signals declarations
-    signal ram_address : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
+    signal ram_address_a : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
+    signal ram_dina : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
+    signal ram_address_b : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
     signal ram_dout : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
     signal ram_wea : STD_LOGIC_VECTOR(0 DOWNTO 0) := (others => '0'); -- write enable initializing 
     
     -- internal signals
     signal data_counter : STD_LOGIC_VECTOR (9 downto 0) := (others => '0'); 
     signal hist_index   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
+    signal median_number_counter   : STD_LOGIC_VECTOR(9 downto 0) := (others => '0'); 
     signal hist_full    : STD_LOGIC := '0';
-    
+       
 begin
 
     -- device under unit (DUT) is ROM 
@@ -99,61 +102,12 @@ begin
         port map (
             clka  => clk,
             wea   => ram_wea,
-            addra => hist_index, 
-            dina  => data_in, 
+            addra => ram_address_a, 
+            dina  => ram_dina, 
             clkb  => clk,
             enb   => '1', 
-            addrb => ram_address, 
+            addrb => ram_address_b, 
             doutb => ram_dout 
         );  
-
-    -- Data Counter
-    process (clk, rst)
-    begin
-        if rst = '1' then
-            data_counter <= (others => '0'); 
-        elsif rising_edge(clk) then
-            if data_counter < 1023 then -- 1023 data points
-                data_counter <= data_counter + 1;
-            end if;
-        end if;
-    end process;
-    
-    -- ROM Address Generation
-    rom_address <= data_counter; 
-   
-    -- RAM Write
-    process (clk, rst)
-    begin
-        if rst = '1' then
-            ram_wea(0) <= '0';
-        elsif rising_edge(clk) then
-            if data_counter < 1023 then 
-                ram_wea(0) <= '1'; -- Write to RAM 
-            else
-                ram_wea(0) <= '0'; 
-            end if;
-        end if;
-     end process; 
-     
-     -- Histogram Generation
-    process (clk, rst)
-    begin
-        if rst = '1' then
-            hist_index <= (others => '0');
-            hist_full <= '0';
-        elsif rising_edge(clk) then
-            if data_counter < 1023 then -- Assuming 1023 data points
-                hist_index <= rom_dout; 
-            else
-                hist_full <= '1'; 
-            end if;
-        end if;
-    end process;
-               
-     -- Output Assignments
-    hist_ready   <= hist_full; 
-    hist_value   <= hist_index; 
-    hist_amount <= ram_dout;
 
 end Behavioral;

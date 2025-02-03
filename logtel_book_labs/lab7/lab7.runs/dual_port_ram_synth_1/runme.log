@@ -1,0 +1,4 @@
+
+*** Running vivado
+    with args -log dual_port_ram.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source dual_port_ram.tcl
+
