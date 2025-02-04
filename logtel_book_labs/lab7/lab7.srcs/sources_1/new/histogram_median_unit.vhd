@@ -104,7 +104,7 @@ begin
         end if;
     end process;
 
-    -- ROM Writing and RAM Writing
+    -- ROM reading and RAM Writing
     process (clk, rst)
     begin
         if rst = '1' then
