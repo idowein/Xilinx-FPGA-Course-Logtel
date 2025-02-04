@@ -59,7 +59,6 @@ module dual_port_ram (
   addra,
   dina,
   clkb,
-  enb,
   addrb,
   doutb
 );
@@ -75,8 +74,6 @@ input wire [7 : 0] addra;
 input wire [9 : 0] dina;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK" *)
 input wire clkb;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB EN" *)
-input wire enb;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR" *)
 input wire [7 : 0] addrb;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1" *)
@@ -99,8 +96,8 @@ output wire [9 : 0] doutb;
     .C_BYTE_SIZE(9),
     .C_ALGORITHM(1),
     .C_PRIM_TYPE(1),
-    .C_LOAD_INIT_FILE(1),
-    .C_INIT_FILE_NAME("dual_port_ram.mif"),
+    .C_LOAD_INIT_FILE(0),
+    .C_INIT_FILE_NAME("no_coe_file_loaded"),
     .C_INIT_FILE("dual_port_ram.mem"),
     .C_USE_DEFAULT_DATA(0),
     .C_DEFAULT_DATA("0"),
@@ -122,7 +119,7 @@ output wire [9 : 0] doutb;
     .C_RST_PRIORITY_B("CE"),
     .C_RSTRAM_B(0),
     .C_INITB_VAL("0"),
-    .C_HAS_ENB(1),
+    .C_HAS_ENB(0),
     .C_HAS_REGCEB(0),
     .C_USE_BYTE_WEB(0),
     .C_WEB_WIDTH(1),
@@ -170,7 +167,7 @@ output wire [9 : 0] doutb;
     .douta(),
     .clkb(clkb),
     .rstb(1'D0),
-    .enb(enb),
+    .enb(1'D0),
     .regceb(1'D0),
     .web(1'B0),
     .addrb(addrb),

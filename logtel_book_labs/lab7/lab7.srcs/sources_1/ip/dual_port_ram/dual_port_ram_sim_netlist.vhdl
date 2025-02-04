@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Mon Feb  3 22:10:23 2025
+-- Date        : Tue Feb  4 23:15:24 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top dual_port_ram -prefix
---               dual_port_ram_ dual_port_ram_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim {C:/Users/idowe/FPGA
+--               Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/dual_port_ram/dual_port_ram_sim_netlist.vhdl}
 -- Design      : dual_port_ram
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,20 +14,21 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity dual_port_ram_blk_mem_gen_prim_wrapper_init is
+entity dual_port_ram_blk_mem_gen_prim_wrapper is
   port (
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-end dual_port_ram_blk_mem_gen_prim_wrapper_init;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of dual_port_ram_blk_mem_gen_prim_wrapper : entity is "blk_mem_gen_prim_wrapper";
+end dual_port_ram_blk_mem_gen_prim_wrapper;
 
-architecture STRUCTURE of dual_port_ram_blk_mem_gen_prim_wrapper_init is
+architecture STRUCTURE of dual_port_ram_blk_mem_gen_prim_wrapper is
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_0\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_1\ : STD_LOGIC;
   signal \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_10\ : STD_LOGIC;
@@ -69,38 +70,38 @@ begin
       INITP_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0000000300070304000000020007030500000001000703060000000000070307",
-      INIT_01 => X"0000000700070300000000060007030100000005000703020000000400070303",
-      INIT_02 => X"0000010300070204000001020007020500000101000702060000010000070207",
-      INIT_03 => X"0000010700070200000001060007020100000105000702020000010400070203",
-      INIT_04 => X"0000020300070104000002020007010500000201000701060000020000070107",
-      INIT_05 => X"0000020700070100000002060007010100000205000701020000020400070103",
-      INIT_06 => X"0000030300070004000003020007000500000301000700060000030000070007",
-      INIT_07 => X"0000030700070000000003060007000100000305000700020000030400070003",
-      INIT_08 => X"0001000300060304000100020006030500010001000603060001000000060307",
-      INIT_09 => X"0001000700060300000100060006030100010005000603020001000400060303",
-      INIT_0A => X"0001010300060204000101020006020500010101000602060001010000060207",
-      INIT_0B => X"0001010700060200000101060006020100010105000602020001010400060203",
-      INIT_0C => X"0001020300060104000102020006010500010201000601060001020000060107",
-      INIT_0D => X"0001020700060100000102060006010100010205000601020001020400060103",
-      INIT_0E => X"0001030300060004000103020006000500010301000600060001030000060007",
-      INIT_0F => X"0007030700060000000103040006000100010303000600020001030200060003",
-      INIT_10 => X"0007030300000003000703040000000200070305000000010007030600000000",
-      INIT_11 => X"0007020700000007000703000000000600070301000000050007030200000004",
-      INIT_12 => X"0007020300000103000702040000010200070205000001010007020600000100",
-      INIT_13 => X"0007010700000107000702000000010600070201000001050007020200000104",
-      INIT_14 => X"0007010300000203000701040000020200070105000002010007010600000200",
-      INIT_15 => X"0007000700000207000701000000020600070101000002050007010200000204",
-      INIT_16 => X"0007000300000303000700040000030200070005000003010007000600000300",
-      INIT_17 => X"0006030700000307000700000000030600070001000003050007000200000304",
-      INIT_18 => X"0006030300010003000603040001000200060305000100010006030600010000",
-      INIT_19 => X"0006020700010007000603000001000600060301000100050006030200010004",
-      INIT_1A => X"0006020300010103000602040001010200060205000101010006020600010100",
-      INIT_1B => X"0006010700010107000602000001010600060201000101050006020200010104",
-      INIT_1C => X"0006010300010203000601040001020200060105000102010006010600010200",
-      INIT_1D => X"0006000700010207000601000001020600060101000102050006010200010204",
-      INIT_1E => X"0006000300010303000600040001030200060005000103010006000600010300",
-      INIT_1F => X"0000000000070307000600000001030400060001000103030006000200010302",
+      INIT_00 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_08 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_09 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_0A => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_0B => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_0C => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_0D => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_10 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_11 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_12 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_13 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_14 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_15 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_16 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_17 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_18 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_19 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_1A => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_1B => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_1C => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_1D => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_1E => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_1F => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_20 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_21 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_22 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -208,7 +209,7 @@ begin
       DOPADOP(0) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_33\,
       DOPBDOP(1) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_34\,
       DOPBDOP(0) => \DEVICE_7SERIES.NO_BMM_INFO.SDP.WIDE_PRIM18.ram_n_35\,
-      ENARDEN => enb,
+      ENARDEN => '1',
       ENBWREN => wea(0),
       REGCEAREGCE => '0',
       REGCEB => '0',
@@ -229,17 +230,18 @@ entity dual_port_ram_blk_mem_gen_prim_width is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of dual_port_ram_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end dual_port_ram_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of dual_port_ram_blk_mem_gen_prim_width is
 begin
-\prim_init.ram\: entity work.dual_port_ram_blk_mem_gen_prim_wrapper_init
+\prim_noinit.ram\: entity work.dual_port_ram_blk_mem_gen_prim_wrapper
      port map (
       addra(7 downto 0) => addra(7 downto 0),
       addrb(7 downto 0) => addrb(7 downto 0),
@@ -247,7 +249,6 @@ begin
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -260,12 +261,13 @@ entity dual_port_ram_blk_mem_gen_generic_cstr is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of dual_port_ram_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end dual_port_ram_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of dual_port_ram_blk_mem_gen_generic_cstr is
@@ -278,7 +280,6 @@ begin
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -291,12 +292,13 @@ entity dual_port_ram_blk_mem_gen_top is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of dual_port_ram_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end dual_port_ram_blk_mem_gen_top;
 
 architecture STRUCTURE of dual_port_ram_blk_mem_gen_top is
@@ -309,7 +311,6 @@ begin
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -322,12 +323,13 @@ entity dual_port_ram_blk_mem_gen_v8_4_4_synth is
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
     clka : in STD_LOGIC;
-    enb : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of dual_port_ram_blk_mem_gen_v8_4_4_synth : entity is "blk_mem_gen_v8_4_4_synth";
 end dual_port_ram_blk_mem_gen_v8_4_4_synth;
 
 architecture STRUCTURE of dual_port_ram_blk_mem_gen_v8_4_4_synth is
@@ -340,7 +342,6 @@ begin
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -469,7 +470,7 @@ entity dual_port_ram_blk_mem_gen_v8_4_4 is
   attribute C_HAS_ENA : integer;
   attribute C_HAS_ENA of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_HAS_ENB : integer;
-  attribute C_HAS_ENB of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 1;
+  attribute C_HAS_ENB of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_HAS_INJECTERR : integer;
   attribute C_HAS_INJECTERR of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_HAS_MEM_OUTPUT_REGS_A : integer;
@@ -499,11 +500,11 @@ entity dual_port_ram_blk_mem_gen_v8_4_4 is
   attribute C_INIT_FILE : string;
   attribute C_INIT_FILE of dual_port_ram_blk_mem_gen_v8_4_4 : entity is "dual_port_ram.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of dual_port_ram_blk_mem_gen_v8_4_4 : entity is "dual_port_ram.mif";
+  attribute C_INIT_FILE_NAME of dual_port_ram_blk_mem_gen_v8_4_4 : entity is "no_coe_file_loaded";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 1;
+  attribute C_LOAD_INIT_FILE of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 0;
   attribute C_MEM_TYPE : integer;
   attribute C_MEM_TYPE of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 1;
   attribute C_MUX_PIPELINE_STAGES : integer;
@@ -564,6 +565,8 @@ entity dual_port_ram_blk_mem_gen_v8_4_4 is
   attribute C_WRITE_WIDTH_B of dual_port_ram_blk_mem_gen_v8_4_4 : entity is 10;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of dual_port_ram_blk_mem_gen_v8_4_4 : entity is "zynq";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of dual_port_ram_blk_mem_gen_v8_4_4 : entity is "blk_mem_gen_v8_4_4";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of dual_port_ram_blk_mem_gen_v8_4_4 : entity is "yes";
 end dual_port_ram_blk_mem_gen_v8_4_4;
@@ -643,7 +646,6 @@ inst_blk_mem_gen: entity work.dual_port_ram_blk_mem_gen_v8_4_4_synth
       clkb => clkb,
       dina(9 downto 0) => dina(9 downto 0),
       doutb(9 downto 0) => doutb(9 downto 0),
-      enb => enb,
       wea(0) => wea(0)
     );
 end STRUCTURE;
@@ -658,7 +660,6 @@ entity dual_port_ram is
     addra : in STD_LOGIC_VECTOR ( 7 downto 0 );
     dina : in STD_LOGIC_VECTOR ( 9 downto 0 );
     clkb : in STD_LOGIC;
-    enb : in STD_LOGIC;
     addrb : in STD_LOGIC_VECTOR ( 7 downto 0 );
     doutb : out STD_LOGIC_VECTOR ( 9 downto 0 )
   );
@@ -748,7 +749,7 @@ architecture STRUCTURE of dual_port_ram is
   attribute C_HAS_ENA : integer;
   attribute C_HAS_ENA of U0 : label is 0;
   attribute C_HAS_ENB : integer;
-  attribute C_HAS_ENB of U0 : label is 1;
+  attribute C_HAS_ENB of U0 : label is 0;
   attribute C_HAS_INJECTERR : integer;
   attribute C_HAS_INJECTERR of U0 : label is 0;
   attribute C_HAS_MEM_OUTPUT_REGS_A : integer;
@@ -778,11 +779,11 @@ architecture STRUCTURE of dual_port_ram is
   attribute C_INIT_FILE : string;
   attribute C_INIT_FILE of U0 : label is "dual_port_ram.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of U0 : label is "dual_port_ram.mif";
+  attribute C_INIT_FILE_NAME of U0 : label is "no_coe_file_loaded";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of U0 : label is 0;
   attribute C_LOAD_INIT_FILE : integer;
-  attribute C_LOAD_INIT_FILE of U0 : label is 1;
+  attribute C_LOAD_INIT_FILE of U0 : label is 0;
   attribute C_MEM_TYPE : integer;
   attribute C_MEM_TYPE of U0 : label is 1;
   attribute C_MUX_PIPELINE_STAGES : integer;
@@ -850,7 +851,6 @@ architecture STRUCTURE of dual_port_ram is
   attribute x_interface_parameter of clka : signal is "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
   attribute x_interface_info of clkb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK";
   attribute x_interface_parameter of clkb : signal is "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER, READ_LATENCY 1";
-  attribute x_interface_info of enb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB EN";
   attribute x_interface_info of addra : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR";
   attribute x_interface_info of addrb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR";
   attribute x_interface_info of dina : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA DIN";
@@ -871,7 +871,7 @@ U0: entity work.dual_port_ram_blk_mem_gen_v8_4_4
       doutb(9 downto 0) => doutb(9 downto 0),
       eccpipece => '0',
       ena => '0',
-      enb => enb,
+      enb => '0',
       injectdbiterr => '0',
       injectsbiterr => '0',
       rdaddrecc(7 downto 0) => NLW_U0_rdaddrecc_UNCONNECTED(7 downto 0),

@@ -39,7 +39,7 @@ entity histogram_median_unit is
             rst         : in  STD_LOGIC;
             data_in     : in  STD_LOGIC_VECTOR(9 downto 0); 
             hist_ready  : out STD_LOGIC;                        -- flag for finish reading
-            hist_value  : out STD_LOGIC_VECTOR(7 downto 0);     -- index of the memory
+            hist_value  : out STD_LOGIC_VECTOR(7 downto 0);     -- index of the RAM memory
             hist_amount : out STD_LOGIC_VECTOR(9 downto 0);     -- storage of the memory
             median_number : out STD_LOGIC_VECTOR(9 downto 0) 
     );
@@ -64,33 +64,92 @@ architecture Behavioral of histogram_median_unit is
             addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
             clkb : IN STD_LOGIC;
-            enb : IN STD_LOGIC;
+            --enb : IN STD_LOGIC;
             addrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
             doutb : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
       );
     end component;
     
-    -- ROM signals declarations
+    -- ROM signals declaration
     signal rom_address : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
     signal rom_dout : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
     
-    -- RAM signals declarations
+    -- RAM signals declaration
     signal ram_address_a : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
     signal ram_dina : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
     signal ram_address_b : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
     signal ram_dout : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
     signal ram_wea : STD_LOGIC_VECTOR(0 DOWNTO 0) := (others => '0'); -- write enable initializing 
     
-    -- internal signals
+    -- external signals declaration
     signal data_counter : STD_LOGIC_VECTOR (9 downto 0) := (others => '0'); 
     signal hist_index   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
     signal median_number_counter   : STD_LOGIC_VECTOR(9 downto 0) := (others => '0'); 
     signal hist_full    : STD_LOGIC := '0';
+    signal ram_read_enable : STD_LOGIC := '0'; 
        
 begin
 
+    -- counter procedure
+    process (clk, rst)
+    begin
+        if rising_edge (clk) then
+            if rst = '1' then
+                data_counter <= (others => '0');
+            else
+                if data_counter < 1023 then 
+                    data_counter <= data_counter + 1; 
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- ROM Writing and RAM Writing
+    process (clk, rst)
+    begin
+        if rst = '1' then
+            ram_address_a <= (others => '0'); 
+            hist_full <= '0';
+        elsif rising_edge(clk) then
+            if data_counter < 1023 then 
+                -- Read from ROM
+                rom_address <= data_counter; 
+                -- Write to RAM
+                ram_address_a <= rom_dout; 
+                ram_dina <= ram_dout + '1'; 
+                ram_wea(0) <= '1'; 
+            else
+                hist_full <= '1'; 
+                ram_wea(0) <= '0'; 
+            end if;
+        end if;
+    end process;
+    
+    -- Read from RAM and Assign to HISTOGRAM unit Output Signals
+    process (clk, rst)
+    begin
+        if rst = '1' then
+            ram_address_b <= (others => '0'); 
+            hist_index <= (others => '0'); 
+            hist_amount <= (others => '0'); 
+            ram_read_enable <= '0'; 
+        elsif rising_edge(clk) then
+            if hist_full = '1' and not ram_read_enable = '1' then 
+                ram_read_enable <= '1'; 
+            end if;
+            if ram_read_enable = '1' then 
+                hist_index <= ram_address_b; 
+                hist_amount <= ram_dout; 
+                ram_address_b <= ram_address_b + 1; 
+                if ram_address_b = 255 then -- stop reading from RAM
+                    ram_read_enable <= '0'; 
+                end if;
+            end if;
+        end if;
+    end process;
+ 
     -- device under unit (DUT) is ROM 
-    UUT_ROM : single_port_rom
+    DUT_ROM : single_port_rom
         port map (
             clka  => clk,
             addra => rom_address, 
@@ -98,14 +157,14 @@ begin
         );
         
      -- device under unit (DUT) RAM 
-    UUT_RAM : dual_port_ram
+    DUT_RAM : dual_port_ram
         port map (
             clka  => clk,
             wea   => ram_wea,
             addra => ram_address_a, 
             dina  => ram_dina, 
             clkb  => clk,
-            enb   => '1', 
+            --enb   => '1', 
             addrb => ram_address_b, 
             doutb => ram_dout 
         );  
