@@ -9,5 +9,6 @@
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source single_port_rom.tcl -notrace
+create_project: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 456.074 ; gain = 164.996
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP single_port_rom, cache-ID = 1ee3dbfabdb88310.
-INFO: [Common 17-206] Exiting Vivado at Tue Feb  4 10:07:09 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Feb  5 14:25:27 2025...
