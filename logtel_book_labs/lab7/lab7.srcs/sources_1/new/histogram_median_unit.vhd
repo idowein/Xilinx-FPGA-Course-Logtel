@@ -112,50 +112,27 @@ begin
             hist_full <= '0';
             hist_index <= (others => '0'); 
             hist_amount <= (others => '0'); 
-        elsif rising_edge(clk) then
-            if data_counter < 2048 then     -- phase 1 : collection & summing
-                -- Read from ROM
-                rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
-                -- Write to RAM
-                ram_address_a <= rom_dout; 
-                ram_dina <= ram_dout + 1; 
-                ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
-            elsif data_counter <= 2304 then -- phase 2 : show histogram
+            elsif data_counter < 2048 then     -- phase 1 : collection & summing
+             -- Read from ROM
+             rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
+             -- Write to RAM
+             ram_address_a <= rom_dout; 
+             if ram_wea(0) = '1' then
+                 ram_dina <= ram_dout + 1; 
+             end if;
+             ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
+             elsif data_counter <= 2304 then -- phase 2 : show histogram
                 hist_full <= '1'; 
                 ram_wea(0) <= '0'; 
---                ram_address_b <= data_counter - 2302; 
                 ram_address_b <= data_counter(7 downto 0) - 256; -- ram address b will be from 0 to 255
                 hist_index <= ram_address_b; 
                 hist_amount <= ram_dout;
             else                            -- phase 3 : erease histogram
  
-            end if;
         end if;
+
     end process;
     
---    -- Read from RAM and Assign to HISTOGRAM unit Output Signals
---    process (clk, rst)
---    begin
---        if rst = '1' then
-            
---            hist_index <= (others => '0'); 
---            hist_amount <= (others => '0'); 
---            ram_read_enable <= '0'; 
---        elsif rising_edge(clk) then
---            if hist_full = '1' and not ram_read_enable = '1' then 
---                ram_read_enable <= '1'; 
---            end if;
---            if ram_read_enable = '1' then 
---                hist_index <= ram_address_b; 
---                hist_amount <= ram_dout; 
-                
---                if ram_address_b = 255 then -- stop reading from RAM
---                    ram_read_enable <= '0'; 
---                end if;
---            end if;
---        end if;
---    end process;
- 
     -- device under unit (DUT) is ROM 
     DUT_ROM : single_port_rom
         port map (
