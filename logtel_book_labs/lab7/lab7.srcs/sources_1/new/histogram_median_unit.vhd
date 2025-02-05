@@ -104,31 +104,34 @@ begin
         end if;
     end process;
 
-    process (clk, rst) -- histogram process
+    process (rst, clk) -- histogram process
     begin
-        if rst = '1' then
+        
+        -- phase 3 : erease histogram
+        if rst = '1' then                      
             ram_address_a <= (others => '0'); 
             ram_address_b <= (others => '0'); 
             hist_full <= '0';
             hist_index <= (others => '0'); 
             hist_amount <= (others => '0'); 
-            elsif data_counter < 2048 then     -- phase 1 : collection & summing
+            
+            -- phase 1 : collection & summing
+         elsif data_counter < 2048 then     
              -- Read from ROM
              rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
              -- Write to RAM
-             ram_address_a <= rom_dout; 
-             if ram_wea(0) = '1' then
-                 ram_dina <= ram_dout + 1; 
-             end if;
+             ram_address_a <= rom_dout;
+             ram_dina <= ram_dout + 1;  
              ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
-             elsif data_counter <= 2304 then -- phase 2 : show histogram
-                hist_full <= '1'; 
-                ram_wea(0) <= '0'; 
-                ram_address_b <= data_counter(7 downto 0) - 256; -- ram address b will be from 0 to 255
-                hist_index <= ram_address_b; 
-                hist_amount <= ram_dout;
-            else                            -- phase 3 : erease histogram
- 
+             
+             -- phase 2 : show histogram
+          elsif data_counter <= 2304 and data_counter > 2048 then 
+             hist_full <= '1'; 
+             ram_wea(0) <= '0'; 
+             ram_address_b <= data_counter(7 downto 0) - 256; -- ram address b will be from 0 to 255
+             hist_index <= ram_address_b; 
+             hist_amount <= ram_dout;
+                            
         end if;
 
     end process;
