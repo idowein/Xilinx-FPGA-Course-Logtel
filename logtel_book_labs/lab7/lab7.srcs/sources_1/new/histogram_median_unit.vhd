@@ -81,6 +81,10 @@ architecture Behavioral of histogram_median_unit is
     signal ram_dout : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
     signal ram_wea : STD_LOGIC_VECTOR(0 DOWNTO 0) := (others => '0'); -- write enable initializing 
     
+    -- signals for delay purpose
+    signal read_flag : STD_LOGIC := '0'; -- tracking read status to avoid wtite before read 
+    signal ram_dout_reg : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); -- delay purpose
+    
     -- external signals declaration
     signal data_counter : STD_LOGIC_VECTOR (11 downto 0) := (others => '0'); 
     signal hist_index   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
@@ -104,26 +108,30 @@ begin
         end if;
     end process;
 
-    process (rst, clk) -- histogram process
+    process (rst, clk, hist_index) -- histogram process
     begin
         
         -- phase 3 : erease histogram
-        if rst = '1' then                      
+        if hist_index = 255 then                      
             ram_address_a <= (others => '0'); 
             ram_address_b <= (others => '0'); 
             hist_full <= '0';
             hist_index <= (others => '0'); 
             hist_amount <= (others => '0'); 
             
-            -- phase 1 : collection & summing
-         elsif data_counter < 2048 then     
+           -- phase 1 : collection & summing
+           elsif data_counter < 2048 then  
+           read_flag <= '0' ;
              -- Read from ROM
              rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
-             -- Read from RAM
-             ram_address_b <= rom_dout;
+            -- Read from RAM only if not already read
+            if read_flag = '0' then 
+                ram_address_b <= rom_dout; 
+                read_flag <= '1'; -- Set flag to indicate read operation is done
+            end if; 
              -- Write to RAM
              ram_address_a <= rom_dout;
-             ram_dina <= ram_dout + 1;  
+             ram_dina <= ram_dout_reg + 1;  
              ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
              
              -- phase 2 : show histogram
