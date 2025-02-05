@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="6111600fs"></ZoomStartTime>
-      <ZoomEndTime time="6472601fs"></ZoomEndTime>
-      <Cursor1Time time="6173100fs"></Cursor1Time>
+      <ZoomStartTime time="90000fs"></ZoomStartTime>
+      <ZoomEndTime time="235201fs"></ZoomEndTime>
+      <Cursor1Time time="125000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="134"></ValueColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="26" />
    <wave_markers>
@@ -81,11 +81,6 @@
       <obj_property name="ObjectShortName">hist_value[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/histogram_median_unit_tb/uut/hist_amount" type="array">
-      <obj_property name="ElementShortName">hist_amount[9:0]</obj_property>
-      <obj_property name="ObjectShortName">hist_amount[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/median_number" type="array">
       <obj_property name="ElementShortName">median_number[9:0]</obj_property>
       <obj_property name="ObjectShortName">median_number[9:0]</obj_property>
@@ -96,19 +91,14 @@
       <obj_property name="ObjectShortName">rom_address[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/histogram_median_unit_tb/uut/ram_dina" type="array">
-      <obj_property name="ElementShortName">ram_dina[9:0]</obj_property>
-      <obj_property name="ObjectShortName">ram_dina[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/histogram_median_unit_tb/uut/ram_dout" type="array">
-      <obj_property name="ElementShortName">ram_dout[9:0]</obj_property>
-      <obj_property name="ObjectShortName">ram_dout[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/rom_dout" type="array">
       <obj_property name="ElementShortName">rom_dout[7:0]</obj_property>
       <obj_property name="ObjectShortName">rom_dout[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/ram_dina" type="array">
+      <obj_property name="ElementShortName">ram_dina[9:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_dina[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/ram_address_a" type="array">
@@ -128,6 +118,11 @@
       <obj_property name="ObjectShortName">ram_address_b[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/ram_dout" type="array">
+      <obj_property name="ElementShortName">ram_dout[9:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_dout[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/data_counter" type="array">
       <obj_property name="ElementShortName">data_counter[11:0]</obj_property>
       <obj_property name="ObjectShortName">data_counter[11:0]</obj_property>
@@ -136,6 +131,11 @@
    <wvobject fp_name="/histogram_median_unit_tb/uut/hist_index" type="array">
       <obj_property name="ElementShortName">hist_index[7:0]</obj_property>
       <obj_property name="ObjectShortName">hist_index[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/hist_amount" type="array">
+      <obj_property name="ElementShortName">hist_amount[9:0]</obj_property>
+      <obj_property name="ObjectShortName">hist_amount[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/median_number_counter" type="array">
