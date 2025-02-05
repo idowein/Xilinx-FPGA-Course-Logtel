@@ -119,10 +119,11 @@ begin
          elsif data_counter < 2048 then     
              -- Read from ROM
              rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
+             -- Read from RAM
+             ram_address_b <= rom_dout;
              -- Write to RAM
-             ram_address_b <= ram_address_a;
-             ram_dina <= ram_dout + 1;  
              ram_address_a <= rom_dout;
+             ram_dina <= ram_dout + 1;  
              ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
              
              -- phase 2 : show histogram
