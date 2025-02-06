@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.sim/sim_1/behav/xsim/xsim.dir/histogram_median_unit_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Thu Feb  6 20:49:18 2025" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Thu Feb  6 22:23:04 2025" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2019.2 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2708876" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "5009c377-8929-4214-99f1-91b5f5c0fbb0" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "fd8b77c8f5b449c496f33413736969ec" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "195" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "200" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Windows Server 2016 or Windows 10" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "AMD Ryzen 7 7735HS with Radeon Graphics        " -context "user_environment"
@@ -31,12 +31,12 @@ webtalk_add_data -client xsim -key HWCosim -value "false" -context "xsim\\comman
 webtalk_add_data -client xsim -key DPI_Used -value "false" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key Debug -value "typical" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key Simulation_Image_Code -value "270 KB" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Image_Data -value "25 KB" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Image_Data -value "26 KB" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Nets -value "0" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Processes -value "381" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Instances -value "22" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Xilinx_HDL_Libraries_Used -value "secureip unimacro_ver unisims_ver " -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Time -value "0.94_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Memory -value "90428_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 436152056 -regid "" -xml C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.sim/sim_1/behav/xsim/xsim.dir/histogram_median_unit_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.sim/sim_1/behav/xsim/xsim.dir/histogram_median_unit_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.sim/sim_1/behav/xsim/xsim.dir/histogram_median_unit_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Compiler_Time -value "0.98_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Compiler_Memory -value "90452_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 2183326614 -regid "" -xml C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.sim/sim_1/behav/xsim/xsim.dir/histogram_median_unit_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.sim/sim_1/behav/xsim/xsim.dir/histogram_median_unit_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.sim/sim_1/behav/xsim/xsim.dir/histogram_median_unit_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

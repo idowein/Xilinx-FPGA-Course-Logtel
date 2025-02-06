@@ -112,7 +112,8 @@ begin
 
     process (rst, clk, hist_index, data_counter) -- histogram process
     begin
-           if rst = '0' then        
+           if rst = '0' then   
+                
                -- phase 1 : collection & summing
                if data_counter <= PHASE1 then 
                 state <=  COLLECT_AND_SUMMING;
@@ -125,10 +126,9 @@ begin
                 ram_dina <= ram_dout + 1;  
                 -- notice the not!!!!!!!!!!!!!!!
                 ram_wea(0) <= not data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
-                --ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
                  
                  -- phase 2 : show histogram
-              elsif data_counter <= PHASE2 then 
+               elsif data_counter <= PHASE2 then 
                 state <=  SHOW_HISTOGRAM;
                 hist_full <= '1'; 
                 ram_wea(0) <= '0'; 
@@ -138,19 +138,19 @@ begin
                 
                  -- phase 3 : erease histogram
                 elsif data_counter <= PHASE3 then   
-                    state <=  ERASE;    
-                    ram_wea(0) <= '1';
-                    ram_dina <= (others => '0');             
-                    ram_address_a <= (others => '0');
-                    ram_address_b <= (others => '0');  
-                    rom_address <= (others => '0');
-                    hist_full <= '0';
-                    hist_index <= (others => '0'); 
-                    hist_amount <= (others => '0');
-                    hist_value <= (others => '0');
+                 state <=  ERASE;    
+                 ram_wea(0) <= '1';
+                 ram_dina <= (others => '0');             
+                 ram_address_a <= (others => '0');
+                 ram_address_b <= (others => '0');  
+                 rom_address <= (others => '0');
+                 hist_full <= '0';
+                 hist_index <= (others => '0'); 
+                 hist_amount <= (others => '0');
+                 hist_value <= (others => '0');
         
                  else
-                    state <=  FINISH;               
+                 state <=  FINISH;               
 
                 end if;         
             end if;
