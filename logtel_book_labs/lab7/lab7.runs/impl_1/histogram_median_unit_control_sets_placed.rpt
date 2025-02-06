@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Feb  5 21:28:44 2025
+| Date         : Thu Feb  6 17:31:13 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file histogram_median_unit_control_sets_placed.rpt
 | Design       : histogram_median_unit
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     7 |
-|    Minimum number of control sets                        |     7 |
+| Total control sets                                       |     4 |
+|    Minimum number of control sets                        |     4 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    29 |
+| Unused register locations in slices containing registers |    17 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     7 |
-| >= 0 to < 4        |     2 |
+| Total control sets |     4 |
+| >= 0 to < 4        |     1 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     2 |
+| >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     1 |
 | >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     1 |
+| >= 16              |     0 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,9 +58,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              13 |            5 |
+| No           | No                    | No                     |              19 |            8 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              34 |           12 |
+| No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              12 |            3 |
@@ -73,13 +73,10 @@ Table of Contents
 +-------------------------------+---------------+------------------+------------------+----------------+
 |          Clock Signal         | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +-------------------------------+---------------+------------------+------------------+----------------+
-|  read_flag__0                 |               |                  |                1 |              1 |
-|  ram_wea2_out                 |               |                  |                1 |              1 |
-|  ram_address_b_reg[7]_i_2_n_0 |               | eqOp             |                3 |              8 |
-| ~data_counter_reg__1[11]      |               | eqOp             |                3 |              8 |
-|  rom_address__0               |               |                  |                3 |             11 |
+| ~leqOp                        |               |                  |                1 |              1 |
+|  ram_address_b_reg[7]_i_2_n_0 |               |                  |                4 |              8 |
+|  leqOp                        |               |                  |                3 |             10 |
 |  clk_IBUF_BUFG                | sel           | rst_IBUF         |                3 |             12 |
-|  hist_index__0                |               | eqOp             |                6 |             18 |
 +-------------------------------+---------------+------------------+------------------+----------------+
 
 

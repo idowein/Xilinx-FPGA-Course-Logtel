@@ -11,17 +11,17 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="90000fs"></ZoomStartTime>
-      <ZoomEndTime time="235201fs"></ZoomEndTime>
-      <Cursor1Time time="125000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="146801fs"></ZoomEndTime>
+      <Cursor1Time time="118000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="26" />
    <wave_markers>
-      <marker time="20585100" label="" />
+      <marker time="20575000" label="" />
    </wave_markers>
    <wvobject fp_name="/histogram_median_unit_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
@@ -100,6 +100,8 @@
       <obj_property name="ElementShortName">ram_dina[9:0]</obj_property>
       <obj_property name="ObjectShortName">ram_dina[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/ram_address_a" type="array">
       <obj_property name="ElementShortName">ram_address_a[7:0]</obj_property>
@@ -112,16 +114,21 @@
       <obj_property name="ElementShortName">ram_wea[0:0]</obj_property>
       <obj_property name="ObjectShortName">ram_wea[0:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/ram_address_b" type="array">
       <obj_property name="ElementShortName">ram_address_b[7:0]</obj_property>
       <obj_property name="ObjectShortName">ram_address_b[7:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/ram_dout" type="array">
       <obj_property name="ElementShortName">ram_dout[9:0]</obj_property>
       <obj_property name="ObjectShortName">ram_dout[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/data_counter" type="array">
       <obj_property name="ElementShortName">data_counter[11:0]</obj_property>

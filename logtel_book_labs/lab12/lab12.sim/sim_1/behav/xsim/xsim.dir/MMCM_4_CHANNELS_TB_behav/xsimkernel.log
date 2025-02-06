@@ -2,3 +2,6 @@ Running: xsim.dir/MMCM_4_CHANNELS_TB_behav/xsimk.exe -simmode gui -wdb MMCM_4_CH
 Design successfully loaded
 Design Loading Memory Usage: 6924 KB (Peak: 6924 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 7484 KB (Peak: 7484 KB)
+Simulation CPU Usage: 15 ms

@@ -47,6 +47,13 @@ end histogram_median_unit;
 
 architecture Behavioral of histogram_median_unit is
 
+    type state_type is (COLLECT, PRESENT, ERASE);
+    signal state : state_type := COLLECT;
+
+    constant COLLECTION_AND_SUMMING   : integer := 2046; -- 1023 * 2
+    constant SHOW_HISTOGRAM : integer := 2302; -- +256
+    constant EREASE_HISTOGRASM      : integer := 2558; -- +256
+
     -- ROM component declaration
     component single_port_rom
         port(
@@ -64,7 +71,6 @@ architecture Behavioral of histogram_median_unit is
             addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
             dina : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
             clkb : IN STD_LOGIC;
-            --enb : IN STD_LOGIC;
             addrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
             doutb : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
       );
@@ -80,11 +86,7 @@ architecture Behavioral of histogram_median_unit is
     signal ram_address_b : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
     signal ram_dout : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
     signal ram_wea : STD_LOGIC_VECTOR(0 DOWNTO 0) := (others => '0'); -- write enable initializing 
-    
-    -- signals for delay purpose
-    signal read_flag : STD_LOGIC := '0'; -- tracking read status to avoid wtite before read 
-    signal ram_dout_reg : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); -- delay purpose
-    
+        
     -- external signals declaration
     signal data_counter : STD_LOGIC_VECTOR (11 downto 0) := (others => '0'); 
     signal hist_index   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
@@ -100,7 +102,7 @@ begin
             if rst = '1' then
                 data_counter <= (others => '0');
             else
-                if data_counter < 2558 then 
+                if data_counter < EREASE_HISTOGRASM then 
                 -- number of clock periods of 3 phases ( collect (2046 clock cycles), present (256), reset (256))
                     data_counter <= data_counter + 1; 
                 end if;
@@ -110,41 +112,48 @@ begin
 
     process (rst, clk, hist_index) -- histogram process
     begin
-        
-        -- phase 3 : erease histogram
-        if hist_index = 255 then                      
-            ram_address_a <= (others => '0'); 
-            ram_address_b <= (others => '0'); 
-            hist_full <= '0';
-            hist_index <= (others => '0'); 
-            hist_amount <= (others => '0'); 
-            
+                   
            -- phase 1 : collection & summing
-           elsif data_counter < 2048 then  
-           read_flag <= '0' ;
+           if data_counter <= COLLECTION_AND_SUMMING then 
+            state <=  COLLECT;
              -- Read from ROM
-             rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
-            -- Read from RAM only if not already read
-            if read_flag = '0' then 
-                ram_address_b <= rom_dout; 
-                read_flag <= '1'; -- Set flag to indicate read operation is done
-            end if; 
-             -- Write to RAM
-             ram_address_a <= rom_dout;
-             ram_dina <= ram_dout_reg + 1;  
-             ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
+            rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
+            ram_address_b <= rom_dout;
+            -- Write to RAM
+            ram_address_a <= ram_address_b;
+            ram_dina <= ram_dout + 1;  
+            ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
              
              -- phase 2 : show histogram
-          elsif data_counter <= 2304 and data_counter > 2048 then 
-             hist_full <= '1'; 
-             ram_wea(0) <= '0'; 
-             ram_address_b <= data_counter(7 downto 0) - 256; -- ram address b will be from 0 to 255
-             hist_index <= ram_address_b; 
-             hist_amount <= ram_dout;
+          elsif data_counter <= SHOW_HISTOGRAM then 
+            state <=  PRESENT;
+            hist_full <= '1'; 
+            ram_wea(0) <= '0'; 
+            ram_address_b <= data_counter(7 downto 0) - 256; -- ram address b will be from 0 to 255
+            hist_index <= ram_address_b; 
+            hist_amount <= ram_dout;
+            
+        -- phase 3 : erease histogram
+        else   
+            state <=  ERASE;    
+            ram_wea(0) <= '1';
+            ram_dina <= (others => '0');             
+            ram_address_a <= (others => '0');
+            ram_address_b <= (others => '0');  
+            rom_address <= (others => '0');
+            hist_full <= '0';
+            hist_index <= (others => '0'); 
+            hist_amount <= (others => '0');
+            hist_value <= (others => '0');
                             
         end if;
 
     end process;
+    
+ -- output assignments
+hist_ready <= hist_full;
+hist_value <= ram_address_b;
+hist_amount <= ram_dout; 
     
     -- device under unit (DUT) is ROM 
     DUT_ROM : single_port_rom
@@ -162,7 +171,6 @@ begin
             addra => ram_address_a, 
             dina  => ram_dina, 
             clkb  => clk,
-            --enb   => '1', 
             addrb => ram_address_b, 
             doutb => ram_dout 
         );  

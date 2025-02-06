@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
 -- Date        : Wed Feb  5 19:21:00 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {C:/Users/idowe/FPGA
---               Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim -rename_top single_port_rom -prefix
+--               single_port_rom_ single_port_rom_sim_netlist.vhdl
 -- Design      : single_port_rom
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity single_port_rom_blk_mem_gen_prim_wrapper_init is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of single_port_rom_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end single_port_rom_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of single_port_rom_blk_mem_gen_prim_wrapper_init is
@@ -188,8 +186,6 @@ entity single_port_rom_blk_mem_gen_prim_width is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of single_port_rom_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end single_port_rom_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of single_port_rom_blk_mem_gen_prim_width is
@@ -211,8 +207,6 @@ entity single_port_rom_blk_mem_gen_generic_cstr is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of single_port_rom_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end single_port_rom_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of single_port_rom_blk_mem_gen_generic_cstr is
@@ -234,8 +228,6 @@ entity single_port_rom_blk_mem_gen_top is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of single_port_rom_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end single_port_rom_blk_mem_gen_top;
 
 architecture STRUCTURE of single_port_rom_blk_mem_gen_top is
@@ -257,8 +249,6 @@ entity single_port_rom_blk_mem_gen_v8_4_4_synth is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of single_port_rom_blk_mem_gen_v8_4_4_synth : entity is "blk_mem_gen_v8_4_4_synth";
 end single_port_rom_blk_mem_gen_v8_4_4_synth;
 
 architecture STRUCTURE of single_port_rom_blk_mem_gen_v8_4_4_synth is
@@ -490,8 +480,6 @@ entity single_port_rom_blk_mem_gen_v8_4_4 is
   attribute C_WRITE_WIDTH_B of single_port_rom_blk_mem_gen_v8_4_4 : entity is 8;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of single_port_rom_blk_mem_gen_v8_4_4 : entity is "zynq";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of single_port_rom_blk_mem_gen_v8_4_4 : entity is "blk_mem_gen_v8_4_4";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of single_port_rom_blk_mem_gen_v8_4_4 : entity is "yes";
 end single_port_rom_blk_mem_gen_v8_4_4;
