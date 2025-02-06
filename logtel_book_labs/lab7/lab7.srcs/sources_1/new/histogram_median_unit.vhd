@@ -123,7 +123,8 @@ begin
             -- Write to RAM
             ram_address_a <= ram_address_b;
             ram_dina <= ram_dout + 1;  
-            ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
+            -- notice the not!!!!!!!!!!!!!!!
+            ram_wea(0) <= not data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
              
              -- phase 2 : show histogram
           elsif data_counter <= PHASE2 then 
