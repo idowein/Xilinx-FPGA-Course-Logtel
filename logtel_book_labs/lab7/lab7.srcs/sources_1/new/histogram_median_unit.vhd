@@ -47,7 +47,7 @@ end histogram_median_unit;
 
 architecture Behavioral of histogram_median_unit is
 
-    type state_type is (COLLECT_AND_SUMMING, SHOW_HISTOGRAM, ERASE);
+    type state_type is (COLLECT_AND_SUMMING, SHOW_HISTOGRAM, ERASE, FINISH);
     signal state : state_type := COLLECT_AND_SUMMING;
 
     constant PHASE1   : integer := 2046; -- 1023 * 2
@@ -110,7 +110,7 @@ begin
         end if;
     end process;
 
-    process (rst, clk, hist_index) -- histogram process
+    process (rst, clk, hist_index, data_counter) -- histogram process
     begin
                    
            -- phase 1 : collection & summing
@@ -125,7 +125,7 @@ begin
             ram_dina <= ram_dout + 1;  
             -- notice the not!!!!!!!!!!!!!!!
             ram_wea(0) <= not data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
-             
+            --ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz 
              -- phase 2 : show histogram
           elsif data_counter <= PHASE2 then 
             state <=  SHOW_HISTOGRAM;
@@ -136,7 +136,7 @@ begin
             hist_amount <= ram_dout;
             
         -- phase 3 : erease histogram
-        else   
+        elsif data_counter <= PHASE3 then   
             state <=  ERASE;    
             ram_wea(0) <= '1';
             ram_dina <= (others => '0');             
@@ -147,6 +147,8 @@ begin
             hist_index <= (others => '0'); 
             hist_amount <= (others => '0');
             hist_value <= (others => '0');
+         else
+            state <=  FINISH;
                             
         end if;
 
