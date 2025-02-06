@@ -1,0 +1,8 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto ec549bb9653b45fbb02b69e4d8432f35 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot MMCM_4_CHANNELS_TB_behav xil_defaultlib.MMCM_4_CHANNELS_TB -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-4940] 'histogram_median_unit' remains a black box since it has no binding entity [C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab12/lab12.srcs/sim_1/new/MMCM_4_CHANNELS_TB.vhd:76]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
