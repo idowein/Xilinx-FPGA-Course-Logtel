@@ -47,12 +47,12 @@ end histogram_median_unit;
 
 architecture Behavioral of histogram_median_unit is
 
-    type state_type is (COLLECT, PRESENT, ERASE);
-    signal state : state_type := COLLECT;
+    type state_type is (COLLECT_AND_SUMMING, SHOW_HISTOGRAM, ERASE);
+    signal state : state_type := COLLECT_AND_SUMMING;
 
-    constant COLLECTION_AND_SUMMING   : integer := 2046; -- 1023 * 2
-    constant SHOW_HISTOGRAM : integer := 2302; -- +256
-    constant EREASE_HISTOGRASM      : integer := 2558; -- +256
+    constant PHASE1   : integer := 2046; -- 1023 * 2
+    constant PHASE2 : integer := 2302; -- +256
+    constant PHASE3      : integer := 2558; -- +256
 
     -- ROM component declaration
     component single_port_rom
@@ -102,7 +102,7 @@ begin
             if rst = '1' then
                 data_counter <= (others => '0');
             else
-                if data_counter < EREASE_HISTOGRASM then 
+                if data_counter < PHASE3 then 
                 -- number of clock periods of 3 phases ( collect (2046 clock cycles), present (256), reset (256))
                     data_counter <= data_counter + 1; 
                 end if;
@@ -114,8 +114,8 @@ begin
     begin
                    
            -- phase 1 : collection & summing
-           if data_counter <= COLLECTION_AND_SUMMING then 
-            state <=  COLLECT;
+           if data_counter <= PHASE1 then 
+            state <=  COLLECT_AND_SUMMING;
              -- Read from ROM
             rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
             ram_address_b <= rom_dout;
@@ -125,8 +125,8 @@ begin
             ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
              
              -- phase 2 : show histogram
-          elsif data_counter <= SHOW_HISTOGRAM then 
-            state <=  PRESENT;
+          elsif data_counter <= PHASE2 then 
+            state <=  SHOW_HISTOGRAM;
             hist_full <= '1'; 
             ram_wea(0) <= '0'; 
             ram_address_b <= data_counter(7 downto 0) - 256; -- ram address b will be from 0 to 255
