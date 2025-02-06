@@ -103,7 +103,7 @@ begin
                 data_counter <= (others => '0');
             else
                 if data_counter < PHASE3 then 
-                -- number of clock periods of 3 phases ( collect (2046 clock cycles), present (256), reset (256))
+                -- number of clock periods of 3 phases ( collect (2046 clock cycles), present (256), reset (256) = 2558)
                     data_counter <= data_counter + 1; 
                 end if;
             end if;
@@ -118,6 +118,7 @@ begin
             state <=  COLLECT_AND_SUMMING;
              -- Read from ROM
             rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
+            -- Read from RAM
             ram_address_b <= rom_dout;
             -- Write to RAM
             ram_address_a <= ram_address_b;
