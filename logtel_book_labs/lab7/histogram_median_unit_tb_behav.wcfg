@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="146801fs"></ZoomEndTime>
-      <Cursor1Time time="118000fs"></Cursor1Time>
+      <ZoomEndTime time="147601fs"></ZoomEndTime>
+      <Cursor1Time time="88200fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+      <ValueColumnWidth column_width="118"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="26" />
+   <WVObjectSize size="34" />
    <wave_markers>
       <marker time="20575000" label="" />
    </wave_markers>
@@ -130,11 +130,6 @@
       <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/histogram_median_unit_tb/uut/data_counter" type="array">
-      <obj_property name="ElementShortName">data_counter[11:0]</obj_property>
-      <obj_property name="ObjectShortName">data_counter[11:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/histogram_median_unit_tb/uut/hist_index" type="array">
       <obj_property name="ElementShortName">hist_index[7:0]</obj_property>
       <obj_property name="ObjectShortName">hist_index[7:0]</obj_property>
@@ -153,5 +148,52 @@
    <wvobject fp_name="/histogram_median_unit_tb/uut/hist_full" type="logic">
       <obj_property name="ElementShortName">hist_full</obj_property>
       <obj_property name="ObjectShortName">hist_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/DUT_RAM/clka" type="logic">
+      <obj_property name="ElementShortName">clka</obj_property>
+      <obj_property name="ObjectShortName">clka</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/state" type="other">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/data_counter" type="array">
+      <obj_property name="ElementShortName">data_counter[11:0]</obj_property>
+      <obj_property name="ObjectShortName">data_counter[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/DUT_RAM/wea" type="array">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/DUT_RAM/addra" type="array">
+      <obj_property name="ElementShortName">addra[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/DUT_RAM/dina" type="array">
+      <obj_property name="ElementShortName">dina[9:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/DUT_RAM/clkb" type="logic">
+      <obj_property name="ElementShortName">clkb</obj_property>
+      <obj_property name="ObjectShortName">clkb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/DUT_RAM/addrb" type="array">
+      <obj_property name="ElementShortName">addrb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">addrb[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/uut/DUT_RAM/doutb" type="array">
+      <obj_property name="ElementShortName">doutb[9:0]</obj_property>
+      <obj_property name="ObjectShortName">doutb[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

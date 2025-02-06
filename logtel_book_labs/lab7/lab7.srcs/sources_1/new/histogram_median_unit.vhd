@@ -112,45 +112,48 @@ begin
 
     process (rst, clk, hist_index, data_counter) -- histogram process
     begin
-                   
-           -- phase 1 : collection & summing
-           if data_counter <= PHASE1 then 
-            state <=  COLLECT_AND_SUMMING;
-             -- Read from ROM
-            rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
-            -- Read from RAM
-            ram_address_b <= rom_dout;
-            -- Write to RAM
-            ram_address_a <= ram_address_b;
-            ram_dina <= ram_dout + 1;  
-            -- notice the not!!!!!!!!!!!!!!!
-            ram_wea(0) <= not data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
-            --ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz 
-             -- phase 2 : show histogram
-          elsif data_counter <= PHASE2 then 
-            state <=  SHOW_HISTOGRAM;
-            hist_full <= '1'; 
-            ram_wea(0) <= '0'; 
-            ram_address_b <= data_counter(7 downto 0) - 256; -- ram address b will be from 0 to 255
-            hist_index <= ram_address_b; 
-            hist_amount <= ram_dout;
-            
-        -- phase 3 : erease histogram
-        elsif data_counter <= PHASE3 then   
-            state <=  ERASE;    
-            ram_wea(0) <= '1';
-            ram_dina <= (others => '0');             
-            ram_address_a <= (others => '0');
-            ram_address_b <= (others => '0');  
-            rom_address <= (others => '0');
-            hist_full <= '0';
-            hist_index <= (others => '0'); 
-            hist_amount <= (others => '0');
-            hist_value <= (others => '0');
-         else
-            state <=  FINISH;
-                            
-        end if;
+           if rst = '0' then        
+               -- phase 1 : collection & summing
+               if data_counter <= PHASE1 then 
+                state <=  COLLECT_AND_SUMMING;
+                 -- Read from ROM
+                rom_address <= data_counter(10 downto 1);  -- we don't use the MSB and LSB of the data_counter (becuase we are working in 50mhz, half the frequency than the rom sending data)
+                -- Read from RAM
+                ram_address_b <= rom_dout;
+                -- Write to RAM
+                ram_address_a <= ram_address_b;
+                ram_dina <= ram_dout + 1;  
+                -- notice the not!!!!!!!!!!!!!!!
+                ram_wea(0) <= not data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
+                --ram_wea(0) <= data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
+                 
+                 -- phase 2 : show histogram
+              elsif data_counter <= PHASE2 then 
+                state <=  SHOW_HISTOGRAM;
+                hist_full <= '1'; 
+                ram_wea(0) <= '0'; 
+                ram_address_b <= data_counter(7 downto 0) - 256; -- ram address b will be from 0 to 255
+                hist_index <= ram_address_b; 
+                hist_amount <= ram_dout;
+                
+                 -- phase 3 : erease histogram
+                elsif data_counter <= PHASE3 then   
+                    state <=  ERASE;    
+                    ram_wea(0) <= '1';
+                    ram_dina <= (others => '0');             
+                    ram_address_a <= (others => '0');
+                    ram_address_b <= (others => '0');  
+                    rom_address <= (others => '0');
+                    hist_full <= '0';
+                    hist_index <= (others => '0'); 
+                    hist_amount <= (others => '0');
+                    hist_value <= (others => '0');
+        
+                 else
+                    state <=  FINISH;               
+
+                end if;         
+            end if;
 
     end process;
     
