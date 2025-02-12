@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="22386643fs"></ZoomStartTime>
-      <ZoomEndTime time="22460844fs"></ZoomEndTime>
-      <Cursor1Time time="21548490fs"></Cursor1Time>
+      <ZoomStartTime time="20794713fs"></ZoomStartTime>
+      <ZoomEndTime time="20943114fs"></ZoomEndTime>
+      <Cursor1Time time="25580000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
       <ValueColumnWidth column_width="114"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="16" />
    <wave_markers>
       <marker time="20565000" label="" />
    </wave_markers>
@@ -89,6 +89,25 @@
    <wvobject fp_name="/histogram_median_unit_tb/uut/data_counter" type="array">
       <obj_property name="ElementShortName">data_counter[11:0]</obj_property>
       <obj_property name="ObjectShortName">data_counter[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/hist_ready" type="logic">
+      <obj_property name="ElementShortName">hist_ready</obj_property>
+      <obj_property name="ObjectShortName">hist_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/hist_value" type="array">
+      <obj_property name="ElementShortName">hist_value[7:0]</obj_property>
+      <obj_property name="ObjectShortName">hist_value[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/hist_amount" type="array">
+      <obj_property name="ElementShortName">hist_amount[9:0]</obj_property>
+      <obj_property name="ObjectShortName">hist_amount[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/histogram_median_unit_tb/median_number" type="array">
+      <obj_property name="ElementShortName">median_number[9:0]</obj_property>
+      <obj_property name="ObjectShortName">median_number[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

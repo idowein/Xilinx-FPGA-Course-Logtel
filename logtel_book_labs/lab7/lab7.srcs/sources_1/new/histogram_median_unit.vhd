@@ -110,7 +110,7 @@ begin
         end if;
     end process;
 
-    process (rst, clk, hist_index, data_counter) -- histogram process
+    process (rst, clk, hist_index, data_counter, ram_address_b) -- histogram process
     begin
            if rst = '0' then   
                 
@@ -142,12 +142,7 @@ begin
                  ram_wea(0) <= '1';
                  ram_dina <= (others => '0');             
                  ram_address_a <= data_counter(7 downto 0) - PHASE3; -- ram adress A will run from 0 - 255
-                 ram_address_b <= (others => '0');  
-                 rom_address <= (others => '0');
                  hist_full <= '0';
-                 hist_index <= (others => '0'); 
-                 hist_amount <= (others => '0');
-                 hist_value <= (others => '0');
         
                  else
                  state <=  FINISH;               
@@ -159,7 +154,7 @@ begin
     
  -- output assignments
 hist_ready <= hist_full;
---hist_value <= ram_address_b;
+hist_value <= ram_address_b;
 hist_amount <= ram_dout; 
     
     -- device under unit (DUT) is ROM 

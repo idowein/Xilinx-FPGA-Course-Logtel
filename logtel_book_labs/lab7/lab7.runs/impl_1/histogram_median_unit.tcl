@@ -76,8 +76,8 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   add_files -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.runs/synth_1/histogram_median_unit.dcp}}
-  read_ip -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom.xci}}
   read_ip -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/dual_port_ram/dual_port_ram.xci}}
+  read_ip -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom.xci}}
   link_design -top histogram_median_unit -part xc7z020clg400-1
   close_msg_db -file init_design.pb
 } RESULT]

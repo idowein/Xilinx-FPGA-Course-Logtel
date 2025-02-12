@@ -34,11 +34,11 @@ set_property ip_output_repo {c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/log
 set_property ip_cache_permissions {read write} [current_project]
 add_files {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/data_simulation.coe}}
 read_vhdl -library xil_defaultlib {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/new/histogram_median_unit.vhd}}
-read_ip -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom_ooc.xdc}}]
-
 read_ip -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/dual_port_ram/dual_port_ram.xci}}
 set_property used_in_implementation false [get_files -all {{c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/dual_port_ram/dual_port_ram_ooc.xdc}}]
+
+read_ip -quiet {{C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom.xci}}
+set_property used_in_implementation false [get_files -all {{c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab7/lab7.srcs/sources_1/ip/single_port_rom/single_port_rom_ooc.xdc}}]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -48,6 +48,8 @@ set_property used_in_implementation false [get_files -all {{c:/Users/idowe/FPGA 
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
