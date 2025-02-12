@@ -141,7 +141,7 @@ begin
                  state <=  ERASE;    
                  ram_wea(0) <= '1';
                  ram_dina <= (others => '0');             
-                 ram_address_a <= (others => '0');
+                 ram_address_a <= data_counter(7 downto 0) - PHASE3; -- ram adress A will run from 0 - 255
                  ram_address_b <= (others => '0');  
                  rom_address <= (others => '0');
                  hist_full <= '0';
