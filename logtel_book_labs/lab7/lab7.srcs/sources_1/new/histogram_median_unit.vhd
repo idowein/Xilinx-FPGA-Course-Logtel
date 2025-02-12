@@ -159,7 +159,7 @@ begin
     
  -- output assignments
 hist_ready <= hist_full;
-hist_value <= ram_address_b;
+--hist_value <= ram_address_b;
 hist_amount <= ram_dout; 
     
     -- device under unit (DUT) is ROM 
