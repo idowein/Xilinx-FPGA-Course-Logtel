@@ -50,48 +50,51 @@ architecture Behavioral of histogram_median_unit is
     type state_type is (COLLECT_AND_SUMMING, SHOW_HISTOGRAM, ERASE, FINISH);
     signal state : state_type := COLLECT_AND_SUMMING;
 
-    constant PHASE1   : integer := 2046; -- 1023 * 2
-    constant PHASE2 : integer := 2302; -- +256
-    constant PHASE3      : integer := 2558; -- +256
+    constant PHASE1     : integer := 2046; -- 1023 * 2
+    constant PHASE2     : integer := 2302; -- +256
+    constant PHASE3     : integer := 2558; -- +256
 
     -- ROM component declaration
     component single_port_rom
         port(
-            clka : IN STD_LOGIC;
-            addra : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+            clka    : IN STD_LOGIC;
+            addra   : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+            douta   : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
     end component;
     
      -- RAM declaration
     component dual_port_ram
       port (
-            clka : IN STD_LOGIC;
-            wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-            dina : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
-            clkb : IN STD_LOGIC;
-            addrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-            doutb : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
+            clka    : IN STD_LOGIC;
+            wea     : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+            addra   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            dina    : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+            clkb    : IN STD_LOGIC;
+            addrb   : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+            doutb   : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
       );
     end component;
     
     -- ROM signals declaration
-    signal rom_address : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
-    signal rom_dout : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
+    signal rom_address              : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
+    signal rom_dout                 : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
     
     -- RAM signals declaration
-    signal ram_address_a : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
-    signal ram_dina : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
-    signal ram_address_b : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
-    signal ram_dout : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
-    signal ram_wea : STD_LOGIC_VECTOR(0 DOWNTO 0) := (others => '0'); -- write enable initializing 
-        
+    signal ram_address_a            : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
+    signal ram_dina                 : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
+    signal ram_address_b            : STD_LOGIC_VECTOR(7 downto 0):= (others => '0'); 
+    signal ram_dout                 : STD_LOGIC_VECTOR(9 downto 0):= (others => '0'); 
+    signal ram_wea                  : STD_LOGIC_VECTOR(0 DOWNTO 0) := (others => '0'); -- write enable initializing 
+    
+    -- median number finding signals
+    signal median_number_counter   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
+    signal SUM_HIST                : STD_LOGIC_VECTOR(17 downto 0) := (others => '0');
+    
     -- external signals declaration
-    signal data_counter : STD_LOGIC_VECTOR (11 downto 0) := (others => '0'); 
-    signal hist_index   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
-    signal median_number_counter   : STD_LOGIC_VECTOR(9 downto 0) := (others => '0'); 
-    signal hist_full    : STD_LOGIC := '0';
+    signal data_counter             : STD_LOGIC_VECTOR (11 downto 0) := (others => '0'); 
+    signal hist_index               : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
+    signal hist_full                : STD_LOGIC := '0';
        
 begin
 
@@ -126,6 +129,7 @@ begin
                 ram_dina <= ram_dout + 1;  
                 -- notice the not!!!!!!!!!!!!!!!
                 ram_wea(0) <= not data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
+                -- summing all adresses t
                  
                  -- phase 2 : show histogram
                elsif data_counter <= PHASE2 then 
