@@ -260,7 +260,7 @@ process (clk) begin
 end process;
 
 with BTN(4) select
-	LED <= COUNTER (42 downto 27) when '0',
+	LED <= COUNTER (42 downto 27) when '0', -- the counter in the led displays 0000 - 1111 in binary (2^4 = 16). it's 42 - 27 for the freq of the dysplay
 			 SW when others;
 			 			 
 ----------------------------------------------------------
