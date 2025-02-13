@@ -99,7 +99,7 @@
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_CEP">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_CESEL">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_CONCAT">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_D">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_D">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_INDEP_CE">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_INDEP_SCLR">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_PCIN">0</spirit:configurableElementValue>
@@ -115,11 +115,11 @@
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_HAS_SCLRSEL">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_LATENCY">127</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_MODEL_TYPE">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_OPMODES">000100100000010100000000,000000000010010100000000,000000000010010100000000,000000000010010100000000,000100100000010100001001</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_OPMODES">000100100000010100000000,000000000010010100000000,000000000010010100000000,000000000010010100000000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_P_LSB">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_P_MSB">47</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_REG_CONFIG">11010111010111010111000101100100</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_SEL_WIDTH">3</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_REG_CONFIG">11000111000111000111000101100100</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_SEL_WIDTH">2</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_TEST_CORE">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_VERBOSITY">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_XDEVICEFAMILY">zynq</spirit:configurableElementValue>
@@ -156,9 +156,9 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.creg_5">false</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.d_binarywidth">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.d_width">18</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.dreg_1">true</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.dreg_2">true</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.dreg_3">true</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.dreg_1">false</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.dreg_2">false</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.dreg_3">false</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.has_a_ce">false</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.has_a_sclr">false</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.has_acout">false</spirit:configurableElementValue>
@@ -186,7 +186,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.instruction2">A*B+P</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.instruction3">A*B+P</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.instruction4">A*B+P</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.instruction5">(A+D)</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.instruction5">#</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.instruction6">#</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.instruction7">#</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.instruction8">#</spirit:configurableElementValue>

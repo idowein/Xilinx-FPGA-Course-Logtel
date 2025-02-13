@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Thu Feb 13 18:43:22 2025
+| Date         : Thu Feb 13 19:42:32 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file GPIO_demo_control_sets_placed.rpt
 | Design       : GPIO_demo
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    19 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    39 |
+| Unused register locations in slices containing registers |    44 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              31 |           15 |
+| No           | No                    | No                     |              74 |           28 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |             167 |           44 |
-| Yes          | No                    | No                     |              21 |           10 |
+| Yes          | No                    | No                     |              21 |           11 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              70 |           20 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -76,22 +76,22 @@ Table of Contents
 |  CLK_IBUF_BUFG | pwm_val_reg_i_1_n_0             |                                               |                1 |              1 |
 |  CLK_IBUF_BUFG | RGB_Core/valcount[8]_i_1_n_0    | RGB_Core/valcount                             |                1 |              3 |
 |  CLK_IBUF_BUFG | eqOp2_in                        | tmrVal[3]_i_1_n_0                             |                2 |              4 |
-|  CLK_IBUF_BUFG | RGB_Core/valcount[8]_i_1_n_0    |                                               |                2 |              6 |
+|  CLK_IBUF_BUFG | RGB_Core/valcount[8]_i_1_n_0    |                                               |                3 |              6 |
 |  CLK_IBUF_BUFG | strIndex                        |                                               |                5 |              7 |
 |  CLK_IBUF_BUFG | uartSend                        |                                               |                2 |              7 |
 |  CLK_IBUF_BUFG |                                 | RGB_Core/windowcount[7]_i_1_n_0               |                3 |              8 |
 |  CLK_IBUF_BUFG |                                 | Inst_UART_TX_CTRL/bitTmr                      |                4 |             14 |
+|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[1][0]_i_1_n_0 |                4 |             16 |
+|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[3][0]_i_1_n_0 |                4 |             16 |
+|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[4][0]_i_1_n_0 |                4 |             16 |
 |  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[2][0]_i_1_n_0 |                4 |             16 |
 |  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[0][0]_i_1_n_0 |                4 |             16 |
-|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[1][0]_i_1_n_0 |                4 |             16 |
-|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[4][0]_i_1_n_0 |                4 |             16 |
-|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[3][0]_i_1_n_0 |                4 |             16 |
 |  CLK_IBUF_BUFG |                                 | reset_cntr0                                   |                5 |             18 |
 |  CLK_IBUF_BUFG |                                 | RGB_Core/clear                                |                5 |             20 |
 |  CLK_IBUF_BUFG |                                 | tmrCntr0                                      |                7 |             27 |
-|  CLK_IBUF_BUFG |                                 |                                               |               15 |             31 |
 |  CLK_IBUF_BUFG | strIndex                        | strIndex0                                     |                8 |             31 |
 |  CLK_IBUF_BUFG | Inst_UART_TX_CTRL/txBit_i_2_n_0 | Inst_UART_TX_CTRL/READY                       |                9 |             32 |
+|  CLK_IBUF_BUFG |                                 |                                               |               28 |             74 |
 +----------------+---------------------------------+-----------------------------------------------+------------------+----------------+
 
 

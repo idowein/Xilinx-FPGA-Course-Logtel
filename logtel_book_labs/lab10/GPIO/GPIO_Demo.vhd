@@ -244,15 +244,24 @@ signal pwm_val_reg : std_logic := '0';
 --this counter counts the amount of time paused in the UART reset state
 signal reset_cntr : std_logic_vector (17 downto 0) := (others=>'0');
 
+-- counter signal declaration
+signal COUNTER : STD_LOGIC_VECTOR (42 downto 0) := (others => '0');
+
 begin
 
 ----------------------------------------------------------
 ------                LED Control                  -------
 ----------------------------------------------------------
 
+process (clk) begin
+    if rising_edge (clk) then
+        COUNTER <= COUNTER + 1;
+    end if;
+end process;
+
 with BTN(4) select
-	LED <= SW 			when '0',
-			 "0000000000000000" when others;
+	LED <= COUNTER (42 downto 27) when '0',
+			 SW when others;
 			 			 
 ----------------------------------------------------------
 ------           7-Seg Display Control             -------
