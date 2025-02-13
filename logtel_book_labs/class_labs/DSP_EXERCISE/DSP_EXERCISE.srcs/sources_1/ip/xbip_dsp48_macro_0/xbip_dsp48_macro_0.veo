@@ -56,9 +56,10 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 xbip_dsp48_macro_0 your_instance_name (
   .CLK(CLK),  // input wire CLK
-  .SEL(SEL),  // input wire [1 : 0] SEL
+  .SEL(SEL),  // input wire [2 : 0] SEL
   .A(A),      // input wire [24 : 0] A
   .B(B),      // input wire [17 : 0] B
+  .D(D),      // input wire [17 : 0] D
   .P(P)      // output wire [47 : 0] P
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------

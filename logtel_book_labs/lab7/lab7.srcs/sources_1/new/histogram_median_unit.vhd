@@ -129,7 +129,7 @@ begin
                 ram_dina <= ram_dout + 1;  
                 -- notice the not!!!!!!!!!!!!!!!
                 ram_wea(0) <= not data_counter(0); -- ram_wea enabled ( 0 or 1 )each 100 mhz
-                -- summing all adresses t
+                -- summing all numbers (will help us to calc the median number - if number = SUM\HIST
                  
                  -- phase 2 : show histogram
                elsif data_counter <= PHASE2 then 

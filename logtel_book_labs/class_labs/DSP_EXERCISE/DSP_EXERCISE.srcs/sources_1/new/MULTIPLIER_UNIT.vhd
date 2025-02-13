@@ -54,10 +54,6 @@ architecture Behavioral of MULTIPLIER_UNIT is
         P : OUT STD_LOGIC_VECTOR(47 DOWNTO 0)
     );end COMPONENT;
 
-  --  EXTERNALS SIGNALS DECLARATION
-  signal RESULT : STD_LOGIC_VECTOR(47 downto 0) := (others => '0');
-  signal ACCUMULATOR : STD_LOGIC_VECTOR(47 downto 0) := (others => '0');
- 
 begin
 
   -- Instantiate the generated DSP48 Macro IP core
@@ -70,16 +66,4 @@ begin
       P           => DATA_OUT_P 
     );
     
-  -- Accumulator logic
---  process(CLK, RST)
---  begin
---    if (RST = '1') then
---      ACCUMULATOR <= (others => '0'); 
---    elsif (rising_edge(CLK)) then
---      ACCUMULATOR <= RESULT + ACCUMULATOR; 
---    end if;
---  end process;
-
---  DATA_OUT_P <= ACCUMULATOR; 
-
 end Behavioral;
