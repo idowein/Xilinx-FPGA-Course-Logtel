@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../DSP_EXERCISE.srcs/sources_1/ip/xbip_dsp48_macro_0/sim/xbip_dsp48_macro_0.vhd" \
+"../../../../DSP_EXERCISE.srcs/sources_1/new/MULTIPLIER_UNIT.vhd" \
+
+# Do not sort compile order
+nosort
