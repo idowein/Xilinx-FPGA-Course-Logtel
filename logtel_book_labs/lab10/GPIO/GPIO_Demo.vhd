@@ -270,12 +270,36 @@ with BTN(4) select
 --response to button presses.
 
 --Individual and reset blanking of Anodes
-with BTN(4) select
-	SSEG_AN(3 downto 0) <= btnDeBnc(3 downto 0)	when '0',
-				  "1111" 			when others;	  
-with BTN(4) select
-	SSEG_AN(7 downto 4) <= btnDeBnc(3 downto 0)	when '0',
-				  "1111" 			when others;				  
+
+--with BTN(4) select
+--	SSEG_AN(3 downto 0) <= btnDeBnc(3 downto 0)	when '0',
+--				  "1111" 			when others;	  
+--with BTN(4) select
+--	SSEG_AN(7 downto 4) <= btnDeBnc(3 downto 0)	when '0',
+--				  "1111" 			when others;	
+
+process (clk) begin
+    
+    if rising_edge (clk) then
+        if counter (19 downto 17) = "000" then
+            SSEG_AN (7 downto 0) <= "11111110";
+        elsif counter (19 downto 17) = "001" then
+            SSEG_AN (7 downto 0) <= "11111101";
+        elsif counter (19 downto 17) = "010" then
+            SSEG_AN (7 downto 0) <= "11111011";
+        elsif counter (19 downto 17) = "011" then
+            SSEG_AN (7 downto 0) <= "11110111";
+        elsif counter (19 downto 17) = "100" then
+            SSEG_AN (7 downto 0) <= "11101111";
+        elsif counter (19 downto 17) = "101" then
+            SSEG_AN (7 downto 0) <= "11011111";
+        elsif counter (19 downto 17) = "110" then
+            SSEG_AN (7 downto 0) <= "10111111";
+        elsif counter (19 downto 17) = "111" then
+            SSEG_AN (7 downto 0) <= "01111111";
+        end if;
+    end if;
+end process;			  
 
 --This process controls the counter that triggers the 7-segment
 --to be incremented. It counts 100,000,000 and then resets.		  
