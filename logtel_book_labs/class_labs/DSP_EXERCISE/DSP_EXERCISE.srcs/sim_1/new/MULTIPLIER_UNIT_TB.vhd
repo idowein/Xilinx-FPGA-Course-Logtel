@@ -20,7 +20,9 @@
 
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -50,13 +52,14 @@ architecture Behavioral of MULTIPLIER_UNIT_TB is
   end component;
 
   -- Signals
-  signal CLK : STD_LOGIC := '0';
-  signal RST : STD_LOGIC := '1';
-  signal SEL : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00"; -- Assuming "00" selects the multiplication operation
-  signal A : STD_LOGIC_VECTOR(24 DOWNTO 0) := (others => '0');
-  signal B : STD_LOGIC_VECTOR(17 DOWNTO 0) := (others => '0');
-  signal P : STD_LOGIC_VECTOR(47 DOWNTO 0);
+  signal CLK        : STD_LOGIC := '0';
+  signal RST        : STD_LOGIC := '0';
+  signal SEL        : STD_LOGIC_VECTOR(1 DOWNTO 0) := (others => '0');
+  signal DATA_IN_A  : STD_LOGIC_VECTOR(24 DOWNTO 0) := (others => '0');
+  signal DATA_IN_B  : STD_LOGIC_VECTOR(17 DOWNTO 0) := (others => '0');
+  signal DATA_OUT_P : STD_LOGIC_VECTOR(47 DOWNTO 0) := (others => '0');
 
+  -- Clock period definition
   constant CLK_PERIOD : time := 10 ns;
 
 begin
@@ -67,44 +70,16 @@ begin
       CLK => CLK,
       RST => RST,
       SEL => SEL,
-      DATA_IN_A => A,
-      DATA_IN_B => B,
-      DATA_OUT_P => P 
+      DATA_IN_A => DATA_IN_A,
+      DATA_IN_B => DATA_IN_B,
+      DATA_OUT_P => DATA_OUT_P 
     );
 
-  -- Clock generation process
-  clock_process: process
-  begin
-    CLK <= '1', '0'; 
-  end process;
+    -- Clock generation process
+    CLK <= not CLK after 5 ns;
 
-  -- Reset generation process
-  reset_process: process
-  begin
-    wait for 10 * CLK_PERIOD; -- Assert reset for 10 clock cycles
-    RST <= '0';
-    wait;
-  end process;
-
-  -- Stimulus process
-  stimulus_process: process
-  begin
-    -- Apply stimulus here 
-
-    -- Example stimulus:
-    A <= x"000001"; -- 1
-    B <= x"000002"; -- 2
-
-    wait for 10 * CLK_PERIOD; -- Wait for some clock cycles
-
-    A <= x"000004"; -- 4
-    B <= x"000003"; -- 3
-
-    wait for 10 * CLK_PERIOD; 
-
-    -- Add more test cases here
-
-    wait; 
-  end process;
+    -- Reset generatrion
+    RST <= '1', '0' after CLK_PERIOD * 10;
 
 end Behavioral;
+
