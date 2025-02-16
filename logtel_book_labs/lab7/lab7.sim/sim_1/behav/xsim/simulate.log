@@ -1023,4 +1023,9 @@ blk_mem_gen_v8_4_4 collision detected at time: 20405000, Instance: histogram_med
 blk_mem_gen_v8_4_4 collision detected at time: 20425000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: 27, B  read address: 27
 blk_mem_gen_v8_4_4 collision detected at time: 20445000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: c6, B  read address: c6
 blk_mem_gen_v8_4_4 collision detected at time: 20465000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: e, B  read address: e
-blk_mem_gen_v8
+blk_mem_gen_v8_4_4 collision detected at time: 20485000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: b6, B  read address: b6
+blk_mem_gen_v8_4_4 collision detected at time: 20505000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: 93, B  read address: 93
+blk_mem_gen_v8_4_4 collision detected at time: 20525000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: d6, B  read address: d6
+blk_mem_gen_v8_4_4 collision detected at time: 20545000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: 51, B  read address: 51
+blk_mem_gen_v8_4_4 collision detected at time: 20565000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: 35, B  read address: 35
+blk_mem_gen_v8_4_4 collision detected at time: 25665000, Instance: histogram_median_unit_tb.uut.DUT_RAM.inst.native_mem_module.blk_mem_gen_v8_4_4_inst, A write address: fe, B  read address: fe

@@ -2,3 +2,6 @@ Running: xsim.dir/histogram_median_unit_tb_behav/xsimk.exe -simmode gui -wdb his
 Design successfully loaded
 Design Loading Memory Usage: 7168 KB (Peak: 7168 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 10572 KB (Peak: 10572 KB)
+Simulation CPU Usage: 77 ms
