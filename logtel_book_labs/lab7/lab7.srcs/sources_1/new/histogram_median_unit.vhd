@@ -96,8 +96,18 @@ architecture Behavioral of histogram_median_unit is
     signal hist_index               : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); 
     signal hist_full                : STD_LOGIC := '0';
        
-begin
+    -- Shift register for RAM address B
+    signal ram_address_b_shift_reg : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');  
 
+begin
+    
+    -- shift register proces
+    process (CLK) begin
+        if rising_edge (CLK) then
+        ram_address_b_shift_reg   <= ram_address_b;      
+        end if;
+    end process; 
+    
     -- counter procedure
     process (clk, rst)
     begin
@@ -158,7 +168,7 @@ begin
     
  -- output assignments
 hist_ready <= hist_full;
-hist_value <= ram_address_b;
+hist_value <= ram_address_b_shift_reg;
 hist_amount <= ram_dout; 
     
     -- device under unit (DUT) is ROM 
