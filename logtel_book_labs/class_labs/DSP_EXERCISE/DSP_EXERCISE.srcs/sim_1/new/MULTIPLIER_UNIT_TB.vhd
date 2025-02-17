@@ -69,28 +69,13 @@ begin
   BEGIN
       WAIT FOR 60 ns; -- Ensure reset completes first
       
-      -- First round (A + B + 0)
-      DATA_IN_A <= std_logic_vector(to_unsigned(1, 25)); 
-      DATA_IN_B <= std_logic_vector(to_unsigned(1, 18));
-      WAIT FOR CLK_PERIOD;
-      
-      -- Second round (A + B + Previous Sum)
-      WAIT FOR CLK_PERIOD;
-      DATA_IN_A <= std_logic_vector(to_unsigned(2, 25));
-      DATA_IN_B <= std_logic_vector(to_unsigned(2, 18));
-      WAIT FOR CLK_PERIOD;
-      
-      -- Third round (A + B + Previous Sum)
-      WAIT FOR CLK_PERIOD;
-      DATA_IN_A <= std_logic_vector(to_unsigned(3, 25));
-      DATA_IN_B <= std_logic_vector(to_unsigned(3, 18));
-      WAIT FOR CLK_PERIOD;
-      
-      -- Fourth round (A + B + Previous Sum)
-      WAIT FOR CLK_PERIOD;
-      DATA_IN_A <= std_logic_vector(to_unsigned(4, 25));
-      DATA_IN_B <= std_logic_vector(to_unsigned(4, 18));
-      WAIT FOR CLK_PERIOD;
+      -- Stimuli
+      for i in 0 to 3 loop -- the formula is A*B + P(previous multiplication)
+        SEL <= std_logic_vector(to_unsigned(i, 2));
+        DATA_IN_A <= std_logic_vector(to_unsigned(i+1, 25)); 
+        DATA_IN_B <= std_logic_vector(to_unsigned(i+1, 18));
+        WAIT FOR CLK_PERIOD;
+      end loop;
       
       -- Finish simulation
       WAIT FOR 50 ns;
