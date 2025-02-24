@@ -58,6 +58,7 @@ architecture Behavioral of CALCULATOR_UNIT_TB is
   signal DATA_IN_A  : STD_LOGIC_VECTOR(24 DOWNTO 0) := (others => '0');
   signal DATA_IN_B  : STD_LOGIC_VECTOR(17 DOWNTO 0) := (others => '0');
   signal DATA_OUT : STD_LOGIC_VECTOR(42 DOWNTO 0) := (others => '0');
+ 
   
   -- Clock period definition
   constant CLK_PERIOD : time := 10 ns;
@@ -75,37 +76,23 @@ begin
       DATA_OUT => DATA_OUT 
     );
     
-  -- Clock generation process
-  process
-  begin
-      while true loop
-          CLK <= '0';
-          wait for CLK_PERIOD / 2;
-          CLK <= '1';
-          wait for CLK_PERIOD / 2;
-      end loop;
-  end process;
-  
-  -- Reset process
-  process
-  begin
-      RST <= '1';
-      wait for 50 ns;
-      RST <= '0';
-      wait;
-  end process;
+    -- Clock generation process
+    CLK <= not CLK after 5 ns;
+
+    -- Reset generatrion
+    RST <= '1', '0' after CLK_PERIOD * 5;
   
   -- Stimulus process
   STIMULUS_PROCESS: PROCESS
   BEGIN
     -- ADDER
-    SEL <= "0";
+    SEL(0) <= '0';
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
     
     -- MULTIPLIER
-    SEL <= "1";
+    SEL(0) <= '1';
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
