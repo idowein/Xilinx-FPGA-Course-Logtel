@@ -1709,7 +1709,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Feb 24 13:21:59 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 24 14:00:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -1728,11 +1728,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Feb 24 13:21:59 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 24 14:00:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:48c8d279</spirit:value>
+            <spirit:value>9:e4793757</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1757,11 +1757,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Feb 24 13:21:59 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 24 14:00:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:48c8d279</spirit:value>
+            <spirit:value>9:e4793757</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1775,11 +1775,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Feb 24 13:21:59 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 24 14:00:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:48c8d279</spirit:value>
+            <spirit:value>9:e4793757</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1795,11 +1795,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Feb 24 13:21:59 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 24 14:00:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:48c8d279</spirit:value>
+            <spirit:value>9:e4793757</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1824,11 +1824,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Feb 24 13:21:59 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 24 14:00:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:dd340e03</spirit:value>
+            <spirit:value>9:5c275892</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1844,11 +1844,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Feb 24 13:21:59 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 24 14:00:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:dd340e03</spirit:value>
+            <spirit:value>9:5c275892</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1862,11 +1862,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Feb 24 13:21:59 UTC 2025</spirit:value>
+            <spirit:value>Mon Feb 24 14:00:27 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:48c8d279</spirit:value>
+            <spirit:value>9:e4793757</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1963,7 +1963,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.SEL" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SEL_WIDTH&apos;)) != 0">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.SEL" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_SEL_WIDTH&apos;)) != 0">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2144,7 +2144,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.B" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_B&apos;)) != 0">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.B" xilinx:dependency="spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_B&apos;)) != 0">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2362,7 +2362,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_P_MSB&apos;)) - spirit:decode(id(&apos;MODELPARAM_VALUE.C_P_LSB&apos;)))">24</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_P_MSB&apos;)) - spirit:decode(id(&apos;MODELPARAM_VALUE.C_P_LSB&apos;)))">42</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3417,7 +3417,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_B</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_B">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_B">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_D</spirit:name>
@@ -3453,7 +3453,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_P_MSB</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_P_MSB">24</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_P_MSB">42</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_P_LSB</spirit:name>
@@ -3461,7 +3461,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SEL_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEL_WIDTH">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEL_WIDTH">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_ACOUT</spirit:name>
@@ -3493,11 +3493,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_OPMODES</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OPMODES">000100100000010100001001</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_OPMODES">000100100000010100001001,000100100000010100000000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>C_REG_CONFIG</spirit:name>
-        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_REG_CONFIG">10010010010010010010000001000100</spirit:value>
+        <spirit:value spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_REG_CONFIG">11010111010111010111000101100100</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_TEST_CORE</spirit:name>
@@ -6928,7 +6928,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>instruction2</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.instruction2" spirit:choiceRef="choice_list_a66ffb3b" spirit:order="5">#</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.instruction2" spirit:choiceRef="choice_list_a66ffb3b" spirit:order="5">A*B</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>instruction3</spirit:name>
@@ -7017,19 +7017,19 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>breg_1</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.breg_1" spirit:order="27">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.breg_1" spirit:order="27">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>breg_2</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.breg_2" spirit:order="28">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.breg_2" spirit:order="28">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>breg_3</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.breg_3" spirit:order="29">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.breg_3" spirit:order="29">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>breg_4</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.breg_4" spirit:order="30">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.breg_4" spirit:order="30">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>creg_1</spirit:name>
@@ -7065,23 +7065,23 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>opreg_1</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_1" spirit:order="39">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_1" spirit:order="39">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>opreg_2</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_2" spirit:order="40">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_2" spirit:order="40">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>opreg_3</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_3" spirit:order="41">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_3" spirit:order="41">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>opreg_4</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_4" spirit:order="42">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_4" spirit:order="42">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>opreg_5</spirit:name>
-      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_5" spirit:order="43">false</spirit:value>
+      <spirit:value spirit:format="bool" spirit:resolve="user" spirit:id="PARAM_VALUE.opreg_5" spirit:order="43">true</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>cinreg_1</spirit:name>
@@ -7136,7 +7136,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>b_binarywidth</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.b_binarywidth" spirit:order="56" spirit:minimum="0" spirit:maximum="0" spirit:rangeType="long">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.b_binarywidth" spirit:order="56" spirit:minimum="0" spirit:maximum="18" spirit:rangeType="long">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>concat_width</spirit:name>
@@ -7167,12 +7167,12 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>p_full_width</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.p_full_width" spirit:order="63" spirit:minimum="2" spirit:maximum="48" spirit:rangeType="long">25</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.p_full_width" spirit:order="63" spirit:minimum="2" spirit:maximum="48" spirit:rangeType="long">43</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>p_width</spirit:name>
       <spirit:displayName>Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.p_width" spirit:order="64" spirit:minimum="2" spirit:maximum="48" spirit:rangeType="long">25</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.p_width" spirit:order="64" spirit:minimum="2" spirit:maximum="48" spirit:rangeType="long">43</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>p_binarywidth</spirit:name>

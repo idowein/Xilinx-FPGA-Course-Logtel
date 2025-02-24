@@ -55,9 +55,11 @@
 COMPONENT xbip_dsp48_macro_0
   PORT (
     CLK : IN STD_LOGIC;
+    SEL : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     A : IN STD_LOGIC_VECTOR(24 DOWNTO 0);
+    B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
     D : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
-    P : OUT STD_LOGIC_VECTOR(24 DOWNTO 0)
+    P : OUT STD_LOGIC_VECTOR(42 DOWNTO 0)
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -69,7 +71,9 @@ END COMPONENT;
 your_instance_name : xbip_dsp48_macro_0
   PORT MAP (
     CLK => CLK,
+    SEL => SEL,
     A => A,
+    B => B,
     D => D,
     P => P
   );
