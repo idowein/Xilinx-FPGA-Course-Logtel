@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="CALCULATOR_UNIT_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="CALCULATOR_UNIT_TB" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="150001fs"></ZoomEndTime>
+      <Cursor1Time time="55100fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="106"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/RST" type="logic">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/SEL" type="array">
+      <obj_property name="ElementShortName">SEL[1:0]</obj_property>
+      <obj_property name="ObjectShortName">SEL[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/DATA_IN_A" type="array">
+      <obj_property name="ElementShortName">DATA_IN_A[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_IN_A[24:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/DATA_IN_B" type="array">
+      <obj_property name="ElementShortName">DATA_IN_B[17:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_IN_B[17:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/DATA_OUT" type="array">
+      <obj_property name="ElementShortName">DATA_OUT[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_OUT[24:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/CLK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DUT_DSP/A" type="array">
+      <obj_property name="ElementShortName">A[24:0]</obj_property>
+      <obj_property name="ObjectShortName">A[24:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DUT_DSP/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DUT_DSP/D" type="array">
+      <obj_property name="ElementShortName">D[17:0]</obj_property>
+      <obj_property name="ObjectShortName">D[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DUT_DSP/P" type="array">
+      <obj_property name="ElementShortName">P[24:0]</obj_property>
+      <obj_property name="ObjectShortName">P[24:0]</obj_property>
+   </wvobject>
+</wave_config>
