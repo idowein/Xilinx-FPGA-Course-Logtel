@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date                      : Tue Feb 25 16:11:11 2025
+| Date                      : Tue Feb 25 17:31:30 2025
 | Host                      : Ido running 64-bit major release  (build 9200)
 | Command                   : report_io -file CALCULATOR_UNIT_io_placed.rpt
 | Design                    : CALCULATOR_UNIT
@@ -228,7 +228,7 @@ Table of Contents
 | L11        |               |            | VCCINT                       | VCCINT      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | L12        |               |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | L13        | DATA_IN_B[12] | High Range | IO_L6P_T0_FCS_B_14           | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
-| L14        |               | High Range | IO_L2P_T0_D02_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| L14        | RST           | High Range | IO_L2P_T0_D02_14             | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | L15        | SEL[0]        | High Range | IO_L3P_T0_DQS_PUDC_B_14      | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | L16        | DATA_IN_B[17] | High Range | IO_L3N_T0_DQS_EMCCLK_14      | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | L17        |               | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    1.80 |            |           |          |      |                  |              |                   |              |

@@ -102,8 +102,8 @@ begin
     
     -- SUBSTUCOR
     SEL <= "10";
-    DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 25));
-    DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 18));
+    DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
+    DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
     
     -- Finish simulation

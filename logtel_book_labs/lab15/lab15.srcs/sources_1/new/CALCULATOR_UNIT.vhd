@@ -35,10 +35,6 @@ architecture Behavioral of CALCULATOR_UNIT is
 
 begin
 
-    -- signals instantiation
-    B_input <= DATA_IN_B when SEL(0) = '1' else (others => '0');
-    D_input <= DATA_IN_B when SEL(0) = '0' OR SEL = "10" else (others => '0');
-
     -- Instantiate the generated DSP48 Macro IP core
     DUT_DSP : xbip_dsp48_macro_0
         Port map (
@@ -60,16 +56,18 @@ BEGIN
             CASE SEL IS
                 WHEN "00" =>                -- ADDER STATE
                     state <= ADDER;
+                    D_input <= DATA_IN_B;
                 WHEN "01" =>                -- MULTIPLIER STATE
                     state <= MULTIPLIER;
+                    B_input <= DATA_IN_B;
                 WHEN "10" =>                -- SUB STATE
                     state <= SUBSTRUCTOR;
+                    D_input <= DATA_IN_B;
                 WHEN OTHERS =>
                     state <= ZERO;
             END CASE;
         END IF;
     END IF;
 END PROCESS;
-
 
 END Behavioral;
