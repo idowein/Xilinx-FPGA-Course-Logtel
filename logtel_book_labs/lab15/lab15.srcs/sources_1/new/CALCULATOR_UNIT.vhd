@@ -63,6 +63,14 @@ BEGIN
                 WHEN "10" =>                -- SUB STATE
                     state <= SUBSTRUCTOR;
                     D_input <= DATA_IN_B;
+--                WHEN "11" =>                -- DIV STATE
+--                    state <= DIVIDER;
+--                  1. FOR LOOP - WHAT IS THE GREAT 2^N NUM THAT IS UNDER THE NUMBER
+--                  2. MULTIPLY IT WITH THE DIVIDER
+--                  3. IF SUM > NUM : TAKE THE NEXT SMALL NUMBER AFTER 2^N => 2^N-1
+--                  4. ADD 2^N-2 TO 2^N-1
+--                  5. IF THE SUMM * THE DIVIDER > NUM TAKE INSTEED 2^N-2 => 2^N-3
+--                  6. TILL 2^N-M == 1
                 WHEN OTHERS =>
                     state <= ZERO;
             END CASE;
