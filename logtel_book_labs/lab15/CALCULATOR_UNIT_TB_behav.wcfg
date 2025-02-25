@@ -11,12 +11,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="150001fs"></ZoomEndTime>
-      <Cursor1Time time="100000fs"></Cursor1Time>
+      <ZoomEndTime time="150801fs"></ZoomEndTime>
+      <Cursor1Time time="148760fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="106"></ValueColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="7" />
    <wvobject fp_name="/CALCULATOR_UNIT_TB/CLK" type="logic">
@@ -28,8 +28,8 @@
       <obj_property name="ObjectShortName">RST</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/SEL" type="array">
-      <obj_property name="ElementShortName">SEL[0:0]</obj_property>
-      <obj_property name="ObjectShortName">SEL[0:0]</obj_property>
+      <obj_property name="ElementShortName">SEL[1:0]</obj_property>
+      <obj_property name="ObjectShortName">SEL[1:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/DATA_IN_A" type="array">

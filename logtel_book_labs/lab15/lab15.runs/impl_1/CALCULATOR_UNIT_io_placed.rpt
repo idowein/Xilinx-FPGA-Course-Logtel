@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date                      : Mon Feb 24 17:51:39 2025
+| Date                      : Tue Feb 25 16:11:11 2025
 | Host                      : Ido running 64-bit major release  (build 9200)
 | Command                   : report_io -file CALCULATOR_UNIT_io_placed.rpt
 | Design                    : CALCULATOR_UNIT
@@ -246,7 +246,7 @@ Table of Contents
 | M11        |               |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M12        |               |            | VCCAUX                       | VCCAUX      |             |         |            |      |                     |                      |    1.80 |            |           |          |      |                  |              |                   |              |
 | M13        | DATA_IN_B[11] | High Range | IO_L6N_T0_D08_VREF_14        | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
-| M14        |               | High Range | IO_L2N_T0_D03_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| M14        | SEL[1]        | High Range | IO_L2N_T0_D03_14             | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | M15        |               |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M16        | DATA_IN_B[4]  | High Range | IO_L10P_T1_D14_14            | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | M17        | DATA_IN_B[3]  | High Range | IO_L10N_T1_D15_14            | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |

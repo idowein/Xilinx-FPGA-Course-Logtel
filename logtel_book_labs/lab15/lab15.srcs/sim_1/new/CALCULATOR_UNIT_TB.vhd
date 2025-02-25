@@ -44,7 +44,7 @@ architecture Behavioral of CALCULATOR_UNIT_TB is
     port(
         CLK : IN STD_LOGIC;
         RST: IN STD_LOGIC;
-        SEL : IN STD_LOGIC_VECTOR(0 DOWNTO 0);              -- 4 arithemtic actions in the calculator
+        SEL : IN STD_LOGIC_VECTOR(1 DOWNTO 0);              -- 4 arithemtic actions in the calculator
         DATA_IN_A : IN STD_LOGIC_VECTOR(24 DOWNTO 0);
         DATA_IN_B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
         DATA_OUT : OUT STD_LOGIC_VECTOR(42 DOWNTO 0)
@@ -54,7 +54,7 @@ architecture Behavioral of CALCULATOR_UNIT_TB is
   -- Signals
   signal CLK        : STD_LOGIC := '0';
   signal RST        : STD_LOGIC := '0';
-  signal SEL        : STD_LOGIC_VECTOR(0 DOWNTO 0) := (others => '0');
+  signal SEL        : STD_LOGIC_VECTOR(1 DOWNTO 0) := (others => '0');
   signal DATA_IN_A  : STD_LOGIC_VECTOR(24 DOWNTO 0) := (others => '0');
   signal DATA_IN_B  : STD_LOGIC_VECTOR(17 DOWNTO 0) := (others => '0');
   signal DATA_OUT : STD_LOGIC_VECTOR(42 DOWNTO 0) := (others => '0');
@@ -85,6 +85,9 @@ begin
   -- Stimulus process
   STIMULUS_PROCESS: PROCESS
   BEGIN
+  
+    WAIT FOR CLK_PERIOD * 5; -- clean the pipline
+  
     -- ADDER
     SEL(0) <= '0';
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
@@ -95,6 +98,12 @@ begin
     SEL(0) <= '1';
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
+    WAIT FOR 50 ns;
+    
+    -- SUBSTUCOR
+    SEL <= "10";
+    DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 25));
+    DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 18));
     WAIT FOR 50 ns;
     
     -- Finish simulation
