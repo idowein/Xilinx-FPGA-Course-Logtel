@@ -109,6 +109,11 @@ begin
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
     
+    -- DIVIDER
+    STATE_NUM <= "11";
+    DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(100, 25));
+    DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
+
     -- Finish simulation
     WAIT;
   END PROCESS;

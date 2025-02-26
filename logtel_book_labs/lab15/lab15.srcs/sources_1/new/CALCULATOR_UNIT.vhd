@@ -60,7 +60,7 @@ architecture Behavioral of CALCULATOR_UNIT is
     -- division signals
     signal DIVIDEND : STD_LOGIC_VECTOR(24 DOWNTO 0):= (others => '0');
     signal QUOTIENT : STD_LOGIC_VECTOR(42 DOWNTO 0):= (others => '0');  
-    signal TEMP : STD_LOGIC_VECTOR(42 DOWNTO 0):= (others => '0'); 
+    signal TEMP : STD_LOGIC_VECTOR(24 DOWNTO 0):= (others => '0'); 
     
 begin
 
@@ -78,9 +78,11 @@ begin
     -- State machine process
 PROCESS (CLK, RST, STATE_NUM)
 
-variable index : INTEGER := 24;  -- Start with 2^24
-
+      VARIABLE TEMP_VAR : STD_LOGIC_VECTOR(24 DOWNTO 0):= (others => '0');        -- solve iteration problem of immidiatley
+    
 BEGIN
+    -- Initialize the variable with the current value of TEMP
+    TEMP_VAR := TEMP;  
     IF RISING_EDGE(CLK) THEN
         IF RST = '1' THEN                   -- ZERO STATE
             state <= ZERO;
@@ -114,18 +116,23 @@ BEGIN
                     -- initializtion
                     DIVIDEND   <= DATA_IN_A;    -- Dividend  
                     B_input    <= DATA_IN_B;    -- Divisor
-                    TEMP(index) <= '1';  -- Start from 2^24      
-                                  
-                    -- 1. LOOP - WHAT IS THE GREAT 2^N NUM THAT IS LOWER THAN THE DIVIDEND
-                    FOR I IN 0 TO 24 LOOP
-                        IF (TEMP > DATA_IN_A) THEN
-                            TEMP(INDEX) <= '0';
-                            INDEX := INDEX - 1;             -- DANGER!! WHAT THE LOOP DO WHEN INDEX = 0?
-                            TEMP(INDEX) <= '1';
-                        END IF;
-                    END LOOP;
                     
---                  2. MULTIPLY IT WITH THE DIVIDER
+                    -- Initialize TEMP_VAR to 2^24
+                    TEMP_VAR := (others => '0');
+                    TEMP_VAR(24) := '1';       -- Set the MSB to '1' for 2^24    
+                                  
+                    -- Loop to find the greatest 2^N less than or equal to DIVIDEND
+                    FOR I IN 24 DOWNTO 0 LOOP
+                        IF (UNSIGNED(TEMP_VAR) > UNSIGNED(DATA_IN_A)) THEN
+                            -- Shift TEMP_VAR right by one bit
+                            TEMP_VAR := STD_LOGIC_VECTOR(SHIFT_RIGHT(UNSIGNED(TEMP_VAR), 1));
+                        ELSE
+                            EXIT;  -- Found the correct TEMP_VAR
+                        END IF;
+                     END LOOP;
+                    TEMP <= TEMP_VAR;   -- Assign the computed value to the TEMP signal
+                    
+                    -- 2. MULTIPLY IT WITH THE DIVIDER
                     
 --                  3. IF SUM > NUM : TAKE THE NEXT SMALL NUMBER AFTER 2^N => 2^N-1
 

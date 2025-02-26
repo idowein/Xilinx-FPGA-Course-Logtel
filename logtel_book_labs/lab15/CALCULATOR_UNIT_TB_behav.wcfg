@@ -10,39 +10,44 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="104520fs"></ZoomStartTime>
-      <ZoomEndTime time="255321fs"></ZoomEndTime>
+      <ZoomStartTime time="169090fs"></ZoomStartTime>
+      <ZoomEndTime time="244891fs"></ZoomEndTime>
       <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="102"></ValueColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject fp_name="/CALCULATOR_UNIT_TB/CLK" type="logic">
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
-   <wvobject fp_name="/CALCULATOR_UNIT_TB/RST" type="logic">
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/RST" type="logic">
       <obj_property name="ElementShortName">RST</obj_property>
       <obj_property name="ObjectShortName">RST</obj_property>
    </wvobject>
-   <wvobject fp_name="/CALCULATOR_UNIT_TB/SEL" type="array">
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/SEL" type="array">
       <obj_property name="ElementShortName">SEL[1:0]</obj_property>
       <obj_property name="ObjectShortName">SEL[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CALCULATOR_UNIT_TB/DATA_IN_A" type="array">
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/STATE_NUM" type="array">
+      <obj_property name="ElementShortName">STATE_NUM[1:0]</obj_property>
+      <obj_property name="ObjectShortName">STATE_NUM[1:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DATA_IN_A" type="array">
       <obj_property name="ElementShortName">DATA_IN_A[24:0]</obj_property>
       <obj_property name="ObjectShortName">DATA_IN_A[24:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CALCULATOR_UNIT_TB/DATA_IN_B" type="array">
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DATA_IN_B" type="array">
       <obj_property name="ElementShortName">DATA_IN_B[17:0]</obj_property>
       <obj_property name="ObjectShortName">DATA_IN_B[17:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/CALCULATOR_UNIT_TB/DATA_OUT" type="array">
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DATA_OUT" type="array">
       <obj_property name="ElementShortName">DATA_OUT[42:0]</obj_property>
       <obj_property name="ObjectShortName">DATA_OUT[42:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
@@ -50,5 +55,45 @@
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/state" type="other">
       <obj_property name="ElementShortName">state</obj_property>
       <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/A_input" type="array">
+      <obj_property name="ElementShortName">A_input[24:0]</obj_property>
+      <obj_property name="ObjectShortName">A_input[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/B_input" type="array">
+      <obj_property name="ElementShortName">B_input[17:0]</obj_property>
+      <obj_property name="ObjectShortName">B_input[17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/D_input" type="array">
+      <obj_property name="ElementShortName">D_input[17:0]</obj_property>
+      <obj_property name="ObjectShortName">D_input[17:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/SEL_input" type="array">
+      <obj_property name="ElementShortName">SEL_input[1:0]</obj_property>
+      <obj_property name="ObjectShortName">SEL_input[1:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/P_OUT" type="array">
+      <obj_property name="ElementShortName">P_OUT[42:0]</obj_property>
+      <obj_property name="ObjectShortName">P_OUT[42:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DIVIDEND" type="array">
+      <obj_property name="ElementShortName">DIVIDEND[24:0]</obj_property>
+      <obj_property name="ObjectShortName">DIVIDEND[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/QUOTIENT" type="array">
+      <obj_property name="ElementShortName">QUOTIENT[42:0]</obj_property>
+      <obj_property name="ObjectShortName">QUOTIENT[42:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/TEMP" type="array">
+      <obj_property name="ElementShortName">TEMP[24:0]</obj_property>
+      <obj_property name="ObjectShortName">TEMP[24:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>
