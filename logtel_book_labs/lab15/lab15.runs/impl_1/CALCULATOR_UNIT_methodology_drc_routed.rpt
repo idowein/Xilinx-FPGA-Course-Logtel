@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Feb 26 17:45:46 2025
+| Date         : Wed Feb 26 18:29:28 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_methodology -file CALCULATOR_UNIT_methodology_drc_routed.rpt -pb CALCULATOR_UNIT_methodology_drc_routed.pb -rpx CALCULATOR_UNIT_methodology_drc_routed.rpx
 | Design       : CALCULATOR_UNIT
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 172
+             Violations found: 174
 +-----------+------------------+-----------------------------+------------+
 | Rule      | Severity         | Description                 | Violations |
 +-----------+------------------+-----------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell | 172        |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell | 174        |
 +-----------+------------------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -890,6 +890,16 @@ Related violations: <none>
 TIMING-17#172 Critical Warning
 Non-clocked sequential cell  
 The clock pin D_input_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#173 Critical Warning
+Non-clocked sequential cell  
+The clock pin SEL_input_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#174 Critical Warning
+Non-clocked sequential cell  
+The clock pin SEL_input_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 

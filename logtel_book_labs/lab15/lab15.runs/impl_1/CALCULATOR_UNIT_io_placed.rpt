@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date                      : Wed Feb 26 17:45:26 2025
+| Date                      : Wed Feb 26 18:29:07 2025
 | Host                      : Ido running 64-bit major release  (build 9200)
 | Command                   : report_io -file CALCULATOR_UNIT_io_placed.rpt
 | Design                    : CALCULATOR_UNIT
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            90 |
+|            92 |
 +---------------+
 
 
@@ -296,7 +296,7 @@ Table of Contents
 | R7         |               | High Range | IO_L23P_T3_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R8         |               | High Range | IO_L24P_T3_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R9         |               | Dedicated  | VCCO_0                       | VCCO        |             |       0 |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |
-| R10        | SEL[0]        | High Range | IO_25_14                     | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
+| R10        | STATE_NUM[0]  | High Range | IO_25_14                     | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | R11        |               | High Range | IO_0_14                      | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | R12        | DATA_OUT[36]  | High Range | IO_L5P_T0_D06_14             | OUTPUT      | LVCMOS18*   |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | R13        | DATA_OUT[35]  | High Range | IO_L5N_T0_D07_14             | OUTPUT      | LVCMOS18*   |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
@@ -314,7 +314,7 @@ Table of Contents
 | T7         |               |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | T8         |               | High Range | IO_L24N_T3_34                | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | T9         | RST           | High Range | IO_L24P_T3_A01_D17_14        | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
-| T10        | SEL[1]        | High Range | IO_L24N_T3_A00_D16_14        | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
+| T10        | STATE_NUM[1]  | High Range | IO_L24N_T3_A00_D16_14        | INPUT       | LVCMOS18*   |      14 |            |      |                     |                 NONE |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | T11        | DATA_OUT[9]   | High Range | IO_L19P_T3_A10_D26_14        | OUTPUT      | LVCMOS18*   |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |
 | T12        |               | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    1.80 |            |           |          |      |                  |              |                   |              |
 | T13        | DATA_OUT[1]   | High Range | IO_L23P_T3_A03_D19_14        | OUTPUT      | LVCMOS18*   |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | UNFIXED    |           |          |      | NONE             |              |                   |              |

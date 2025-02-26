@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Feb 26 17:45:26 2025
+| Date         : Wed Feb 26 18:29:07 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file CALCULATOR_UNIT_control_sets_placed.rpt
 | Design       : CALCULATOR_UNIT
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |     4 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    20 |
+| Unused register locations in slices containing registers |    18 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              68 |           21 |
+| No           | No                    | No                     |              68 |           22 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |             104 |           34 |
+| Yes          | No                    | No                     |             106 |           29 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -73,10 +73,10 @@ Table of Contents
 +----------------+----------------------+------------------+------------------+----------------+
 |  Clock Signal  |     Enable Signal    | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +----------------+----------------------+------------------+------------------+----------------+
+|  CLK_IBUF_BUFG | B_input[17]_i_1_n_0  |                  |                5 |             18 |
 |  CLK_IBUF_BUFG | D_input[17]_i_1_n_0  |                  |                6 |             18 |
-|  CLK_IBUF_BUFG | B_input[17]_i_1_n_0  |                  |                7 |             18 |
-|  CLK_IBUF_BUFG |                      |                  |               21 |             68 |
-|  CLK_IBUF_BUFG | DATA_OUT[42]_i_1_n_0 |                  |               21 |             68 |
+|  CLK_IBUF_BUFG |                      |                  |               22 |             68 |
+|  CLK_IBUF_BUFG | DATA_OUT[42]_i_1_n_0 |                  |               18 |             70 |
 +----------------+----------------------+------------------+------------------+----------------+
 
 

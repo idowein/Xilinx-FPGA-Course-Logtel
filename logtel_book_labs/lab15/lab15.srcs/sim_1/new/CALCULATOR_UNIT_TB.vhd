@@ -45,6 +45,7 @@ architecture Behavioral of CALCULATOR_UNIT_TB is
         CLK : IN STD_LOGIC;
         RST: IN STD_LOGIC;
         SEL : IN STD_LOGIC_VECTOR(1 DOWNTO 0);              -- 4 arithemtic actions in the calculator
+        STATE_NUM : IN STD_LOGIC_VECTOR(1 DOWNTO 0);        
         DATA_IN_A : IN STD_LOGIC_VECTOR(24 DOWNTO 0);
         DATA_IN_B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
         DATA_OUT : OUT STD_LOGIC_VECTOR(42 DOWNTO 0)
@@ -55,6 +56,7 @@ architecture Behavioral of CALCULATOR_UNIT_TB is
   signal CLK        : STD_LOGIC := '0';
   signal RST        : STD_LOGIC := '0';
   signal SEL        : STD_LOGIC_VECTOR(1 DOWNTO 0) := (others => '0');
+  signal STATE_NUM        : STD_LOGIC_VECTOR(1 DOWNTO 0) := (others => '0');
   signal DATA_IN_A  : STD_LOGIC_VECTOR(24 DOWNTO 0) := (others => '0');
   signal DATA_IN_B  : STD_LOGIC_VECTOR(17 DOWNTO 0) := (others => '0');
   signal DATA_OUT : STD_LOGIC_VECTOR(42 DOWNTO 0) := (others => '0');
@@ -71,6 +73,7 @@ begin
       CLK => CLK,
       RST => RST,
       SEL => SEL,
+      STATE_NUM => STATE_NUM,  
       DATA_IN_A => DATA_IN_A,
       DATA_IN_B => DATA_IN_B,
       DATA_OUT => DATA_OUT 
@@ -89,19 +92,19 @@ begin
     WAIT FOR CLK_PERIOD * 5; -- clean the pipline
   
     -- ADDER
-    SEL(0) <= '0';
+    STATE_NUM(0) <= '0';
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
     
     -- MULTIPLIER
-    SEL(0) <= '1';
+    STATE_NUM(0) <= '1';
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
     
     -- SUBSTUCOR
-    SEL <= "10";
+    STATE_NUM <= "10";
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
