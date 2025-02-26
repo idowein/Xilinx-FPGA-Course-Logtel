@@ -1,3 +1,22 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: Ido Weinstock
+-- 
+-- Create Date: 
+-- Design Name: 
+-- Module Name: CALCULATOR_UNIT
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
@@ -30,8 +49,10 @@ architecture Behavioral of CALCULATOR_UNIT is
         );
     END COMPONENT;
 
+    signal A_input : STD_LOGIC_VECTOR(24 DOWNTO 0):= (others => '0');
     signal B_input : STD_LOGIC_VECTOR(17 DOWNTO 0):= (others => '0');
     signal D_input : STD_LOGIC_VECTOR(17 DOWNTO 0):= (others => '0');
+    signal P_OUT : STD_LOGIC_VECTOR(42 DOWNTO 0):= (others => '0');
 
 begin
 
@@ -40,10 +61,10 @@ begin
         Port map (
             CLK     => CLK,
             SEL     => SEL,
-            A       => DATA_IN_A,
+            A       => A_input,
             B       => B_input,
             D       => D_input,
-            P       => DATA_OUT
+            P       => P_OUT
         );
 
     -- State machine process
@@ -54,15 +75,25 @@ BEGIN
             state <= ZERO;
         ELSE
             CASE SEL IS
+            
                 WHEN "00" =>                -- ADDER STATE
                     state <= ADDER;
                     D_input <= DATA_IN_B;
+                    A_input <= DATA_IN_A;
+                    DATA_OUT <= P_OUT;
+                    
                 WHEN "01" =>                -- MULTIPLIER STATE
                     state <= MULTIPLIER;
                     B_input <= DATA_IN_B;
+                    A_input <= DATA_IN_A;
+                    DATA_OUT <= P_OUT;
+                    
                 WHEN "10" =>                -- SUB STATE
                     state <= SUBSTRUCTOR;
                     D_input <= DATA_IN_B;
+                    A_input <= DATA_IN_A;
+                    DATA_OUT <= P_OUT;
+                    
 --                WHEN "11" =>                -- DIV STATE
 --                    state <= DIVIDER;
 --                  1. FOR LOOP - WHAT IS THE GREAT 2^N NUM THAT IS UNDER THE NUMBER
@@ -71,8 +102,10 @@ BEGIN
 --                  4. ADD 2^N-2 TO 2^N-1
 --                  5. IF THE SUMM * THE DIVIDER > NUM TAKE INSTEED 2^N-2 => 2^N-3
 --                  6. TILL 2^N-M == 1
+
                 WHEN OTHERS =>
                     state <= ZERO;
+                    
             END CASE;
         END IF;
     END IF;

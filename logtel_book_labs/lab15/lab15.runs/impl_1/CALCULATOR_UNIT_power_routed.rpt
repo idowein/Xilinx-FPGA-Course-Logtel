@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Tue Feb 25 17:31:51 2025
+| Date             : Wed Feb 26 17:45:46 2025
 | Host             : Ido running 64-bit major release  (build 9200)
 | Command          : report_power -file CALCULATOR_UNIT_power_routed.rpt -pb CALCULATOR_UNIT_power_summary_routed.pb -rpx CALCULATOR_UNIT_power_routed.rpx
 | Design           : CALCULATOR_UNIT
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 39.665 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 16.768 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 38.874                           |
-| Device Static (W)        | 0.791                            |
+| Dynamic (W)              | 16.351                           |
+| Device Static (W)        | 0.417                            |
 | Effective TJA (C/W)      | 4.6                              |
-| Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 125.0                            |
+| Max Ambient (C)          | 8.5                              |
+| Junction Temperature (C) | 101.5                            |
 | Confidence Level         | Low                              |
 | Setting File             | ---                              |
 | Simulation Activity File | ---                              |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.046 |      141 |       --- |             --- |
-|   LUT as Logic |     0.028 |       22 |     63400 |            0.03 |
-|   Register     |     0.013 |      104 |    126800 |            0.08 |
+| Slice Logic    |     0.063 |      210 |       --- |             --- |
+|   LUT as Logic |     0.029 |       23 |     63400 |            0.04 |
+|   Register     |     0.028 |      172 |    126800 |            0.14 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       13 |       --- |             --- |
-| Signals        |     1.343 |      218 |       --- |             --- |
-| DSPs           |     1.066 |        1 |       240 |            0.42 |
-| I/O            |    36.419 |       90 |       210 |           42.86 |
-| Static Power   |     0.791 |          |           |                 |
-| Total          |    39.665 |          |           |                 |
+| Signals        |     1.051 |      287 |       --- |             --- |
+| DSPs           |     1.026 |        1 |       240 |            0.42 |
+| I/O            |    14.211 |       90 |       210 |           42.86 |
+| Static Power   |     0.417 |          |           |                 |
+| Total          |    16.768 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,16 +71,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     3.206 |       2.643 |      0.563 |
-| Vccaux    |       1.800 |     3.059 |       2.966 |      0.093 |
+| Vccint    |       1.000 |     2.600 |       2.328 |      0.272 |
+| Vccaux    |       1.800 |     1.200 |       1.148 |      0.052 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |    17.166 |      17.162 |      0.004 |
+| Vcco18    |       1.800 |     6.647 |       6.643 |      0.004 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.018 |       0.000 |      0.018 |
+| Vccbram   |       1.000 |     0.008 |       0.000 |      0.008 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -138,10 +138,10 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| CALCULATOR_UNIT |    38.874 |
-|   DUT_DSP       |     2.189 |
-|     U0          |     2.189 |
-|       i_synth   |     2.189 |
+| CALCULATOR_UNIT |    16.351 |
+|   DUT_DSP       |     1.470 |
+|     U0          |     1.470 |
+|       i_synth   |     1.470 |
 +-----------------+-----------+
 
 
