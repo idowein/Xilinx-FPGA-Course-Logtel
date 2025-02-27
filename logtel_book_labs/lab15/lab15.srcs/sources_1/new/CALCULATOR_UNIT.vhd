@@ -16,7 +16,7 @@ entity CALCULATOR_UNIT is
         CLK         : IN STD_LOGIC;
         RST         : IN STD_LOGIC;
         SEL         : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-        STATE_NUM   : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+        STATE_NUM   : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
         DATA_IN_A   : IN STD_LOGIC_VECTOR(24 DOWNTO 0);  -- Dividend
         DATA_IN_B   : IN STD_LOGIC_VECTOR(17 DOWNTO 0);  -- Divisor
         DATA_OUT    : OUT STD_LOGIC_VECTOR(42 DOWNTO 0)  -- Quotient
@@ -26,7 +26,7 @@ end CALCULATOR_UNIT;
 architecture Behavioral of CALCULATOR_UNIT is
 
     -- State machine declaration
-    type state_type is (ZERO, ADDER, MULTIPLIER, SUBSTRUCTOR, DIVIDER);
+    type state_type is (ZERO, ADDER, MULTIPLIER, SUBSTRUCTOR, INITIALIZTION, DIVIDER);
     signal state : state_type := ZERO;
 
     -- DSP48 Macro for multiplication
@@ -82,43 +82,45 @@ begin
             ELSE
                 CASE STATE_NUM IS
                 
-                    WHEN "00" =>  -- ADDER STATE
+                    WHEN "000" =>  -- ADDER STATE
                         state <= ADDER;
                         SEL_input <= "00";
                         D_input <= DATA_IN_B;
                         A_input <= DATA_IN_A;
-                        --DATA_OUT <= P_OUT;
 
-                    WHEN "01" =>  -- MULTIPLIER STATE
+                    WHEN "001" =>  -- MULTIPLIER STATE
                         state <= MULTIPLIER;
                         SEL_input <= "01";
                         B_input <= DATA_IN_B;
                         A_input <= DATA_IN_A;
-                        --DATA_OUT <= P_OUT;
 
-                    WHEN "10" =>  -- SUBTRACTOR STATE
+                    WHEN "010" =>  -- SUBTRACTOR STATE
                         state <= SUBSTRUCTOR;
                         SEL_input <= "10";
                         D_input <= DATA_IN_B;
                         A_input <= DATA_IN_A;
-                        --DATA_OUT <= P_OUT;
+                        
+                    WHEN "011" =>  -- initializtion
+                       state <= INITIALIZTION; 
+                       A_input <= (others => '0');
+                       B_input <= (others => '0');
+                       D_input <= (others => '0');                        
 
-                    WHEN "11" =>  -- DIVIDER STATE
+                    WHEN "100" =>  -- DIVIDER STATE
                         state <= DIVIDER;
 
                         -- Step 1: Initialize division
                         IF DIVISION_STATE = "00" THEN
                             DIVIDEND <= UNSIGNED(DATA_IN_A);
-                            B_input  <= DATA_IN_B;  
                             TEMP     <= (others => '0');
                             TEMP(24) <= '1';  -- Start at 2^24
                             QUOTIENT <= (others => '0');
                             DIVISION_STATE <= "01";
                             SEL_input <= "00";  -- summing operation  
-
                             
                         -- Step 2: Accumulate QUOTIENT and TEMP
                         ELSIF DIVISION_STATE = "01" THEN
+                            B_input  <= DATA_IN_B;
                             A_input <= STD_LOGIC_VECTOR(TEMP);  -- TEMP is power of 2
                             D_input <= STD_LOGIC_VECTOR(QUOTIENT(17 DOWNTO 0));
                             SEL_input <= "00";  -- summing operation  

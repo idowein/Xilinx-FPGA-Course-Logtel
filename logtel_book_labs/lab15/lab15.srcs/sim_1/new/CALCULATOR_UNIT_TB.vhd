@@ -45,7 +45,7 @@ architecture Behavioral of CALCULATOR_UNIT_TB is
         CLK : IN STD_LOGIC;
         RST: IN STD_LOGIC;
         SEL : IN STD_LOGIC_VECTOR(1 DOWNTO 0);              -- 4 arithemtic actions in the calculator
-        STATE_NUM : IN STD_LOGIC_VECTOR(1 DOWNTO 0);        
+        STATE_NUM : IN STD_LOGIC_VECTOR(2 DOWNTO 0);        
         DATA_IN_A : IN STD_LOGIC_VECTOR(24 DOWNTO 0);
         DATA_IN_B : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
         DATA_OUT : OUT STD_LOGIC_VECTOR(42 DOWNTO 0)
@@ -56,7 +56,7 @@ architecture Behavioral of CALCULATOR_UNIT_TB is
   signal CLK        : STD_LOGIC := '0';
   signal RST        : STD_LOGIC := '0';
   signal SEL        : STD_LOGIC_VECTOR(1 DOWNTO 0) := (others => '0');
-  signal STATE_NUM        : STD_LOGIC_VECTOR(1 DOWNTO 0) := (others => '0');
+  signal STATE_NUM        : STD_LOGIC_VECTOR(2 DOWNTO 0) := (others => '0');
   signal DATA_IN_A  : STD_LOGIC_VECTOR(24 DOWNTO 0) := (others => '0');
   signal DATA_IN_B  : STD_LOGIC_VECTOR(17 DOWNTO 0) := (others => '0');
   signal DATA_OUT : STD_LOGIC_VECTOR(42 DOWNTO 0) := (others => '0');
@@ -92,25 +92,31 @@ begin
     WAIT FOR CLK_PERIOD * 5; -- clean the pipline
   
     -- ADDER
-    STATE_NUM(0) <= '0';
+    STATE_NUM <= "000";
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
     
     -- MULTIPLIER
-    STATE_NUM(0) <= '1';
+    STATE_NUM <= "001";
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
     
     -- SUBSTUCOR
-    STATE_NUM <= "10";
+    STATE_NUM <= "010";
+    DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
+    DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
+    WAIT FOR 50 ns;
+    
+    -- INITIALIZTION
+    STATE_NUM <= "011";
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(4, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
     WAIT FOR 50 ns;
     
     -- DIVIDER
-    STATE_NUM <= "11";
+    STATE_NUM <= "100";
     DATA_IN_A <= STD_LOGIC_VECTOR(TO_UNSIGNED(100, 25));
     DATA_IN_B <= STD_LOGIC_VECTOR(TO_UNSIGNED(3, 18));
 
