@@ -53,8 +53,9 @@ architecture Behavioral of CALCULATOR_UNIT is
     signal QUOTIENT       : UNSIGNED(24 DOWNTO 0) := (others => '0');  
     signal TEMP           : UNSIGNED(24 DOWNTO 0) := (others => '0');  
     signal MULT_RESULT    : UNSIGNED(42 DOWNTO 0) := (others => '0');  -- Holds multiplication result
-    signal SUM_RESULT    : UNSIGNED(42 DOWNTO 0) := (others => '0');  -- Holds sum result
-    signal DIVISION_STATE : STD_LOGIC_VECTOR(2 DOWNTO 0) := "000";
+    --signal SUM_RESULT    : UNSIGNED(42 DOWNTO 0) := (others => '0');  -- Holds sum result
+    signal DIVISION_STATE : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
+    signal SUITABLE : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
     
 begin
 
@@ -77,7 +78,7 @@ begin
                 state           <= ZERO;
                 QUOTIENT        <= (others => '0');
                 TEMP            <= (others => '0');
-                DIVISION_STATE  <= "000";
+                DIVISION_STATE  <= "00";
             ELSE
                 CASE STATE_NUM IS
                 
@@ -106,52 +107,46 @@ begin
                         state <= DIVIDER;
 
                         -- Step 1: Initialize division
-                        IF DIVISION_STATE = "000" THEN
+                        IF DIVISION_STATE = "00" THEN
                             DIVIDEND <= UNSIGNED(DATA_IN_A);
                             B_input  <= DATA_IN_B;  
                             TEMP     <= (others => '0');
                             TEMP(24) <= '1';  -- Start at 2^24
                             QUOTIENT <= (others => '0');
-                            DIVISION_STATE <= "001";
+                            DIVISION_STATE <= "01";
+                            SEL_input <= "00";  -- summing operation  
+
                             
-                        -- Step 2: Sum up QUOTIENT and TEMP
-                        ELSIF DIVISION_STATE = "001" THEN
-                        A_input <= STD_LOGIC_VECTOR(TEMP);  -- TEMP is power of 2
-                        B_input <= STD_LOGIC_VECTOR(QUOTIENT(17 DOWNTO 0));
-                        SEL_input <= "00";  -- summing operation  
-                        SUM_RESULT <= UNSIGNED(P_OUT);
-                        DIVISION_STATE <= "010";
+                        -- Step 2: Accumulate QUOTIENT and TEMP
+                        ELSIF DIVISION_STATE = "01" THEN
+                            A_input <= STD_LOGIC_VECTOR(TEMP);  -- TEMP is power of 2
+                            D_input <= STD_LOGIC_VECTOR(QUOTIENT(17 DOWNTO 0));
+                            SEL_input <= "00";  -- summing operation  
+                            QUOTIENT <= UNSIGNED(P_OUT(24 DOWNTO 0));
+                            DIVISION_STATE <= "10";
                             
                         -- Step 3: Multiply SUM (QUOTIENT + TEMP) * Divisor
-                        ELSIF DIVISION_STATE = "010" THEN
-                            A_input <= STD_LOGIC_VECTOR(SUM_RESULT(24 DOWNTO 0));  
+                        ELSIF DIVISION_STATE = "10" THEN
+                            A_input <= STD_LOGIC_VECTOR(QUOTIENT(24 DOWNTO 0));  
                             B_input  <= DATA_IN_B;
                             SEL_input <= "01";  -- Multiplication operation
                             MULT_RESULT <= UNSIGNED(P_OUT);
 
-                            -- Check if (SUM * Divisor) > Dividend
+                            -- Check if MULT_RESULT(SUM * Divisor) > Dividend
                             IF MULT_RESULT > DIVIDEND THEN
                                 TEMP <= SHIFT_RIGHT(TEMP, 1);  -- Reduce power of 2
+                                DIVISION_STATE <= "01";        -- Redefine QUOTIENT
+                                SUITABLE <= "00";
                             ELSE
-                                DIVISION_STATE <= "011";  -- Continue division process
+                                DIVISION_STATE <= "11";  -- Continue division process
                             END IF;
+                            DIVISION_STATE <= "11";
 
-                        -- Step 4: Accumulate Quotient
-                        ELSIF DIVISION_STATE = "011" THEN
-                        -- Add current power of 2 to quotient
-                        
---                        A_input <= STD_LOGIC_VECTOR(TEMP);  -- TEMP is power of 2
---                        B_input <= STD_LOGIC_VECTOR(QUOTIENT(17 DOWNTO 0));
---                        SEL_input <= "00";  -- summing operation  
---                        QUOTIENT <= UNSIGNED(P_OUT(24 DOWNTO 0));
-                          
-                            TEMP <= SHIFT_RIGHT(TEMP, 1);  -- Reduce TEMP to next lower power of 2
-                            DIVISION_STATE <= "100";
-
-                        -- Step 5: Continue until reaching 2^0
-                        ELSIF DIVISION_STATE = "100" THEN
+                        -- Step 4: Continue until reaching 2^0
+                        ELSIF DIVISION_STATE = "11" THEN
                             IF TEMP /= "0000000000000000000000001" THEN
-                                DIVISION_STATE <= "001";  -- Restart summing with next power
+                                SUITABLE <= "01";
+                                DIVISION_STATE <= "01";  -- Restart summing with next power
                             ELSE
                                 state <= ZERO;  -- Finish division
                             END IF;
