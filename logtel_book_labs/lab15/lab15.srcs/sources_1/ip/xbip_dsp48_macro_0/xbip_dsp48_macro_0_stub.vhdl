@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Tue Feb 25 15:59:45 2025
+-- Date        : Tue Feb 25 15:59:44 2025
 -- Host        : Ido running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub {C:/Users/idowe/FPGA
---               Projects/FPGA-Course-Logtel/logtel_book_labs/lab15/lab15.srcs/sources_1/ip/xbip_dsp48_macro_0/xbip_dsp48_macro_0_stub.vhdl}
+-- Command     : write_vhdl -force -mode synth_stub -rename_top xbip_dsp48_macro_0 -prefix
+--               xbip_dsp48_macro_0_ xbip_dsp48_macro_0_stub.vhdl
 -- Design      : xbip_dsp48_macro_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1
