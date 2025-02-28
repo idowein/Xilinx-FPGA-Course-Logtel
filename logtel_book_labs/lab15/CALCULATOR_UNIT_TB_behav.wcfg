@@ -10,9 +10,9 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="212801fs"></ZoomStartTime>
-      <ZoomEndTime time="289002fs"></ZoomEndTime>
-      <Cursor1Time time="255000fs"></Cursor1Time>
+      <ZoomStartTime time="439689fs"></ZoomStartTime>
+      <ZoomEndTime time="454930fs"></ZoomEndTime>
+      <Cursor1Time time="268600fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
@@ -20,8 +20,8 @@
    </column_width_setting>
    <WVObjectSize size="19" />
    <wave_markers>
-      <marker time="255000" label="" />
       <marker time="205000" label="" />
+      <marker time="255000" label="" />
    </wave_markers>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
@@ -59,6 +59,8 @@
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/state" type="other">
       <obj_property name="ElementShortName">state</obj_property>
       <obj_property name="ObjectShortName">state</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/A_input" type="array">
       <obj_property name="ElementShortName">A_input[24:0]</obj_property>
@@ -68,22 +70,22 @@
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/B_input" type="array">
       <obj_property name="ElementShortName">B_input[17:0]</obj_property>
       <obj_property name="ObjectShortName">B_input[17:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/D_input" type="array">
       <obj_property name="ElementShortName">D_input[17:0]</obj_property>
       <obj_property name="ObjectShortName">D_input[17:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/SEL_input" type="array">
       <obj_property name="ElementShortName">SEL_input[1:0]</obj_property>
       <obj_property name="ObjectShortName">SEL_input[1:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/P_OUT" type="array">
       <obj_property name="ElementShortName">P_OUT[42:0]</obj_property>
       <obj_property name="ObjectShortName">P_OUT[42:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DIVIDEND" type="array">
       <obj_property name="ElementShortName">DIVIDEND[24:0]</obj_property>
@@ -94,7 +96,7 @@
       <obj_property name="ElementShortName">QUOTIENT[24:0]</obj_property>
       <obj_property name="ObjectShortName">QUOTIENT[24:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/TEMP" type="array">
@@ -110,8 +112,8 @@
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DIVISION_STATE" type="array">
-      <obj_property name="ElementShortName">DIVISION_STATE[1:0]</obj_property>
-      <obj_property name="ObjectShortName">DIVISION_STATE[1:0]</obj_property>
+      <obj_property name="ElementShortName">DIVISION_STATE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">DIVISION_STATE[2:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <obj_property name="CustomSignalColor">#FF0000</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
