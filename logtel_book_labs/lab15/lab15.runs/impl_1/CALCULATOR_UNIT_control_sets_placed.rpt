@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Fri Feb 28 15:15:08 2025
+| Date         : Fri Feb 28 22:29:35 2025
 | Host         : Ido running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file CALCULATOR_UNIT_control_sets_placed.rpt
 | Design       : CALCULATOR_UNIT
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     9 |
-|    Minimum number of control sets                        |     9 |
+| Total control sets                                       |    10 |
+|    Minimum number of control sets                        |    10 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    41 |
+| Unused register locations in slices containing registers |    48 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,7 +39,7 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     9 |
+| Total control sets |    10 |
 | >= 0 to < 4        |     1 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     1 |
@@ -47,7 +47,7 @@ Table of Contents
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     7 |
+| >= 16              |     8 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              78 |           17 |
+| No           | No                    | No                     |              78 |           19 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              88 |           28 |
+| Yes          | No                    | No                     |             113 |           34 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              81 |           24 |
+| Yes          | Yes                   | No                     |              81 |           28 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -74,14 +74,15 @@ Table of Contents
 |  Clock Signal  |     Enable Signal    |   Set/Reset Signal  | Slice Load Count | Bel Load Count |
 +----------------+----------------------+---------------------+------------------+----------------+
 |  CLK_IBUF_BUFG | p_0_in[23]           | RST_IBUF            |                1 |              1 |
-|  CLK_IBUF_BUFG | D_input[24]_i_2_n_0  | D_input[24]_i_1_n_0 |                2 |              7 |
-|  CLK_IBUF_BUFG | D_input[17]_i_1_n_0  |                     |                8 |             18 |
+|  CLK_IBUF_BUFG | D_input[24]_i_2_n_0  | D_input[24]_i_1_n_0 |                3 |              7 |
+|  CLK_IBUF_BUFG | D_input[17]_i_1_n_0  |                     |                6 |             18 |
 |  CLK_IBUF_BUFG | B_input              |                     |                6 |             18 |
-|  CLK_IBUF_BUFG | p_0_in[18]           | RST_IBUF            |                4 |             23 |
-|  CLK_IBUF_BUFG | DIVIDEND[24]_i_1_n_0 |                     |                6 |             25 |
-|  CLK_IBUF_BUFG | SEL_input[1]_i_1_n_0 |                     |                8 |             27 |
-|  CLK_IBUF_BUFG | QUOTIENT[24]_i_1_n_0 | RST_IBUF            |               17 |             50 |
-|  CLK_IBUF_BUFG |                      |                     |               17 |             78 |
+|  CLK_IBUF_BUFG | p_0_in[0]            | RST_IBUF            |                5 |             23 |
+|  CLK_IBUF_BUFG | DIVIDEND[24]_i_1_n_0 |                     |                5 |             25 |
+|  CLK_IBUF_BUFG | SUM_RESULT           |                     |                6 |             25 |
+|  CLK_IBUF_BUFG | SEL_input            |                     |               11 |             27 |
+|  CLK_IBUF_BUFG | QUOTIENT[24]_i_1_n_0 | RST_IBUF            |               19 |             50 |
+|  CLK_IBUF_BUFG |                      |                     |               19 |             78 |
 +----------------+----------------------+---------------------+------------------+----------------+
 
 

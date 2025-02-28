@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Fri Feb 28 15:15:29 2025
+| Date             : Fri Feb 28 22:29:56 2025
 | Host             : Ido running 64-bit major release  (build 9200)
 | Command          : report_power -file CALCULATOR_UNIT_power_routed.rpt -pb CALCULATOR_UNIT_power_summary_routed.pb -rpx CALCULATOR_UNIT_power_routed.rpx
 | Design           : CALCULATOR_UNIT
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 5.084        |
+| Total On-Chip Power (W)  | 5.093        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 4.966        |
+| Dynamic (W)              | 4.976        |
 | Device Static (W)        | 0.118        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 61.8         |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.702 |      427 |       --- |             --- |
-|   LUT as Logic |     0.655 |      120 |     63400 |            0.19 |
-|   Register     |     0.028 |      247 |    126800 |            0.19 |
+| Slice Logic    |     0.671 |      456 |       --- |             --- |
+|   LUT as Logic |     0.624 |      118 |     63400 |            0.19 |
+|   Register     |     0.028 |      272 |    126800 |            0.21 |
 |   CARRY4       |     0.013 |        6 |     15850 |            0.04 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |     1.190 |      415 |       --- |             --- |
-| DSPs           |     1.059 |        1 |       240 |            0.42 |
-| I/O            |     2.015 |       91 |       210 |           43.33 |
+| Signals        |     1.210 |      444 |       --- |             --- |
+| DSPs           |     1.027 |        1 |       240 |            0.42 |
+| I/O            |     2.068 |       91 |       210 |           43.33 |
 | Static Power   |     0.118 |          |           |                 |
-| Total          |     5.084 |          |           |                 |
+| Total          |     5.093 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,11 +72,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     3.176 |       3.139 |      0.037 |
-| Vccaux    |       1.800 |     0.170 |       0.150 |      0.021 |
+| Vccint    |       1.000 |     3.133 |       3.096 |      0.037 |
+| Vccaux    |       1.800 |     0.174 |       0.154 |      0.021 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.870 |       0.866 |      0.004 |
+| Vcco18    |       1.800 |     0.894 |       0.890 |      0.004 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -139,10 +139,10 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| CALCULATOR_UNIT |     4.966 |
-|   DUT_DSP       |     1.509 |
-|     U0          |     1.509 |
-|       i_synth   |     1.509 |
+| CALCULATOR_UNIT |     4.976 |
+|   DUT_DSP       |     1.469 |
+|     U0          |     1.469 |
+|       i_synth   |     1.469 |
 +-----------------+-----------+
 
 

@@ -51,10 +51,10 @@ architecture Behavioral of CALCULATOR_UNIT is
     -- Division signals
     signal DIVIDEND       : STD_LOGIC_VECTOR(24 DOWNTO 0) := (others => '0');  
     signal QUOTIENT       : UNSIGNED(24 DOWNTO 0) := (others => '0');  
-    signal TEMP_QUOTIENT       : UNSIGNED(24 DOWNTO 0) := (others => '0');
     signal TEMP           : UNSIGNED(24 DOWNTO 0) := (others => '0');  
     signal MULT_RESULT    : STD_LOGIC_VECTOR(42 DOWNTO 0) := (others => '0');  -- Holds multiplication result
-    signal DIVISION_STATE : STD_LOGIC_VECTOR(2 DOWNTO 0) := "000";
+    signal SUM_RESULT       : UNSIGNED(24 DOWNTO 0) := (others => '0'); 
+    signal DIVISION_STATE : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0000";
     signal SUITABLE : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
     
 begin
@@ -79,8 +79,7 @@ begin
                 state           <= ZERO;
                 QUOTIENT        <= (others => '0');
                 TEMP            <= (others => '0');
-                TEMP_QUOTIENT        <= (others => '0');
-                DIVISION_STATE  <= "000";
+                DIVISION_STATE  <= "0000";
             ELSE
                 CASE STATE_NUM IS
                 
@@ -110,60 +109,67 @@ begin
                        SEL_input <= "00";  
                        
                        TEMP(23) <= '1';  -- Start at 2^24
-                       TEMP_QUOTIENT <= (others => '0');
+                       QUOTIENT <= (others => '0');
                        B_input  <= DATA_IN_B;                     
 
                     WHEN "100" =>  -- DIVIDER STATE
                         state <= DIVIDER;
 
                         -- Step 0: DSP input initialization before summing
-                        IF DIVISION_STATE = "000" THEN
+                        IF DIVISION_STATE = "0000" THEN
                             DIVIDEND <= DATA_IN_A;
                             A_input <= STD_LOGIC_VECTOR(TEMP);  -- TEMP is power of 2
-                            D_input <= STD_LOGIC_VECTOR(TEMP_QUOTIENT);
+                            D_input <= STD_LOGIC_VECTOR(QUOTIENT);
                             SEL_input <= "00";  -- summing operation  
-                            DIVISION_STATE <= "001";
+                            DIVISION_STATE <= "0001";
                             
                         -- Step 1: P_OUT input     
-                        ELSIF DIVISION_STATE = "001" THEN
-                            DIVISION_STATE <= "010";
+                        ELSIF DIVISION_STATE = "0001" THEN
+                            DIVISION_STATE <= "0010";
                          
-                        -- Step 2: TEMP_QUOTIENT input initialization    
-                        ELSIF DIVISION_STATE = "010" THEN
-                            TEMP_QUOTIENT <= UNSIGNED(P_OUT(24 DOWNTO 0));
-                            DIVISION_STATE <= "011";
+                        -- Step 2: SUM_RESULT input initialization    
+                        ELSIF DIVISION_STATE = "0010" THEN
+                            SUM_RESULT <= UNSIGNED(P_OUT(24 DOWNTO 0));
+                            DIVISION_STATE <= "0011";
                             
-                        -- Step 3: Multiply SUM (TEMP_QUOTIENT + TEMP) * Divisor 
-                        ELSIF DIVISION_STATE = "011" THEN
-                            A_input <= STD_LOGIC_VECTOR(TEMP_QUOTIENT(24 DOWNTO 0));  
+                        -- Step 3: Multiply SUM (QUOTIENT + TEMP) * Divisor 
+                        ELSIF DIVISION_STATE = "0011" THEN
+                            A_input <= STD_LOGIC_VECTOR(SUM_RESULT(24 DOWNTO 0));  
                             SEL_input <= "01";  -- Multiplication operation
-                            DIVISION_STATE <= "100";
+                            DIVISION_STATE <= "0100";
                             
                         -- Step 4: P_OUT input     
-                        ELSIF DIVISION_STATE = "100" THEN
-                            DIVISION_STATE <= "101";
-                        
-                        -- TO ADD IN THE NEXT STEP THAT IF SUITABLE = 0 OT 1
+                        ELSIF DIVISION_STATE = "0100" THEN
+                            DIVISION_STATE <= "0101";
                         
                         -- Step 5: Check if MULT_RESULT(SUM * Divisor) > Dividend   
-                        ELSIF DIVISION_STATE = "101" THEN
+                        ELSIF DIVISION_STATE = "0101" THEN
                             IF UNSIGNED(MULT_RESULT) > UNSIGNED(DIVIDEND) THEN
                                 TEMP <= SHIFT_RIGHT(TEMP, 1);  -- Reduce power of 2
-                                TEMP_QUOTIENT <= (others => '0');
-                                DIVISION_STATE <= "000";        -- Redefine QUOTIENT
+                                DIVISION_STATE <= "0000";        -- Redefine sum
                                 SUITABLE <= "00";
+                                SUM_RESULT <= (others => '0');
                             ELSE
-                                DIVISION_STATE <= "111";  -- Continue division process
+                                DIVISION_STATE <= "0111";  -- Continue division process
+                                SUITABLE <= "01";
+                                A_input <= STD_LOGIC_VECTOR(TEMP);  -- TEMP is power of 2
+                                D_input <= STD_LOGIC_VECTOR(QUOTIENT);
+                                SEL_input <= "00";
                             END IF;
 
-                        -- Step 6: Continue until reaching 2^0
-                        ELSIF DIVISION_STATE = "111" THEN
-                            IF TEMP /= "0000000000000000000000001" THEN
-                                SUITABLE <= "01";
-                                DIVISION_STATE <= "000";  -- Restart summing with next power
+                        -- Step 6: if temp is suitable continue until reaching 2^0 
+                        ELSIF DIVISION_STATE = "0111" THEN
+                            IF TEMP >= "0000000000000000000000001" THEN
+                                DIVISION_STATE <= "1000";  
+                                SUM_RESULT <= (others => '0');
                             ELSE
                                 state <= ZERO;  -- Finish division
                             END IF;
+                            
+                        -- Step 7: QUOTIENT input 
+                        ELSIF DIVISION_STATE = "1000" THEN
+                            QUOTIENT <= UNSIGNED(P_OUT(24 DOWNTO 0));
+                            DIVISION_STATE <= "0000";  -- Restart summing with next power
                             
                         END IF;
                 
