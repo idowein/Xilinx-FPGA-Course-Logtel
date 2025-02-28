@@ -10,18 +10,19 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="439689fs"></ZoomStartTime>
-      <ZoomEndTime time="454930fs"></ZoomEndTime>
-      <Cursor1Time time="268600fs"></Cursor1Time>
+      <ZoomStartTime time="667276fs"></ZoomStartTime>
+      <ZoomEndTime time="700827fs"></ZoomEndTime>
+      <Cursor1Time time="685100fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="94"></ValueColumnWidth>
+      <ValueColumnWidth column_width="185"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="19" />
    <wave_markers>
       <marker time="205000" label="" />
       <marker time="255000" label="" />
+      <marker time="685100" label="" />
    </wave_markers>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
@@ -65,7 +66,7 @@
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/A_input" type="array">
       <obj_property name="ElementShortName">A_input[24:0]</obj_property>
       <obj_property name="ObjectShortName">A_input[24:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/B_input" type="array">
       <obj_property name="ElementShortName">B_input[17:0]</obj_property>
@@ -75,7 +76,7 @@
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/D_input" type="array">
       <obj_property name="ElementShortName">D_input[17:0]</obj_property>
       <obj_property name="ObjectShortName">D_input[17:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/SEL_input" type="array">
       <obj_property name="ElementShortName">SEL_input[1:0]</obj_property>
@@ -85,7 +86,9 @@
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/P_OUT" type="array">
       <obj_property name="ElementShortName">P_OUT[42:0]</obj_property>
       <obj_property name="ObjectShortName">P_OUT[42:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/CALCULATOR_UNIT_TB/uut/DIVIDEND" type="array">
       <obj_property name="ElementShortName">DIVIDEND[24:0]</obj_property>
