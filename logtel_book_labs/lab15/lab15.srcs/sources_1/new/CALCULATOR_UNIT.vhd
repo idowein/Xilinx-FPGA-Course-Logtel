@@ -117,6 +117,9 @@ begin
 
                         -- Step 0: DSP input initialization before summing
                         IF DIVISION_STATE = "0000" THEN
+                            IF TEMP = "0000000000000000000000000" THEN
+                                state <= ZERO;
+                            END IF;
                             DIVIDEND <= DATA_IN_A;
                             A_input <= STD_LOGIC_VECTOR(TEMP);  -- TEMP is power of 2
                             D_input <= STD_LOGIC_VECTOR(QUOTIENT);
@@ -172,6 +175,15 @@ begin
                             DIVISION_STATE <= "0000";  -- Restart summing with next power
                             
                         END IF;
+                
+                WHEN "101" =>   -- ZERO STATE
+                    QUOTIENT        <= (others => '0');
+                    TEMP            <= (others => '0');
+                    MULT_RESULT     <= (others => '0');
+                    SUM_RESULT      <= (others => '0');
+                    A_input         <= (others => '0');
+                    B_input         <= (others => '0');
+                    D_input         <= (others => '0');
                 
                 WHEN OTHERS =>
                 
