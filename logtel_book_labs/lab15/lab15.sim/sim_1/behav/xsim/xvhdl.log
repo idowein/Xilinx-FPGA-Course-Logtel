@@ -1,2 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab15/lab15.srcs/sources_1/ip/xbip_dsp48_macro_0/sim/xbip_dsp48_macro_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'xbip_dsp48_macro_0'
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/lab15/lab15.srcs/sources_1/new/CALCULATOR_UNIT.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'CALCULATOR_UNIT'
