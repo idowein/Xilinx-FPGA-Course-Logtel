@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../lab16.srcs/sources_1/new/LOGIC_BREAKING_UNIT.vhd" \
+"../../../../lab16.srcs/sim_1/new/LOGIC_BREAKING_UNIT_TB.vhd" \
+
+# Do not sort compile order
+nosort
