@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1741604820">
+  <File Type="BITSTR-BMM" Name="LOGIC_BREAKING_UNIT_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="LOGIC_BREAKING_UNIT_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="LOGIC_BREAKING_UNIT_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="LOGIC_BREAKING_UNIT_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="LOGIC_BREAKING_UNIT.tcl"/>
+  <File Type="OPT-TIMING" Name="LOGIC_BREAKING_UNIT_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="LOGIC_BREAKING_UNIT_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="LOGIC_BREAKING_UNIT_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="LOGIC_BREAKING_UNIT_reports.tcl"/>
+  <File Type="OPT-DRC" Name="LOGIC_BREAKING_UNIT_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="LOGIC_BREAKING_UNIT.hwdef"/>
+  <File Type="PWROPT-DCP" Name="LOGIC_BREAKING_UNIT_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="LOGIC_BREAKING_UNIT_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="LOGIC_BREAKING_UNIT_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="LOGIC_BREAKING_UNIT_placed.dcp"/>
+  <File Type="PLACE-IO" Name="LOGIC_BREAKING_UNIT_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="LOGIC_BREAKING_UNIT_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="LOGIC_BREAKING_UNIT_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="LOGIC_BREAKING_UNIT_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="LOGIC_BREAKING_UNIT_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="LOGIC_BREAKING_UNIT_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="LOGIC_BREAKING_UNIT_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="LOGIC_BREAKING_UNIT_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="LOGIC_BREAKING_UNIT_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="LOGIC_BREAKING_UNIT.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="LOGIC_BREAKING_UNIT_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="LOGIC_BREAKING_UNIT_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="LOGIC_BREAKING_UNIT_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="LOGIC_BREAKING_UNIT.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="LOGIC_BREAKING_UNIT_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="LOGIC_BREAKING_UNIT_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="LOGIC_BREAKING_UNIT_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="LOGIC_BREAKING_UNIT_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="LOGIC_BREAKING_UNIT_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="LOGIC_BREAKING_UNIT_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="LOGIC_BREAKING_UNIT_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="LOGIC_BREAKING_UNIT.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="LOGIC_BREAKING_UNIT_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="LOGIC_BREAKING_UNIT_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="LOGIC_BREAKING_UNIT_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="LOGIC_BREAKING_UNIT_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="LOGIC_BREAKING_UNIT_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="LOGIC_BREAKING_UNIT_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="LOGIC_BREAKING_UNIT_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="LOGIC_BREAKING_UNIT_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="LOGIC_BREAKING_UNIT_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="LOGIC_BREAKING_UNIT_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="LOGIC_BREAKING_UNIT_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="LOGIC_BREAKING_UNIT_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="LOGIC_BREAKING_UNIT_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="LOGIC_BREAKING_UNIT_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="LOGIC_BREAKING_UNIT_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="LOGIC_BREAKING_UNIT_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="LOGIC_BREAKING_UNIT_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="LOGIC_BREAKING_UNIT_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="LOGIC_BREAKING_UNIT_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="LOGIC_BREAKING_UNIT_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="LOGIC_BREAKING_UNIT_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="LOGIC_BREAKING_UNIT.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="LOGIC_BREAKING_UNIT_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="LOGIC_BREAKING_UNIT.rbt"/>
+  <File Type="BITSTR-NKY" Name="LOGIC_BREAKING_UNIT.nky"/>
+  <File Type="PDI-FILE" Name="LOGIC_BREAKING_UNIT.pdi"/>
+  <File Type="RCFI_FILE" Name="LOGIC_BREAKING_UNIT.rcfi"/>
+  <File Type="CFI_FILE" Name="LOGIC_BREAKING_UNIT.cfi"/>
+  <File Type="RNPI_FILE" Name="LOGIC_BREAKING_UNIT.rnpi"/>
+  <File Type="NPI_FILE" Name="LOGIC_BREAKING_UNIT.npi"/>
+  <File Type="RBD_FILE" Name="LOGIC_BREAKING_UNIT.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="LOGIC_BREAKING_UNIT.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="LOGIC_BREAKING_UNIT.sysdef"/>
+  <File Type="BG-BGN" Name="LOGIC_BREAKING_UNIT.bgn"/>
+  <File Type="BG-DRC" Name="LOGIC_BREAKING_UNIT.drc"/>
+  <File Type="RDI-RDI" Name="LOGIC_BREAKING_UNIT.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/LOGIC_BREAKING_UNIT.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="LOGIC_BREAKING_UNIT"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/RUN1.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/RUN1.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

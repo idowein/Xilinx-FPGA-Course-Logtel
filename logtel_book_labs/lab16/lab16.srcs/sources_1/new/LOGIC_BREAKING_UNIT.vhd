@@ -51,8 +51,8 @@ architecture Behavioral of LOGIC_BREAKING_UNIT is
     
     -- I/O signals
     signal STATE_NUM        : STD_LOGIC_VECTOR(1 DOWNTO 0) := (others => '0');
-    signal A_input          : STD_LOGIC_VECTOR(5 DOWNTO 0) := (others => '0');
-    signal B_input          : STD_LOGIC_VECTOR(5 DOWNTO 0) := (others => '0');
+    signal A_input          : STD_LOGIC_VECTOR(59 DOWNTO 0) := (others => '0');
+    signal B_input          : STD_LOGIC_VECTOR(59 DOWNTO 0) := (others => '0');
     signal D_out            : STD_LOGIC;
     
     -- Equaltion signals
