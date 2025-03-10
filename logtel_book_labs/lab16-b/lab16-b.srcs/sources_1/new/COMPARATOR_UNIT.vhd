@@ -23,21 +23,21 @@ begin
             if rst = '1' then
                 a1 <=(others=>'0');
                 b1 <=(others=>'0');
-                else
+            else
                 a1 <= a ;
                 b1 <=b ;
             end if;
         end if;
-        end process;
+    end process;
         
         process(clk)
         begin
         if rising_edge(clk) then
             if rst = '1' then
                 cmp <= '0';
-                elsif a1 = b1 then
+            elsif a1 = b1 then
                 cmp <= '1';
-                else
+            else
                 cmp <= '0';
             end if;
         end if;
