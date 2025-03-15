@@ -1,0 +1,15 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/blk_mem_gen_0_ex.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/blk_mem_gen_0_ex.srcs/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v,1742062498,verilog,,,,blk_mem_gen_0,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/axi_checker.vhd,1742062655,vhdl,,,,axi_checker,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/blk_mem_gen_0_exdes.vhd,1742062656,vhdl,,,,blk_mem_gen_0_exdes,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/blk_mem_gen_0_tb.vhd,1742062656,vhdl,,,,blk_mem_gen_0_tb,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/blk_mem_gen_0_wrapper.vhd,1742062655,vhdl,,,,blk_mem_gen_0_wrapper,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/bmg_axi_protocol_chkr.vhd,1742062655,vhdl,,,,bmg_axi_full_protocol_chkr,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/bmg_stim_gen.vhd,1742062655,vhdl,,,,bmg_stim_gen,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/bmg_tb_pkg.vhd,1742062655,vhdl,c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/axi_checker.vhd;c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/blk_mem_gen_0_exdes.vhd;c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/bmg_axi_protocol_chkr.vhd;c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/bmg_stim_gen.vhd;c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/data_gen.vhd,,,bmg_tb_pkg,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/data_gen.vhd,1742062655,vhdl,,,,data_gen,,,,,,,,
+c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/imports/random.vhd,1742062655,vhdl,,,,random,,,,,,,,
