@@ -20,7 +20,9 @@
 
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -52,24 +54,32 @@ END COMPONENT;
 
 signal wr_clk : STD_LOGIC := '0';
 signal rd_clk : STD_LOGIC := '0';
-signal din : STD_LOGIC_VECTOR(15 DOWNTO 0);
+signal din : STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');
 signal wr_en : STD_LOGIC;
 signal rd_en : STD_LOGIC;
 signal dout : STD_LOGIC_VECTOR(15 DOWNTO 0);
 signal full : STD_LOGIC;
 signal empty : STD_LOGIC;
 
+signal RST        : STD_LOGIC := '0';
 signal count : STD_LOGIC_VECTOR(15 DOWNTO 0) := (others => '0');
 constant CLK_PERIOD : time := 10 ns;
 
 begin
 
 wr_clk <= not wr_clk after 2.5 ns;  -- 200 MHz
-rd_clk <= not rd_clk after clock_period / 2; -- 100 MHz
+rd_clk <= not rd_clk after CLK_PERIOD / 2; -- 100 MHz
 
 process (wr_clk) begin
   if rising_edge (wr_clk) then
-    count <= count + 1;
+    if rst = '1' then
+      din <= (others => '0');
+      wr_en <= '0';
+      rd_en <= '0';
+    else  -- rst = '0'
+      din <= din + 1;
+      wr_en <= '1';
+      end if;
   end if;
 end process;
 
