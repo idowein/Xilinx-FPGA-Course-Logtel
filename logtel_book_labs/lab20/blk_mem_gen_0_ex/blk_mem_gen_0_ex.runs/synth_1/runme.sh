@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='c:/Users/idowe/FPGA Projects/FPGA-Course-Logtel/logtel_book_labs/blk_mem_gen_0_ex/blk_mem_gen_0_ex.runs/synth_1'
+HD_PWD='C:/Users/idowe/myProjects/FPGA-Course-Logtel/logtel_book_labs/lab20/blk_mem_gen_0_ex/blk_mem_gen_0_ex.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

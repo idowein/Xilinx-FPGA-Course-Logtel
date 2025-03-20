@@ -163,10 +163,10 @@ proc create_root_design { parentCell } {
   set aresetn [ create_bd_port -dir I -type rst aresetn ]
   set clk_in1 [ create_bd_port -dir I -type clk clk_in1 ]
   set interrupt [ create_bd_port -dir O -type intr interrupt ]
-  set reset_1 [ create_bd_port -dir I -type rst reset_1 ]
+  set reset_0 [ create_bd_port -dir I -type rst reset_0 ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_HIGH} \
- ] $reset_1
+ ] $reset_0
   set rx [ create_bd_port -dir I rx ]
   set tx [ create_bd_port -dir O tx ]
 
@@ -200,7 +200,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net axi_uartlite_0_tx [get_bd_ports tx] [get_bd_pins axi_uartlite_0/tx]
   connect_bd_net -net clk_in1_0_1 [get_bd_ports clk_in1] [get_bd_pins clk_wiz/clk_in1]
   connect_bd_net -net clk_wiz_clk_out1 [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins clk_wiz/clk_out1] [get_bd_pins jtag_axi_0/aclk] [get_bd_pins jtag_axi_0_axi_periph/ACLK] [get_bd_pins jtag_axi_0_axi_periph/M00_ACLK] [get_bd_pins jtag_axi_0_axi_periph/S00_ACLK]
-  connect_bd_net -net reset_0_1 [get_bd_ports reset_1] [get_bd_pins clk_wiz/reset]
+  connect_bd_net -net reset_0_1 [get_bd_ports reset_0] [get_bd_pins clk_wiz/reset]
   connect_bd_net -net rx_0_1 [get_bd_ports rx] [get_bd_pins axi_uartlite_0/rx]
 
   # Create address segments
