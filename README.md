@@ -1,6 +1,6 @@
 #Xilinx FPGA-Course-Logtel
 
-This repository contains materials and code examples from my FPGA Design course at Holon Institute of Technology (HIT). The course provided a comprehensive overview of FPGA design principles and practical skills using the Vivado Design Suite.
+This repository contains materials and code examples from my Xilinx FPGA Design course. The course provided a comprehensive overview of FPGA design principles and practical skills using the Vivado Design Suite using VHDL.
 
 **Course Objectives:**
 
