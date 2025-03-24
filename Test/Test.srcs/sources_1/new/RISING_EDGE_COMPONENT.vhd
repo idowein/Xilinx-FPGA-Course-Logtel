@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Synchronizer is
+entity risinf_edsge_component is
     port (
         D_IN  : in  std_logic;
         CLK   : in  std_logic;
