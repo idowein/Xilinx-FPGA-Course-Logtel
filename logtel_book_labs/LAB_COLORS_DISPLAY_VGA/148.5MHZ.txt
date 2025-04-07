@@ -1,0 +1,13 @@
+1920 pixels (width) +
+88 front porch +
+44 sync pulse +
+148 back porch =
+2200 total pixels per line
+
+1080 lines (height) +
+4 front porch +
+5 sync pulse +
+36 back porch =
+1125 total lines per frame
+
+2200 × 1125 × 60 fps = 148,500,000 pixels/sec = 148.5 MHz
