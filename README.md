@@ -1,6 +1,6 @@
 #Xilinx FPGA-Course-Logtel
 
-This repository contains materials and code examples from my Xilinx FPGA Design course. The course provided a comprehensive overview of FPGA design principles and practical skills using the Vivado Design Suite using VHDL.
+Comprehensive training at LOGTEL Training Center in advanced VHDL design, focusing on synthesizable, high-performance code. The course covers simulation using Text IO and extensive work with key FPGA components such as BRAM, SRL, FIFO, PLL/MMCM, and DSP. It also includes DSP topics like divider implementation via multipliers, square root, and standard deviation calculations. Students learn FPGA internal clocking, timing analysis, identifying design bottlenecks, and solving timing issues using constraints. Practical projects include simulation and synthesis, exemplified by a histogram collection design. Additional training involves Xilinx IP Integrator and debugging tools such as ChipScope, TSM scripts, and JTAG to AXI effectively.
 
 **Course Objectives:**
 
