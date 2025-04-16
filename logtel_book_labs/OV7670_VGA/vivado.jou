@@ -1,0 +1,121 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed Apr 16 22:35:37 2025
+# Process ID: 18280
+# Current directory: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23880 C:\Users\idowe\myProjects\FPGA-image-interpolator\OV7670_VGA\OV7670_VGA.xpr
+# Log file: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/vivado.log
+# Journal file: C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.xpr
+update_module_reference design_1_ov7670_controller_0_0
+update_module_reference design_1_cntl_0_0
+update_module_reference design_1_ovo_7670_caputre_0_0
+update_module_reference design_1_vga_0_0
+update_module_reference design_1_xlconstant_0_0
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+delete_bd_objs [get_bd_nets xlconstant_0_dout] [get_bd_cells xlconstant_0]
+update_compile_order -fileset sources_1
+startgroup
+make_bd_pins_external  [get_bd_pins clk_wiz_0/reset]
+endgroup
+set_property CONFIG.ASSOCIATED_RESET {reset_0} [get_bd_ports /clk_in1]
+set_property CONFIG.POLARITY ACTIVE_LOW [get_bd_ports reset_0]
+set_property CONFIG.POLARITY ACTIVE_LOW [get_bd_ports reset_0]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+save_bd_design
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+make_wrapper -files [get_files C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -top
+validate_bd_design
+startgroup
+set_property -dict [list CONFIG.RESET_TYPE {ACTIVE_LOW} CONFIG.RESET_PORT {resetn}] [get_bd_cells clk_wiz_0]
+delete_bd_objs [get_bd_nets reset_0_1]
+endgroup
+delete_bd_objs [get_bd_ports reset_0]
+startgroup
+make_bd_pins_external  [get_bd_pins clk_wiz_0/resetn]
+endgroup
+save_bd_design
+set_property name resetn [get_bd_ports resetn_0]
+save_bd_design
+make_wrapper -files [get_files C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -top
+reset_run design_1_clk_wiz_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+set_property location {2 684 405} [get_bd_cells vga_0]
+open_bd_design {C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd}
+make_wrapper -files [get_files C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -top
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_run impl_1
+startgroup
+make_bd_pins_external  [get_bd_pins vga_0/vga_blue] [get_bd_pins vga_0/vga_red] [get_bd_pins vga_0/vga_V_sync] [get_bd_pins vga_0/VGA_H_sync] [get_bd_pins vga_0/vga_green]
+endgroup
+regenerate_bd_layout
+set_property name VGA_H_sync [get_bd_ports VGA_H_sync_0]
+set_property name vga_V_sync [get_bd_ports vga_V_sync_0]
+set_property name vga_red [get_bd_ports vga_red_0]
+save_bd_design
+set_property name vga_green [get_bd_ports vga_green_0]
+set_property name vga_blue [get_bd_ports vga_blue_0]
+validate_bd_design
+make_wrapper -files [get_files C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -top
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_hw_target {localhost:3121/xilinx_tcf/Digilent/210292BD0348A}
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_hw_manager
+open_bd_design {C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+set_property -dict [list CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {148.5} CONFIG.MMCM_CLKFBOUT_MULT_F {6.500} CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.375} CONFIG.MMCM_CLKOUT1_DIVIDE {26} CONFIG.CLKOUT1_JITTER {134.463} CONFIG.CLKOUT1_PHASE_ERROR {124.502} CONFIG.CLKOUT2_JITTER {193.109} CONFIG.CLKOUT2_PHASE_ERROR {124.502}] [get_bd_cells clk_wiz_0]
+endgroup
+save_bd_design
+update_module_reference design_1_vga_0_0
+make_wrapper -files [get_files C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.srcs/sources_1/bd/design_1/design_1.bd] -top
+reset_run synth_1
+reset_run design_1_clk_wiz_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {C:/Users/idowe/myProjects/FPGA-image-interpolator/OV7670_VGA/OV7670_VGA.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
