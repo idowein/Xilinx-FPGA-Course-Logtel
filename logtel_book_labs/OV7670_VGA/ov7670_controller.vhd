@@ -2,21 +2,24 @@
 -- Engineer: Mike Field <hamster@snap.net.nz>
 -- 
 -- Description: Controller for the OV760 camera - transferes registers to the 
---              camera over an I2C like bus
+--              camera over an I2C like bus - SCCB
+-- Edited by : Ido weinstock <ido.weinstock@gmail.com> (23/04/2025)
+--             Dvir Hershkovitz <dvirhersh@gmail.com?>
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity ov7670_controller is
-    Port ( clk   : in    STD_LOGIC;
-			  resend :in    STD_LOGIC;
-			  config_finished : out std_logic;
-           sioc  : out   STD_LOGIC;
-           siod  : inout STD_LOGIC;
-           reset : out   STD_LOGIC;
-           pwdn  : out   STD_LOGIC;
-			  xclk  : out   STD_LOGIC
+    Port ( 
+            clk   : in    STD_LOGIC;
+			resend :in    STD_LOGIC;
+		    config_finished : out std_logic;
+            sioc  : out   STD_LOGIC;
+            siod  : inout STD_LOGIC;
+            reset : out   STD_LOGIC;
+            pwdn  : out   STD_LOGIC;
+			xclk  : out   STD_LOGIC
 );
 end ov7670_controller;
 
@@ -31,7 +34,7 @@ architecture Behavioral of ov7670_controller is
 		);
 	END COMPONENT;
 
-	COMPONENT i2c_sender
+	COMPONENT SCCB_sender
 	PORT(
 		clk   : IN std_logic;
 		send  : IN std_logic;
@@ -55,7 +58,7 @@ begin
    config_finished <= finished;
 	
 	send <= not finished;
-	Inst_i2c_sender: i2c_sender PORT MAP(
+	Inst_SCCB_sender: SCCB_sender PORT MAP(
 		clk   => clk,
 		taken => taken,
 		siod  => siod,
